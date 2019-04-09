@@ -1,0 +1,45 @@
+.first{
+  border:10rpx solid #fff;
+  height:300rpx;
+  background-color: #fff;
+  border-radius: 5%;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content:space-around;
+  align-items: center;
+}
+
+
+.divLine{
+ background: rgb(210, 210, 236);
+ width: 100%;
+ height: 20rpx;
+ 
+}
+.style{
+  border:1rpx solid rgb(12, 12, 12);
+  height:180rpx;
+  width:180rpx;
+
+}
+.style image{
+  height:180rpx;
+  width:180rpx;
+  
+
+}
+.style1{
+  
+  height:140rpx;
+  width:400rpx;
+
+}
+
+.style1 text{
+  font-size: 40rpx;
+}
+
+page{
+  background-color: rgb(210, 210, 236)
+}

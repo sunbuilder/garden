@@ -1,0 +1,90 @@
+.log-list {
+  display: flex;
+  flex-direction: column;
+  padding: 40rpx;
+}
+.log-item {
+  margin: 10rpx;
+}
+.con {
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+ align-items: center;
+ justify-content: space-between;
+ padding:100rpx 0;
+ box-sizing:border-box;
+ 
+
+} 
+.first{
+  border:10rpx solid #8E8CD8;
+}
+
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+.slide swiper{
+  height: 190px;
+}
+.slide-image{
+  width:100%;
+  height:100%;
+}
+.board{
+  display:flex;
+  -webkit-flex-direction:column;
+  -moz-flex-direction:column;
+  -ms-flex-direction:column;
+  -o--flex-direction:column; 
+  flex-direction: column;
+
+}
+.board-item{
+  display:flex;
+  flex:1;
+  cursor:pointer;
+  border:10rpx solid #fff;
+  padding:40rpx;
+  background-color:#8E8CD8;
+}
+.board-item text{
+  flex:1;
+  width: 40rpx;
+  height: 40rpx;
+}
+.board-item image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.contain{
+  height: 100%;
+  width:100%;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content:space-around;
+}
+.ceshi{
+ 
+  height: 50px;
+ align-items: center;
+ display: flex;
+  flex-direction: column;
+ 
+}

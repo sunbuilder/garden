@@ -1,0 +1,81 @@
+.scroll-header{
+display: flex;
+white-space: nowrap;
+}
+.scroll-header view{
+height:95rpx;
+width:190rpx;
+border:5px solid white;
+display: inline-block;
+justify-content: center;
+align-items: center;
+}
+
+.style{
+ border:10rpx solid white;
+  height:600rpx;
+  
+  border-radius: 5%;
+  
+  
+ 
+}
+.style1{
+ 
+  height:450rpx;
+  width:100%;
+  
+  border-radius: 5%;
+ 
+}
+.style1 image{
+  height:100%;
+  width:100%;
+  border-radius: 5%;
+}
+.style2{
+ border:0rpx solid black;
+  height:80rpx;
+ justify-content: center;
+ 
+}
+.style text{
+  font-size: 50rpx;
+}
+.tr4{
+  border: 0px solid darkgray;
+ display: flex;
+ width: 100%;
+ justify-content: center;
+ height: 80rpx;
+ align-items: center;
+}
+.td4{
+  border: 0px solid white;
+  width:10%;
+  height: 1.5rem;
+  justify-content: center;
+  text-align: center;
+}
+.td3{
+  border: 0px solid white;
+  width:60%;
+  height: 1.5rem;
+  justify-content: center;
+ 
+}
+.td3 text{
+  font-size: 35rpx;
+}
+.td4 text{
+  font-size: 35rpx;
+}
+.td4 image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.x1{
+  background-color:yellow;
+}
+
+

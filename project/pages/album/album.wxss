@@ -1,0 +1,10 @@
+.imgList{
+  width:100%;
+}
+.imgList .imgList-li {
+  width:100%;
+}
+.imgList .imgList-li .img{
+  width: 33.3%;
+  height: 250rpx;
+}

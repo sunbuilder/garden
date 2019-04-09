@@ -1,0 +1,95 @@
+<!--logs.wxml-->
+
+<view class="con">
+
+  <view class="userinfo">
+    
+    
+      <image class="userinfo-avatar" src="../../image/1.jpg" mode="cover"></image>
+      <text class="userinfo-nickname">--基本资料--</text>
+    
+  </view>
+
+ </view>
+  <view class="board">
+ 
+  <view class="board-item">
+  <image class="userinfo-avatar1"src="../../image/p1.png" background-size="cover"></image>
+      <text class="board-text">植物姓名</text>
+       <view class="container" class="zn-uploadimg"bindtap="modalinput"><text class="style1">未填写</text></view> 
+  </view>
+  
+   </view>
+   <view class="board">
+  <navigator url="../message/message">
+  <view class="board-item">
+  <image class="userinfo-avatar1"src="../../image/p2.png" background-size="cover"></image>
+      <text class="board-text">栽培空间</text>
+      <text>室内</text>
+  </view>
+   </navigator>
+   </view>
+   <view class="board">
+  <navigator url="../collect/collect">
+  <view class="board-item">
+  <image class="userinfo-avatar1"src="../../image/p3.png" background-size="cover"></image>
+      <text class="board-text">栽培方式</text>
+      <text>盆栽.</text>
+  </view>
+   </navigator>
+   </view>
+   <view class="board">
+  <navigator url="../feedback/feedback">
+  <view class="board-item">
+  <image class="userinfo-avatar1"src="../../image/p4.png" background-size="cover"></image>
+      <text class="board-text">所在城市</text>
+     <text>哈尔滨</text>
+  </view>
+   </navigator>
+   </view>
+ <view class="userinfo">
+     <text class="userinfo-nickname">--养殖经验--</text>
+  </view>
+   <view class="contain">
+<navigator url="../skill/skill">
+    <view class="">
+    <image class="userinfo-avatar1"src="../../image/sun.png" background-size="cover"></image>
+     <view class="contain"><text class="style">阳光</text></view>
+    </view>
+    </navigator>
+    <navigator url="../photo/photo">
+   <view class="">
+    <image class="userinfo-avatar1"src="../../image/rain.png" background-size="cover"></image>
+    <view class="contain"><text class="style">水分</text></view>
+    </view>
+    </navigator>
+    <navigator url="../share/share">
+    <view class="">
+    <image class="userinfo-avatar1"src="../../image/wendu.png" background-size="cover"></image>
+    <view class="contain"><text class="style">温度</text></view>
+    </view>
+    </navigator>
+  
+</view>
+<view class="contain">
+<navigator url="../skill/skill">
+    <view class="">
+    <image class="userinfo-avatar1"src="../../image/turang.png" background-size="cover"></image>
+     <view class="contain"><text class="style">土壤</text></view>
+    </view>
+    </navigator>
+    <navigator url="../photo/photo">
+   <view class="">
+    <image class="userinfo-avatar1"src="../../image/time.png" background-size="cover"></image>
+    <view class="contain"><text class="style">时间</text></view>
+    </view>
+    </navigator>
+   
+  
+</view>
+
+
+
+<modal hidden="{{hiddenmodalput}}" title="请输入植物姓名" confirm-text="提交" cancel-text="重置" bindcancel="cancel" bindconfirm="confirm"> 
+ <input type='text'placeholder="请输入内容" auto-focus/>
+</modal>

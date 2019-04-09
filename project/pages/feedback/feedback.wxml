@@ -1,0 +1,15 @@
+<view  style="background-image: url(https://img2018.cnblogs.com/blog/1238131/201903/1238131-20190330205012831-578792412.jpg)" class="style1" >
+      <view class="first">
+ <textarea class="detailText" 
+    placeholder="请提出您的宝贵意见...."
+    bindblur="bindTextAreaBlur"
+    value="{{details}}">
+    </textarea>
+      </view>
+       <view class="style">
+        
+    </view>
+     <button >  提交  </button>
+    
+
+    </view>

@@ -1,0 +1,117 @@
+ <scroll-view scroll-x class="scroll-header">
+<view id="green" class="scroll-view-item bc_green">
+    
+   <view class="td1"><button>全部</button></view>
+   
+  
+</view>
+<view id="red" class="scroll-view-item bc_red">
+     <view class="td1"><button>多肉植物</button></view>
+     
+</view>
+<view id="yellow" class="scroll-view-item bc_yellow">
+     <view class="td1"><button >观赏植物</button></view>
+</view>
+<view id="blue" class="scroll-view-item bc_blue">
+     <view class="td1"><button >观叶植物</button></view>
+</view>
+<view id="blue" class="scroll-view-item bc_blue">
+    <view class="td1"><button >草本植物</button></view>
+</view>
+<view id="blue" class="scroll-view-item bc_blue">
+    <view class="td1"><button>木本植物</button></view>
+</view>
+<view id="blue" class="scroll-view-item bc_blue">
+    <view class="td1"><button>水生植物</button></view>
+</view>
+<view id="blue" class="scroll-view-item bc_blue">
+    <view class="td1"><button>室内植物</button></view>
+</view>
+<view id="blue" class="scroll-view-item bc_blue">
+    <view class="td1"><button >水培植物</button></view>
+</view>
+<view id="blue" class="scroll-view-item bc_blue">
+    <view class="td1"><button >其他</button></view>
+</view>
+</scroll-view>
+
+<view class="style">
+<navigator url="../article/article">
+    <view class="style1">
+        <image src="../../image/3.jpg" ></image>
+    </view>
+    <view class="style2">
+        <text>标题.如何养花</text>
+    </view>
+    <view class="tr4">
+     
+      <view class="td3">
+            <text>2019.3.31  19.15</text>
+      </view>
+      <view class="td4">
+            <image src="../../image/note.png"mode="aspectFill" />
+       </view>
+      <view class="td4">
+            <text>11</text>
+       </view>
+       <view class="td4">
+            <image src="../../image/goods.png"mode="aspectFill" />
+       </view>
+      <view class="td4">
+            <text>11</text>
+       </view>
+</view>
+</navigator>
+</view>
+<view class="style">
+    <view class="style1">
+        <image src="../../image/12.jpg" ></image>
+    </view>
+    <view class="style2">
+        <text>标题.如何养花</text>
+    </view>
+    <view class="tr4">
+     
+      <view class="td3">
+            <text>2019.3.31  19.15</text>
+      </view>
+      <view class="td4">
+            <image src="../../image/note.png"mode="aspectFill" />
+       </view>
+      <view class="td4">
+            <text>11</text>
+       </view>
+       <view class="td4">
+            <image src="../../image/goods.png"mode="aspectFill" />
+       </view>
+      <view class="td4">
+            <text>11</text>
+       </view>
+</view>
+</view>
+<view class="style">
+    <view class="style1">
+        <image src="../../image/17.jpg" ></image>
+    </view>
+    <view class="style2">
+        <text>标题.如何养花</text>
+    </view>
+    <view class="tr4">
+     
+      <view class="td3">
+            <text>2019.3.31  19.15</text>
+      </view>
+      <view class="td4">
+            <image src="../../image/note.png"mode="aspectFill" />
+       </view>
+      <view class="td4">
+            <text>11</text>
+       </view>
+       <view class="td4">
+            <image src="../../image/goods.png"mode="aspectFill" />
+       </view>
+      <view class="td4">
+            <text>11</text>
+       </view>
+</view>
+</view>

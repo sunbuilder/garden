@@ -1,0 +1,17 @@
+<view  class="style1" >
+<view class="tr">
+    <view class="td">
+      
+    </view>
+    <view class="td1">
+        <button >  提交  </button>
+    </view>
+</view>
+<view class="first">
+ <textarea class="detailText"  placeholder="分享精彩生活...." bindblur="bindTextAreaBlur"value="{{details}}">
+    </textarea>
+ </view>
+ <view class="style2">
+    <image   bindtap="bindViewTap"src="../../image/30.jpg"mode="widthFix" />
+ </view>
+    </view>

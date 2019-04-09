@@ -1,0 +1,207 @@
+
+.hello{
+
+font-size: 50rpx;
+
+color: red;
+
+}
+.style{
+  height:50rpx;
+}
+.hello1{
+
+font-size: 35rpx;
+
+
+}
+
+.divLine1{
+ background: #E0E3DA;
+ width: 100%;
+ height: 15rpx;
+}
+.userinfo-avatar {
+  border:1rpx solid black;
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.table {
+ border: 10px solid white;
+ font-size: 12px;
+}
+.tr {
+  border: 0px solid darkgray;
+ display: flex;
+ width: 100%;
+ justify-content: center;
+ height: 5rem;
+ align-items: center;
+}
+.tr1 {
+  border: 0px solid darkgray;
+  width:70%;
+  height: 5rem;
+  justify-content: center;
+ 
+}
+.td {
+  border: 0px solid darkgray;
+  width:30%;
+  height: 5rem;
+  justify-content: center;
+  text-align: center;
+}
+.td1 {
+  border: 0px solid darkgray;
+  width:100%;
+  height:3rem;
+ 
+}
+.td2 {
+  border: 0px solid darkgray;
+  width:100%;
+  height:2rem;
+ 
+}
+.divLine{
+ background: #E0E3DA;
+ width: 100%;
+ height: 5rpx;
+ 
+}
+.divLine2{
+ background: white;
+ width: 100%;
+ height: 20rpx;
+ 
+}
+.tr3{
+  border: 0px solid darkgray;
+ display: flex;
+ width: 100%;
+
+ height: 5rem;
+ align-items: center;
+}
+.td3{
+  border: 5px solid white;
+  width:33%;
+  height: 5rem;
+  justify-content: center;
+  text-align: center;
+}
+.td3 image{
+  height:100%;
+  width:100%;
+}
+.tr4{
+  border: 0px solid darkgray;
+ display: flex;
+ width: 100%;
+ justify-content: center;
+ height: 2rem;
+ align-items: center;
+}
+.td4{
+  border: 0px solid white;
+  width:12%;
+  height: 1.5rem;
+  justify-content: center;
+  text-align: center;
+}
+.td9{
+  border: 0px solid white;
+  width:12%;
+  height: 1.5rem;
+  justify-content: center;
+  
+}
+.td8{
+  border: 1px solid black;
+  width:50%;
+  height: 1.5rem;
+  justify-content: center;
+  
+}
+.td10{
+  border: 0px solid black;
+  width:50%;
+  height: 1.5rem;
+  justify-content: center;
+  
+}
+.td4 image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.userinfo-avatar1 {
+  border:1rpx solid black;
+  width: 80rpx;
+  height: 80rpx;
+  margin: 10rpx;
+  border-radius: 50%;
+}
+
+.tr5 {
+  border: 0px solid darkgray;
+ display: flex;
+ width: 100%;
+ justify-content: center;
+ height: 3rem;
+ align-items: center;
+}
+.tr6 {
+  border: 0px solid darkgray;
+  width:80%;
+  height: 3rem;
+  justify-content: center;
+ 
+}
+.td5 {
+  border: 0px solid darkgray;
+  width:20%;
+  height: 3rem;
+ 
+ 
+}
+.td6 {
+  border: 0px solid darkgray;
+  width:100%;
+  height:2rem;
+ 
+}
+.td7 {
+  border: 0px solid darkgray;
+  width:100%;
+  height:1rem;
+ 
+}
+.user_msg{
+  font-size: 30rpx;
+}
+.text1{
+  font-size: 50rpx;
+}
+.usg{
+ font-size: 40rpx;
+}
+
+.circle-float{
+  color: black;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 0rpx;
+  right: 0rpx;
+  width: 100%;
+  height: 100rpx;
+  
+  font-size: 28rpx;
+  background:  white;
+  
+}

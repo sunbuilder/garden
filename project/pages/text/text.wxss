@@ -1,0 +1,133 @@
+
+.hello{
+
+font-size: 50rpx;
+
+color: red;
+
+}
+.style{
+  height:50rpx;
+}
+.hello1{
+
+font-size: 35rpx;
+
+
+}
+
+.divLine1{
+ background: #E0E3DA;
+ width: 100%;
+ height: 15rpx;
+}
+.userinfo-avatar {
+  border:1rpx solid black;
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.table {
+ border: 10px solid white;
+ font-size: 12px;
+}
+.tr {
+  border: 0px solid darkgray;
+ display: flex;
+ width: 100%;
+ justify-content: center;
+ height: 5rem;
+ align-items: center;
+}
+.tr1 {
+  border: 0px solid darkgray;
+  width:70%;
+  height: 5rem;
+  justify-content: center;
+ 
+}
+.td {
+  border: 0px solid darkgray;
+  width:30%;
+  height: 5rem;
+  justify-content: center;
+  text-align: center;
+}
+.td1 {
+  border: 0px solid darkgray;
+  width:100%;
+  height:3rem;
+ 
+}
+.td2 {
+  border: 0px solid darkgray;
+  width:100%;
+  height:2rem;
+ 
+}
+.divLine{
+ background: #E0E3DA;
+ width: 100%;
+ height: 5rpx;
+ 
+}
+.tr3{
+  border: 0px solid darkgray;
+ display: flex;
+ width: 100%;
+
+ height: 5rem;
+ align-items: center;
+}
+.td3{
+  border: 5px solid white;
+  width:33%;
+  height: 5rem;
+  justify-content: center;
+  text-align: center;
+}
+.td3 image{
+  height:100%;
+  width:100%;
+}
+.tr4{
+  border: 0px solid darkgray;
+ display: flex;
+ width: 100%;
+ justify-content: center;
+ height: 2rem;
+ align-items: center;
+}
+.td4{
+  border: 0px solid white;
+  width:16%;
+  height: 1.5rem;
+  justify-content: center;
+  text-align: center;
+}
+.td4 image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.circle-float{
+  color: #ffffff;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 100rpx;
+  right: 20rpx;
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  font-size: 28rpx;
+  background: white;
+  
+}
+.circle-float image{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+}

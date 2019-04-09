@@ -1,0 +1,29 @@
+.style1{
+  margin: 10rpx;
+
+  font-size: 35rpx;
+  background-size:100% 100%;
+    -moz-background-size:100% 100%;
+    width: 97vw;height: 157vw;
+}
+.first{
+  border:10rpx solid #8E8CD8;
+  height:300rpx;
+  background-color: #fff;
+  border-radius: 5%;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content:space-around;
+  
+}
+.style{
+  height:150rpx;
+  justify-content:space-around;
+  align-items: center;
+}
+
+button{
+   background-color:#8E8CD8;
+  width:200rpx;
+}

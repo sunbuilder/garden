@@ -1,0 +1,8 @@
+.style{
+  height:450rpx;
+  width:100%;
+}
+.style image{
+  height:450rpx;
+  width:100%;
+}

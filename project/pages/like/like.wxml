@@ -1,0 +1,116 @@
+ <modal hidden="{{hiddenmodalput}}" title="回复消息" confirm-text="确认" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm"> 
+ <input type='text'placeholder="请输入内容" auto-focus/>
+</modal>
+ 
+ 
+ <view class="contain">
+     <!-- 分割线 -->
+  <view class="divLine"></view>
+</view>
+ <view class="tr5" >
+   <view class="td5"><image  class="userinfo-avatar1" mode="cover" src="../../image/24.jpg"></image></view>
+  
+   <view class="tr6">
+   <view class="td6"><text class="hello">ID</text></view>
+   <view class="td7"><text class='user_msg'>2019.3.30  17.31</text></view>
+   </view>
+   <view class="tr1">
+    <view class="container" class="zn-uploadimg"bindtap="modalinput">
+   <button>回复</button>
+   </view>
+   </view>
+   </view>
+   <view class="td8">
+        <text class="usg">点赞了这条评论</text>
+   </view>
+  <navigator url="../article/article">
+<view class="first">
+    <view class="style">
+       <image src="../../image/3.jpg" background-size="cover"></image>
+    </view>
+    <view class="style1"> 
+    <text>@小明</text>
+    
+    <view class="style2"> 
+    <text>今天天气真好。。。</text>
+    </view>
+    </view>
+    
+</view>
+</navigator>
+
+<view class="contain">
+     <!-- 分割线 -->
+  <view class="divLine"></view>
+</view>
+
+<view class="tr5" >
+   <view class="td5"><image  class="userinfo-avatar1" mode="cover" src="../../image/24.jpg"></image></view>
+  
+   <view class="tr6">
+   <view class="td6"><text class="hello">ID</text></view>
+   <view class="td7"><text class='user_msg'>2019.3.30  17.31</text></view>
+   </view>
+   <view class="tr1">
+    <view class="container" class="zn-uploadimg"bindtap="modalinput">
+   <button>回复</button>
+   </view>
+   </view>
+   </view>
+   <view class="td8">
+        <text class="usg">点赞了这条评论</text>
+   </view>
+   
+<view class="first">
+    <view class="style">
+       <image src="../../image/3.jpg" background-size="cover"></image>
+    </view>
+    <view class="style1"> 
+    <text>@小明</text>
+    
+    <view class="style2"> 
+    <text>今天天气真好。。。</text>
+    </view>
+    </view>
+    
+</view>
+<view class="contain">
+     <!-- 分割线 -->
+  <view class="divLine"></view>
+</view>
+
+<view class="tr5" >
+   <view class="td5"><image  class="userinfo-avatar1" mode="cover" src="../../image/24.jpg"></image></view>
+  
+   <view class="tr6">
+   <view class="td6"><text class="hello">ID</text></view>
+   <view class="td7"><text class='user_msg'>2019.3.30  17.31</text></view>
+   </view>
+   <view class="tr1">
+   <view class="container" class="zn-uploadimg"bindtap="modalinput">
+   <button>回复</button>
+   </view>
+   </view>
+   </view>
+   <view class="td8">
+        <text class="usg">点赞了这条评论</text>
+   </view>
+   
+   <navigator url="../article/article">
+<view class="first">
+    <view class="style">
+       <image src="../../image/3.jpg" background-size="cover"></image>
+    </view>
+    <view class="style1"> 
+    <text>@小明</text>
+    
+    <view class="style2"> 
+    <text>今天天气真好。。。</text>
+    </view>
+    </view>
+    </view>
+</navigator>
+<view class="contain">
+     <!-- 分割线 -->
+  <view class="divLine"></view>
+</view>

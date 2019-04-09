@@ -1,0 +1,15 @@
+
+   <view class="con ">
+
+  <view class="userinfo">
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+     <view class="style1">
+      <input placeholder="请输入新的昵称"/>
+        
+     </view>
+   </view>
+    <view>
+         <button >确认修改</button>
+    </view>
+   </view>
+ 
