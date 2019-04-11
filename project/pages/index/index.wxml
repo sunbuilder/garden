@@ -1,3 +1,9 @@
+<navigator url="../write/write">
+    <view class="circle-float">
+    <image src="../../image/write.png"/>
+    </view>
+</navigator>
+
 <!--index.wxml-->
 <navigator url="../article/article">
 <view class="container">
@@ -21,70 +27,7 @@
 </view>
  </view>
  </navigator>
-<!--
-<view class="contain">
-<navigator url="../skill/skill">
-    <view class="">
-    <image class="userinfo-avatar"src="../../image/24.jpg" background-size="cover"></image>
-     <view class="contain"><text class="style">养花知识</text></view>
-    </view>
-    </navigator>
-    <navigator url="../photo/photo">
-   <view class="">
-    <image class="userinfo-avatar"src="../../image/22.jpg" background-size="cover"></image>
-    <view class="contain"><text class="style">花卉摄影</text></view>
-    </view>
-    </navigator>
-    <navigator url="../share/share">
-    <view class="">
-    <image class="userinfo-avatar"src="../../image/23.jpg" background-size="cover"></image>
-    <view class="contain"><text class="style">分享生活</text></view>
-    </view>
-    </navigator>
-  
-</view>
 
-
-<view class="contain">
-
-  <view class="divLine"></view>
-</view>
-
-  </view>
-  <view class="first">
-     
-  </view>
-
-  <view animation="{{animationData}}" 
-       class="x1" >
-        <view  style="background-image: url(https://img2018.cnblogs.com/blog/1238131/201904/1238131-20190401172042160-1967851700.jpg)" class="x3" >
-           <text class="x2">标题.精选</text>
-       
-        </view>
-         <view class="tr4">
-      <view class="td4">
-          <image src="../../image/share(1).png"mode="aspectFill" />
-      </view>
-      <view class="td4">
-            <text>11</text>
-      </view>
-      <view class="td4">
-            <image src="../../image/note.png"mode="aspectFill" />
-       </view>
-      <view class="td4">
-            <text>11</text>
-       </view>
-       <view class="td4">
-            <image src="../../image/goods.png"mode="aspectFill" />
-       </view>
-      <view class="td4">
-            <text>11</text>
-       </view>
-</view>
-
-</view>
-
-  -->
  <view class="tr" >
 
    <view class="td"> 
@@ -110,16 +53,21 @@
    <view class="tr3">
    <navigator url="../album/album">
         <scroll-view scroll-x class="scroll-header">
-          <view id="green" class="scroll-view-item bc_green">
-              
-            <view class="x3"><image src="https://img2018.cnblogs.com/blog/1238131/201904/1238131-20190403182509903-262101227.jpg"/></view>
+
+         <view wx:for="{{array}}">
+            <view class="x3"><image src="{{item.imgArr}}"/></view>
             
-            
+         
           </view>
+         
           <view id="red" class="scroll-view-item bc_red">
               <view class="x3"><image src="https://img2018.cnblogs.com/blog/1238131/201904/1238131-20190403182454633-208795874.jpg"/></view>
               
           </view>
+          
+
+
+
           <view id="yellow" class="scroll-view-item bc_yellow">
               <view class="x3"><image src="https://img2018.cnblogs.com/blog/1238131/201904/1238131-20190403182435804-1440141718.jpg"/></view>
           </view>
@@ -148,18 +96,23 @@
       </navigator>
    </view>
   </view>
+<view wx:for="{{array}}">
    <view class="divLine3"></view>
+
    <view class="tr5" >
        <view class="td5">
-       <text class="hello">5月</text><text class="hello1">3日</text>
+       <text class="hello">{{item.month}}</text><text class="hello1">{{item.date}}</text>
        <view class="hello2"><image src="../../image/share.png"/></view>
        </view>
   
        <view class="tr6">
-          <view class="td6"><text>今天天气真好.。。。。。</text></view>
-          <view class="td7"><image class='img' src='{{item}}' data-index='{{index}}' bindtap='previewImg'wx:for='{{imgArr}}'></image></view>
+          <view class="td6"><text>{{item.version}}</text></view>
+          <view class="td7"><image class='img' src='{{item.imgArr}}'></image></view>
        </view>
    </view>
+   </view>
+
+
     <view class="divLine3"></view>
    <view class="tr5" >
        <view class="td5">
@@ -208,3 +161,8 @@
           <view class="td7"><image src="https://img2018.cnblogs.com/blog/1238131/201904/1238131-20190403182340135-193336783.jpg"/></view>
        </view>
    </view>
+
+
+<button wx:for="{{buttons}}" wx:key="*this" id="{{'btn'+index}}" bindtap='onchangeTab' class="{{tabIndex==index?'on':''}}">
+        {{item}}
+      </button>

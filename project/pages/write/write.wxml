@@ -8,7 +8,7 @@
     </view>
 </view>
 <view class="first">
- <textarea class="detailText"  placeholder="分享精彩生活...." bindblur="bindTextAreaBlur"value="{{details}}">
+ <textarea class="detailText"  placeholder="记录精彩瞬间...." bindblur="bindTextAreaBlur"value="{{details}}">
     </textarea>
  </view>
  <view class="style2">
@@ -29,5 +29,6 @@
    </view>
  </view>
     </view>
+
 
 

@@ -42,13 +42,9 @@ button{
 
 }
 .td{
-
-  height:70rpx;
+ height:70rpx;
  width:70%;
 
-
-  
- 
 }
 td{
 
@@ -59,8 +55,10 @@ td{
   height:250rpx;
   width:250rpx;
 }
-
-
+.style4 image{
+  height:250rpx;
+  width:250rpx;
+}
 
 .add-image, .up-pic image {
     margin-top: 2%;
