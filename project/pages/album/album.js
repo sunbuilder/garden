@@ -29,24 +29,5 @@ Page({
       fail: function (res) { },
       complete: function (res) { },
     })
-  },
-  onLoad: function () {
-    wx.request({
-      url: 'http://localhost:8080/garden/myDiaryList.action',
-      data: {
-        'imgArr': imgarr    //相册图片
-
-      },
-      method: 'post',
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
-      success: function (res) {
-        console.log(res.data);
-      },
-      fail: function (res) {
-        console.log(".....fail.....");
-      }
-    })
   }
 })

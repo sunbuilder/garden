@@ -131,14 +131,3 @@ font-size: 35rpx;
   height: 120rpx;
   border-radius: 50%;
 }
-.imgList{
-  width:100%;
-}
-.imgList .imgList-li {
-  width:100%;
-}
-.imgList .imgList-li .img{
-  width: 30%;
-  height: 180rpx;
-  border: 5px solid white;
-}

@@ -47,7 +47,6 @@
   </view>
    </navigator>
    </view>
-
  <view class="userinfo">
      <text class="userinfo-nickname">--养殖经验--</text>
   </view>
@@ -94,6 +93,3 @@
 <modal hidden="{{hiddenmodalput}}" title="请输入植物姓名" confirm-text="提交" cancel-text="重置" bindcancel="cancel" bindconfirm="confirm"> 
  <input type='text'placeholder="请输入内容" auto-focus/>
 </modal>
-<button bindtap='btnClick' >显示隐藏</button>
-<view wx:if="{{testtrue}}">123</view>
-<view wx:else>2333333333</view>

@@ -35,38 +35,34 @@
 </view>
 </scroll-view>
 
-
-<view class="style"wx:for="{{array}}">
+<view class="style">
 <navigator url="../article/article">
     <view class="style1">
-        <image src="{{item.imgArr}}" ></image>
+        <image src="../../image/3.jpg" ></image>
     </view>
     <view class="style2">
-        <text>{{item.version}}</text>
+        <text>标题.如何养花</text>
     </view>
     <view class="tr4">
      
       <view class="td3">
-            <text>{{item.time}}</text>
+            <text>2019.3.31  19.15</text>
       </view>
       <view class="td4">
-            <image src="../../image/share(1).png"mode="aspectFill" />
+            <image src="../../image/note.png"mode="aspectFill" />
        </view>
       <view class="td4">
-            <text>{{item.comment}}</text>
+            <text>11</text>
        </view>
        <view class="td4">
             <image src="../../image/goods.png"mode="aspectFill" />
        </view>
       <view class="td4">
-            <text>{{item.like}}</text>
+            <text>11</text>
        </view>
 </view>
 </navigator>
 </view>
-
-
-
 <view class="style">
     <view class="style1">
         <image src="../../image/12.jpg" ></image>
@@ -80,7 +76,7 @@
             <text>2019.3.31  19.15</text>
       </view>
       <view class="td4">
-            <image src="../../image/share(1).png"mode="aspectFill" />
+            <image src="../../image/note.png"mode="aspectFill" />
        </view>
       <view class="td4">
             <text>11</text>

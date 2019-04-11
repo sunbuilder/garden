@@ -24,3 +24,18 @@
      <!-- 分割线 -->
   <view class="divLine"></view>
 </view>
+<!-- 
+   <view class="board">
+  <navigator url="../talk/talk">
+  <view class="board-item">
+      <image src="../../image/@.png" />
+      <text space="ensp">  @我的</text>
+      <image src="../../image/8.png"mode="widthFix" />
+  </view>
+   </navigator>
+   </view>
+   <view class="contain">
+     
+  <view class="divLine"></view>
+</view>
+ -->

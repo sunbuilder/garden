@@ -17,16 +17,16 @@
       <image src="../../image/7.png"mode="widthFix" />
   </view>
  </view>
-  
+  <!--
   <view class="board">
-  <navigator url="../trend/trend">
+  <navigator url="../talk/talk">
  <view class="board-item">
-      <text>我的动态</text>
+      <text>修改信息</text>
       <image src="../../image/8.png"mode="widthFix" />
   </view>
    </navigator>
    </view>
-  
+   -->
    <view class="board">
   <navigator url="../message/message">
   <view class="board-item">
