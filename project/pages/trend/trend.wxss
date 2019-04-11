@@ -1,4 +1,3 @@
-
 .hello{
 
 font-size: 50rpx;
@@ -110,35 +109,4 @@ font-size: 35rpx;
 .td4 image{
   width: 40rpx;
   height: 40rpx;
-}
-.circle-float{
-  color: #ffffff;
-  position: fixed;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  bottom: 100rpx;
-  right: 20rpx;
-  width: 120rpx;
-  height: 120rpx;
-  border-radius: 50%;
-  font-size: 28rpx;
-  background: white;
-  
-}
-.circle-float image{
-  width: 120rpx;
-  height: 120rpx;
-  border-radius: 50%;
-}
-.imgList{
-  width:100%;
-}
-.imgList .imgList-li {
-  width:100%;
-}
-.imgList .imgList-li .img{
-  width: 30%;
-  height: 180rpx;
-  border: 5px solid white;
 }

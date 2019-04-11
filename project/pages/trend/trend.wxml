@@ -1,0 +1,50 @@
+
+
+<navigator url="../state/state">
+<view class="table">
+   <view class="tr" >
+   <view class="td"><image  class="userinfo-avatar" mode="cover" src="../../image/27.jpg"></image></view>
+  
+   <view class="tr1">
+   <view class="td1"><text class="hello">ID</text></view>
+   <view class="td2"><text class='user_msg'>2019.3.30  17.31</text></view>
+   </view>
+  
+  </view>
+  <view class="divLine"></view>
+  <view class="style">
+  <text class="hello1">今天天气真好！！！</text>
+  </view>
+  <view class="divLine"></view>
+  <view class="tr3" >
+   <!--<block wx:for="{{listData}}" wx:key="{[code]}">-->
+   <view class="td3"><image src="../../image/12.jpg"mode="aspectFill" /></view>
+   <view class="td3"><image src="../../image/14.jpg"mode="aspectFill" /></view>
+   <view class="td3"><image src="../../image/16.jpg"mode="aspectFill" /></view>   
+   <!--</block>-->
+   </view>
+   <view class="divLine"></view>
+   <view class="tr4">
+      <view class="td4">
+          <image src="../../image/share(1).png"mode="aspectFill" />
+      </view>
+      <view class="td4">
+            <text>11</text>
+      </view>
+      <view class="td4">
+            <image src="../../image/note.png"mode="aspectFill" />
+       </view>
+      <view class="td4">
+            <text>11</text>
+       </view>
+       <view class="td4">
+            <image src="../../image/goods.png"mode="aspectFill" />
+       </view>
+      <view class="td4">
+            <text>11</text>
+       </view>
+</view>
+   <view class="divLine1"></view>
+</view>
+
+</navigator>
