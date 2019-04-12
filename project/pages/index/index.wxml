@@ -106,6 +106,45 @@
       </navigator>
    </view>
   </view>
+<view wx:if="{{length==1}}">
+<view class="con ">
+<view class="userinfo">
+      <image  class="userinfo-avatar" src="../../image/01.png" mode="cover"></image>
+      <text>点击黄色图标</text>
+       <text>创建你的第一本日记哟</text>
+      </view>
+ </view>
+</view>
+
+
+<view wx:else>
+<view class="divLine4"></view>
+<view class="tr" >
+
+   <view class="td"> 
+        <image src="../../image/biji.png" />
+   </view>
+  <view class="divLine1"></view>
+
+   <view class="tr1">
+        <view class="board1">       
+         <navigator url="../write/write">
+         <view class="board-item">
+      <text>写日记</text>
+      <image src="../../image/8.png"mode="widthFix" />
+  </view>
+        </navigator>
+            
+         
+      
+        
+        </view>
+        
+   </view>
+
+  </view>
+
+
 <view wx:for="{{array}}">
    <view class="divLine3"></view>
 
@@ -173,6 +212,4 @@
    </view>
 
 
-<button wx:for="{{buttons}}" wx:key="*this" id="{{'btn'+index}}" bindtap='onchangeTab' class="{{tabIndex==index?'on':''}}">
-        {{item}}
-      </button>
+</view>

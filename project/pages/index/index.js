@@ -1,5 +1,6 @@
 Page({
   data:{
+    length:0,
     imgUrls:[
       '../../image/1.jpg',
       '../../image/3.jpg',
@@ -38,6 +39,9 @@ Page({
       }
     ]
   },
+
+
+
   onLoad: function () {
     wx.request({
       url: url,

@@ -21,7 +21,8 @@
     "pages/write/write",
     "pages/sense/sense",
     "pages/choose/choose",
-    "pages/detail/detail"
+    "pages/detail/detail",
+    "pages/revise/revise"
 
 
    
