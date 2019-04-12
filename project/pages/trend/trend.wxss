@@ -110,3 +110,14 @@ font-size: 35rpx;
   width: 40rpx;
   height: 40rpx;
 }
+.imgList{
+  width:100%;
+}
+.imgList .imgList-li {
+  width:100%;
+}
+.imgList .imgList-li .img{
+  width: 30%;
+  height: 180rpx;
+  border: 5px solid white;
+}

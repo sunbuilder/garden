@@ -1,0 +1,19 @@
+<navigator url="../write/write">
+<view class="productStatus">
+  <span>
+    <em>写日记</em>
+  </span>
+</view>
+</navigator>
+<view class="con ">
+<view class="userinfo">
+      <image  class="userinfo-avatar" src="../../image/000.jpg" mode="cover"></image>
+      </view>
+ </view>
+ <navigator url="../document/document">
+<view class="productStatus1">
+  <span>
+    <em>添加植物</em>
+  </span>
+</view>
+</navigator>

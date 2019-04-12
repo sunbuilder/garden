@@ -5,6 +5,20 @@ Page({
       '../../image/3.jpg',
       '../../image/9.jpg'
     ],
+    array1: [
+      {
+        
+        imgArr1:
+          '../../image/p2.png'
+
+      },
+      {
+       
+        imgArr1:
+          '../../image/p1.png'
+
+      }
+    ],
     array:[
       {
         month:'5月',

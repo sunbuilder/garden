@@ -1,44 +1,84 @@
 Page({
   data: {
     
-  bindButtonTap() {
-    this.setData({
-      focus: true
-    })
-  },
-  bindKeyInput(e) {
-    this.setData({
-      inputValue: e.detail.value
-    })
-  },
-  bindReplaceInput(e) {
-    const value = e.detail.value
-    let pos = e.detail.cursor
-    if (pos != -1) {
-      // 光标在中间
-      const left = e.detail.value.slice(0, pos)
-      // 计算光标的位置
-      pos = left.replace(/11/g, '2').length
-    }
+   
+    array2: [
+      {
 
-    // 直接返回对象，可以对输入进行过滤处理，同时可以控制光标的位置
-    return {
-      value: value.replace(/11/g, '2'),
-      cursor: pos
-    }
+        
+        imgArr2:
+          '../../image/3.jpg',
+        head2:'养花的100种小技巧',
+        number2:'100'
 
-    // 或者直接返回字符串,光标在最后边
-    // return value.replace(/11/g,'2'),
+      },
+      {
+        imgArr2:
+          '../../image/12.jpg',
+        head2: '养花的100种小技巧',
+        number2: '100'
+
+      }
+      ,
+      {
+        imgArr2:
+          '../../image/10.jpg',
+        head2: '养花的100种小技巧',
+        number2: '100'
+
+      }
+    ],
+    array1: [
+      {
+
+        imgArr1:
+          '../../image/12.jpg'
+
+      },
+      {
+
+        imgArr1:
+          '../../image/10.jpg'
+
+      }
+      ,
+      {
+
+        imgArr1:
+          '../../image/9.jpg'
+
+      }
+     
+    ],
+  },
+  
+  onLoad: function () {
+    wx.request({
+      url: url,
+      data: {
+
+        'version': version,//文章标题
+        'imgArr': imgarr,  //封面
+        'time': time,//时间
+        'comment': comment,//浏览次数
+        'like': like //点赞
+
+
+
+      },
+      method: 'post',
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success: function (res) {
+        console.log(res.data);
+      },
+      fail: function (res) {
+        console.log(".....fail.....");
+      }
+    })
   }
-  }
- 
-}),
-Component({
-  methods: {
-    loginSuccess(e) {
-      console.log(e.detail.code) // wx.login 的 code
-      console.log(e.detail.userInfo) // wx.getUserInfo 的 userInfo
-    }
-  }
+
+
+
 })
-

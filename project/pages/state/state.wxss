@@ -6,6 +6,13 @@ font-size: 50rpx;
 color: red;
 
 }
+.hello2{
+
+font-size: 35rpx;
+
+color: red;
+
+}
 .style{
   height:50rpx;
 }
@@ -204,4 +211,15 @@ font-size: 35rpx;
   font-size: 28rpx;
   background:  white;
   
+}
+.imgList{
+  width:100%;
+}
+.imgList .imgList-li {
+  width:100%;
+}
+.imgList .imgList-li .img{
+  width: 30%;
+  height: 180rpx;
+  border: 5px solid white;
 }

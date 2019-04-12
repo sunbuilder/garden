@@ -11,7 +11,7 @@
   </view>
 
  </view>
- <form bindsubmit="reg">
+
   <view class="board">
  
   <view class="board-item">
@@ -48,49 +48,43 @@
   </view>
   
    </view>
-   <view><button type="primary" form-type="submit"class='btn1'><image class='btnImg' src='../../image/00.gif'></image>
-    <view>申请种植</view></button></view>
-   </form>
-<!--
+ 
+
  <view class="userinfo">
      <text class="userinfo-nickname">--养殖经验--</text>
   </view>
    <view class="contain">
-<navigator url="../skill/skill">
+
     <view class="">
     <image class="userinfo-avatar1"src="../../image/sun.png" background-size="cover"></image>
      <view class="contain"><text class="style">阳光</text></view>
     </view>
-    </navigator>
-    <navigator url="../photo/photo">
+   
    <view class="">
     <image class="userinfo-avatar1"src="../../image/rain.png" background-size="cover"></image>
     <view class="contain"><text class="style">水分</text></view>
     </view>
-    </navigator>
-    <navigator url="../share/share">
+   
     <view class="">
     <image class="userinfo-avatar1"src="../../image/wendu.png" background-size="cover"></image>
     <view class="contain"><text class="style">温度</text></view>
     </view>
-    </navigator>
+    
   
 </view>
 <view class="contain">
-<navigator url="../skill/skill">
+
     <view class="">
     <image class="userinfo-avatar1"src="../../image/turang.png" background-size="cover"></image>
      <view class="contain"><text class="style">土壤</text></view>
     </view>
-    </navigator>
-    <navigator url="../photo/photo">
+ 
    <view class="">
     <image class="userinfo-avatar1"src="../../image/time.png" background-size="cover"></image>
     <view class="contain"><text class="style">时间</text></view>
     </view>
-    </navigator>
+   
    
   
 </view>
--->
 

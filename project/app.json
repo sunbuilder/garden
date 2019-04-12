@@ -19,7 +19,9 @@
     "pages/article/article",
     "pages/trend/trend",
     "pages/write/write",
-    "pages/sense/sense"
+    "pages/sense/sense",
+    "pages/choose/choose",
+    "pages/detail/detail"
 
 
    

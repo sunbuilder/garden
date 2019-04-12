@@ -1,4 +1,4 @@
-
+ <view wx:for="{{array}}">
 <view class="contain">
      <!-- 分割线 -->
   <view class="divLine"></view>
@@ -6,14 +6,16 @@
 <navigator url="../article/article">
 <view class="first">
     <view class="style">
-       <image src="../../image/3.jpg" background-size="cover"></image>
+       <image src="{{item.imgArr}}" background-size="cover"></image>
     </view>
     <view class="style1"> 
-    <text>必看！2019年购物新模式。。。。。。。。</text>
+    <text>{{item.version}}</text>
     </view>
     
 </view>
 </navigator>
+</view>
+
 <view class="contain">
      <!-- 分割线 -->
   <view class="divLine"></view>
