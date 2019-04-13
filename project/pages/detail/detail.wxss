@@ -1,3 +1,39 @@
+
+.productStatus {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 1.81rem;
+  width: 1.81rem;
+  display: flex;
+  align-items: center;
+}
+ 
+.productStatus span {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-top: 6.5rem solid #FF9CB8;
+  border-left: 6.5rem solid transparent;
+}
+ 
+.productStatus em {
+  position: absolute;
+  top: -5.5rem;
+  right: 0rem;
+  height: 4rem;
+  width:4rem;
+  line-height: 1.2rem;
+  text-align: center;
+  font-size: 1rem;
+  color: white;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+
 .log-list {
   display: flex;
   flex-direction: column;
@@ -123,4 +159,13 @@
 .btn1::after {
   border-radius: 98rpx;
   border: 0; 
+}
+.but{
+ 
+  border-radius:0;
+  background-color: #FF9CB8;
+  color:white;
+}
+button::after {
+  border: none;
 }

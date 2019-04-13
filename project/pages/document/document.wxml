@@ -1,17 +1,18 @@
 <!--logs.wxml-->
+ <form bindsubmit="reg">
 
 <view class="con">
 
   <view class="userinfo">
     
     
-      <image class="userinfo-avatar" src="../../image/1.jpg" mode="cover"></image>
+      <image class="userinfo-avatar" src="../../image/1.jpg" mode="cover"bindtap='clickImg'></image>
       <text class="userinfo-nickname">--基本资料--</text>
     
   </view>
 
  </view>
- <form bindsubmit="reg">
+
   <view class="board">
  
   <view class="board-item">

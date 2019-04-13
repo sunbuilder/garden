@@ -1,4 +1,12 @@
 <!--logs.wxml-->
+ <form bindsubmit="reg">
+
+<view class="productStatus">
+  <span>
+    <em><button  form-type="submit"class="but">删除</button></em>
+  </span>
+</view>
+
 
 <view class="con">
 
@@ -65,26 +73,16 @@
     <view class="contain"><text class="style">水分</text></view>
     </view>
    
-    <view class="">
-    <image class="userinfo-avatar1"src="../../image/wendu.png" background-size="cover"></image>
-    <view class="contain"><text class="style">温度</text></view>
-    </view>
-    
-  
-</view>
-<view class="contain">
-
-    <view class="">
+  <view class="">
     <image class="userinfo-avatar1"src="../../image/turang.png" background-size="cover"></image>
      <view class="contain"><text class="style">土壤</text></view>
     </view>
  
    <view class="">
     <image class="userinfo-avatar1"src="../../image/time.png" background-size="cover"></image>
-    <view class="contain"><text class="style">时间</text></view>
+    <view class="contain"><text class="style">花期</text></view>
     </view>
-   
    
   
 </view>
-
+ </form>
