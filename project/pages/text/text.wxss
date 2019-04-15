@@ -107,6 +107,12 @@ font-size: 35rpx;
   justify-content: center;
   text-align: center;
 }
+.td5{
+  border: 0px solid white;
+  width:16%;
+  height: 1.5rem;
+  
+}
 .td4 image{
   width: 40rpx;
   height: 40rpx;

@@ -1,8 +1,8 @@
 
 
 <view class="style2">
-      <input placeholder="请输入搜索内容" />
-      <button plain="true"><image src="../../image/search.png" /></button>
+      <input confirm-type="search" maxlength="30" bindinput='wxSearchInput' value='{{keyword}}' bindconfirm='wxSearchFn' bindfocus="wxSerchFocus" bindblur="wxSearchBlur" placeholder='请输入搜索内容'></input>
+      <button class='search' bindtap="wxSearchFn" hover-class='button-hover'><image src="../../image/search.png" /></button>
       </view>
 
     <view class="contain">
@@ -69,4 +69,7 @@
   <view class="divLine"></view>
   </view>
 
-  
+  <view class='search-view'>
+  <input class='input' confirm-type="search" maxlength="30" bindinput='wxSearchInput' value='{{keyword}}' bindconfirm='wxSearchFn' bindfocus="wxSerchFocus" bindblur="wxSearchBlur" placeholder='请输入搜索内容'></input>
+  <button class='search' bindtap="wxSearchFn" hover-class='button-hover'>搜索</button>
+</view>

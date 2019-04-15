@@ -1,14 +1,26 @@
-<button type='primary' bindtap='choose'>选择照片</button>
-<view class="container">
-  <view class="page-body">
-    <view class="page-section">
-      <view class="page-body-info display-area {{ loaded ? 'font-loaded' : '' }}">
-        <text wx:if="{{!loaded}}">Load {{ fontFamily }}</text>
-        <text wx:else>{{ fontFamily }} is loaded</text>
-      </view>
-      <view class="btn-area">
-        <button type="primary" bindtap="loadFontFace">加载字体</button>
-      </view>
-    </view>
-  </view>
+<textarea class='the_prw_in' bindinput='bindblur' cursor-spacing="130" placeholder='说点什么吧...' maxlength="76">
+ </textarea>
+<view class='the_prw_btn' bindtap='btn_send'>
+ 留言
 </view>
+  
+<view>评论内容：</view>
+ <block wx:for="{{pl_list}}" wx:key="index">
+  <view class='the_msg' wx:if='{{item.input_value!=null}}'>
+    <!-- <view class='msg_left'>
+  <view class='msg_avatar_v'>
+ <image class='msg_avatar' src='{{msg_data.avatar}}'></image>
+ </view>
+</view> -->
+<view class='msg_right'>
+ <!-- <view class='msg_right_name'>
+   {{msg_data.nicename}}
+ </view> -->
+<view class='msg_right_text'>
+ <text>{{item.input_value}}</text>
+  </view>
+   <view class='gap'>
+   </view>
+    </view>
+   </view>
+</block>

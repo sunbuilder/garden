@@ -41,7 +41,6 @@ Page({
   },
 
 
-
   onLoad: function () {
     wx.request({
       url: url,

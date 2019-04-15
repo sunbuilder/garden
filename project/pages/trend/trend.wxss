@@ -1,3 +1,4 @@
+
 .hello{
 
 font-size: 50rpx;
@@ -106,9 +107,35 @@ font-size: 35rpx;
   justify-content: center;
   text-align: center;
 }
+.td5{
+  border: 0px solid white;
+  width:16%;
+  height: 1.5rem;
+  
+}
 .td4 image{
   width: 40rpx;
   height: 40rpx;
+}
+.circle-float{
+  color: #ffffff;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 100rpx;
+  right: 20rpx;
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  font-size: 28rpx;
+  background: white;
+  
+}
+.circle-float image{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
 }
 .imgList{
   width:100%;

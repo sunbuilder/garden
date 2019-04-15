@@ -1,64 +1,69 @@
-//index.js
-//获取应用实例
-var app = getApp();
-var cardTeams;
- 
+var bindblur;
 Page({
-  data: {
-    cardTeams: [{
-        "viewid": "1",
-        "imgsrc": "../../images/win/1.jpg",
-        "price": "¥1245",
-        "count": "一个40岁老码农的总结，",
-        "name": "一个40岁老码农的总结，奋斗",
- 
-      }, {
-        "viewid": "2",
-        "imgsrc": "../../images/win/2.jpg",
-        "price": "¥2345",
-        "count": "小公司打杂三年，意外拿到",
-        "name": "小公司打杂三年，意外拿到美",
- 
-      }, {
-        "viewid": "3",
-        "imgsrc": "../../images/win/3.jpg",
-        "price": "¥2345",
- 
-        "count": "作为一个有追求的前端程序媛作",
-        "name": "作为一个有追求的前端程序媛",
- 
-      }, {
-        "viewid": "4",
-        "imgsrc": "../../images/win/4.jpg",
-        "price": "¥2345",
-        "count": "女程序媛面试总结：我",
-        "name": "女程序媛面试总结：我是这",
- 
-      },
-      {
-        "viewid": "5",
-        "imgsrc": "../../images/win/5.jpg",
-        "price": "¥2345",
-        "count": "前端工作那些年，怎么避？",
-        "name": "前端工作那些年，怎么避免",
- 
-      }
-    ]
+  bindblur: function (e) {
+    console.log( e.detail.value)
+    bindblur = e.detail.value;
   },
- 
- 
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../weixinlink/weixinlink'
-     
+
+  onLoad: function (a) {
+    var that = this;
+    actid = a.id;
+    // 查询评论fetch
+    wx.request({
+      url: 'https://m.yishushe.net/addons/up_text.php',
+      method: 'POST',
+      header: {
+        'content-Type': 'application/x-www-form-urlencoded',
+        'Accept': 'application/json'
+      },
+      data: {
+        act_id: actid
+      },
+      success: function (result) {
+        that.setData({
+          pl_list: result.data.reverse(),
+        })
+      },
+      fail: res => {
+        wx.showToast({
+          title: '网络不好哟',
+          image: '/image/wrong.png',
+          duration: 3000
+        })
+      }
     })
   },
-  onLoad: function() {
-    console.log('onLoad:' + app.globalData.domain)
- 
+  btn_send: function () {
+    var that = this
+    //添加评论
+    console.log('文章id：act_id :', actid);
+    console.log('用户缓存id：user_id :', user_id);
+    console.log('文本输入框: input_value :', bindblur);
+    wx.request({
+      url: 'https://m.yishushe.net/addons/up_text.php',
+      method: 'POST',
+      header: {
+        'content-Type': 'application/x-www-form-urlencoded',
+        'Accept': 'application/json'
+      },
+      data: {
+        act_id: actid,
+        user_id: user_id,
+        input_value: bindblur
+      },
+      success: function (result) {
+        that.setData({
+          pl_list: result.data.reverse(),
+          input_value: "",
+        })
+      },
+      fail: res => {
+        wx.showToast({
+          title: '网络不好哟',
+          image: '/image/wrong.png',
+          duration: 3000
+        })
+      }
+    })
   }
- 
- 
 })
-

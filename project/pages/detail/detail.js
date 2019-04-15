@@ -15,6 +15,16 @@ Page({
       }
     }
   })
+    wx.request({
+      success: reg => {
+        console.log(reg.data)
+        if (reg.data) {
+          wx.navigateTo({
+            url: `../pages/index/index` // 希望跳转过去的页面
+          })
+        }
+      }
+    })
  
   }
 })

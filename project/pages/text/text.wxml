@@ -4,9 +4,10 @@
     </view>
 </navigator>
 
-<view wx:for="{{array}}">
-<navigator url="../state/state">
+<view wx:for="{{goodsList}}">
+
 <view class="table">
+<navigator url="../state/state">
    <view class="tr" >
    <view class="td"><image  class="userinfo-avatar" mode="cover" src="{{item.head}}"></image></view>
   
@@ -28,129 +29,35 @@
   </view>
  
 </view>
-
+</navigator>
    <view class="divLine"></view>
    <view class="tr4">
       <view class="td4">
           <image src="../../image/share(1).png"mode="aspectFill" />
       </view>
-      <view class="td4">
+      <view class="td5">
             <text>{{item.see}}</text>
       </view>
       <view class="td4">
             <image src="../../image/note.png"mode="aspectFill" />
        </view>
-      <view class="td4">
+      <view class="td5">
             <text>{{item.comment}}</text>
        </view>
+      
        <view class="td4">
-            <image src="../../image/goods.png"mode="aspectFill" />
+            <image class='fav-icon' catchtap='onCollectionTap' src="../../image/goods{{item.collected?'1':''}}.png" data-index='{{index}}'></image>
        </view>
-      <view class="td4">
+      <view class="td5">
             <text>{{item.like}}</text>
        </view>
+       
 </view>
    <view class="divLine1"></view>
 </view>
 
-</navigator>
+
 </view>
 
 
 
-<view class="table">
- 
- 
-  <view class="tr" >
-   <view class="td"><image  class="userinfo-avatar" mode="cover" src="../../image/28.jpg"></image></view>
-  
-   <view class="tr1">
-   <view class="td1"><text class="hello">ID</text></view>
-   <view class="td2"><text class='user_msg'>2019.3.30  17.31</text></view>
-   </view>
-  
-  </view>
-  <view class="divLine"></view>
-  <view class="style">
-  <text class="hello1">养花的第一天！！！！！！</text>
-  </view>
-  <view class="divLine"></view>
-  <view class="tr3" >
-   <!--<block wx:for="{{listData}}" wx:key="{[code]}">-->
-   <view class="td3"><image src="../../image/13.jpg"mode="aspectFill" /></view>
-   <view class="td3"><image src="../../image/15.jpg"mode="aspectFill" /></view>
-   <view class="td3"><image src="../../image/17.jpg"mode="aspectFill" /></view>
-   
-   <!--</block>-->
-   </view>
-   <view class="divLine"></view>
-   <view class="tr4">
-      <view class="td4">
-          <image src="../../image/share(1).png"mode="aspectFill" />
-      </view>
-      <view class="td4">
-            <text>11</text>
-      </view>
-      <view class="td4">
-            <image src="../../image/note.png"mode="aspectFill" />
-       </view>
-      <view class="td4">
-            <text>11</text>
-       </view>
-       <view class="td4">
-            <image src="../../image/goods.png"mode="aspectFill" />
-       </view>
-      <view class="td4">
-            <text>11</text>
-       </view>
-</view>
-   <view class="divLine1"></view>
-</view>
-<view class="table">
- 
- 
-  <view class="tr" >
-   <view class="td"><image  class="userinfo-avatar" mode="cover" src="../../image/27.jpg"></image></view>
-  
-   <view class="tr1">
-   <view class="td1"><text class="hello">ID</text></view>
-   <view class="td2"><text class='user_msg'>2019.3.30  17.31</text></view>
-   </view>
-  
-  </view>
-  <view class="divLine"></view>
-  <view class="style">
-  <text class="hello1">养花第10天！！！</text>
-  </view>
-  <view class="divLine"></view>
-  <view class="tr3" >
-   <!--<block wx:for="{{listData}}" wx:key="{[code]}">-->
-   <view class="td3"><image src="../../image/9.jpg"mode="aspectFill" /></view>
-   <view class="td3"><image src="../../image/10.jpg"mode="aspectFill" /></view>
-   <view class="td3"><image src="../../image/11.jpg"mode="aspectFill" /></view>
-   
-   <!--</block>-->
-   </view>
-   <view class="divLine"></view>
-   <view class="tr4">
-      <view class="td4">
-          <image src="../../image/share(1).png"mode="aspectFill" />
-      </view>
-      <view class="td4">
-            <text>11</text>
-      </view>
-      <view class="td4">
-            <image src="../../image/note.png"mode="aspectFill" />
-       </view>
-      <view class="td4">
-            <text>11</text>
-       </view>
-       <view class="td4">
-            <image src="../../image/goods.png"mode="aspectFill" />
-       </view>
-      <view class="td4">
-            <text>11</text>
-       </view>
-</view>
-   <view class="divLine1"></view>
-</view>

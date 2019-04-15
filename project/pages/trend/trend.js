@@ -7,7 +7,7 @@ Page({
       '../../image/12.jpg'
     ]
     ,
-    array: [
+    goodsList: [
       {
         time: '2019.4.11 13.55',
         version: '今天天气好',
@@ -15,7 +15,8 @@ Page({
         head: '../../image/28.jpg',
         see: '20',
         comment: '10',
-        like: '20'
+        like: '20',
+        collected: 0
 
       },
       {
@@ -25,11 +26,42 @@ Page({
         head: '../../image/27.jpg',
         see: '20',
         comment: '10',
-        like: '20'
+        like: '20',
+        collected: 0
 
       }
+      
     ]
   },
+  // 更改点赞状态
+  onCollectionTap: function (event) {
+    // 获取当前点击下标
+    var index = event.currentTarget.dataset.index;
+    // data中获取列表
+    var message = this.data.goodsList;
+    for (let i in message) { //遍历列表数据
+      if (i == index) { //根据下标找到目标
+        var collectStatus = false
+        if (message[i].collected == 0) { //如果是没点赞+1
+          collectStatus = true
+          message[i].collected = parseInt(message[i].collected) + 1
+          message[i].like = parseInt(message[i].like) + 1
+        } else {
+          collectStatus = false
+          message[i].collected = parseInt(message[i].collected) - 1
+          message[i].like = parseInt(message[i].like) - 1
+        }
+
+        wx.showToast({
+          title: collectStatus ? '点赞成功' : '取消点赞',
+        })
+      }
+    }
+    this.setData({
+      goodsList: message
+    })
+  },
+
   onLoad: function () {
     wx.request({
       url: url,
@@ -60,5 +92,5 @@ Page({
   }
 
 
-
 })
+

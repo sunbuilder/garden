@@ -57,7 +57,9 @@
 
   <view class="tr2" >
    <view class="td2">
+   <navigator url="../album/album">
       <image src="../../image/tuku.png"/>
+      </navigator>
    </view>
   <view class="divLine2"></view>
    <view class="tr3">
@@ -70,38 +72,6 @@
          
           </view>
          
-          <view id="red" class="scroll-view-item bc_red">
-              <view class="x3"><image src="https://img2018.cnblogs.com/blog/1238131/201904/1238131-20190403182454633-208795874.jpg"/></view>
-              
-          </view>
-          
-
-
-
-          <view id="yellow" class="scroll-view-item bc_yellow">
-              <view class="x3"><image src="https://img2018.cnblogs.com/blog/1238131/201904/1238131-20190403182435804-1440141718.jpg"/></view>
-          </view>
-          <view id="blue" class="scroll-view-item bc_blue">
-              <view class="x3"><image src="https://img2018.cnblogs.com/blog/1238131/201904/1238131-20190403182418664-246032430.jpg"/></view>
-          </view>
-          <view id="blue" class="scroll-view-item bc_blue">
-              <view class="x3"><image src="https://img2018.cnblogs.com/blog/1238131/201904/1238131-20190403182356657-243811745.jpg"/></view>
-          </view>
-          <view id="blue" class="scroll-view-item bc_blue">
-              <view class="x3"><image src="https://img2018.cnblogs.com/blog/1238131/201904/1238131-20190403182340135-193336783.jpg"/></view>
-          </view>
-          <view id="blue" class="scroll-view-item bc_blue">
-              <view class="x3"><image src="https://img2018.cnblogs.com/blog/1238131/201904/1238131-20190403182323329-1304534958.jpg"/></view>
-          </view>
-          <view id="blue" class="scroll-view-item bc_blue">
-              <view class="x3"><image src="https://img2018.cnblogs.com/blog/1238131/201904/1238131-20190403182305644-1789918961.jpg"/></view>
-          </view>
-          <view id="blue" class="scroll-view-item bc_blue">
-              <view class="x3"><image src="https://img2018.cnblogs.com/blog/1238131/201904/1238131-20190403182250298-497034468.jpg"/></view>
-          </view>
-          <view id="blue" class="scroll-view-item bc_blue">
-              <view class="x3"><image src="https://img2018.cnblogs.com/blog/1238131/201904/1238131-20190403182236559-1327605945.jpg"/></view>
-          </view>
           </scroll-view>
       </navigator>
    </view>
@@ -134,9 +104,7 @@
       <image src="../../image/8.png"mode="widthFix" />
   </view>
         </navigator>
-            
-         
-      
+
         
         </view>
         
@@ -162,54 +130,6 @@
    </view>
 
 
-    <view class="divLine3"></view>
-   <view class="tr5" >
-       <view class="td5">
-       <text class="hello">5月</text><text class="hello1">2日</text>
-       <view class="hello2"><image src="../../image/share.png"/></view>
-       </view>
-  
-       <view class="tr6">
-          <view class="td6"><text>今天天气真好.。。。。。</text></view>
-          <view class="td7"><image src="https://img2018.cnblogs.com/blog/1238131/201904/1238131-20190403182250298-497034468.jpg"/></view>
-       </view>
-   </view>
-    <view class="divLine3"></view>
-   <view class="tr5" >
-       <view class="td5">
-       <text class="hello">5月</text><text class="hello1">1日</text>
-       <view class="hello2"><image src="../../image/share.png"/></view>
-       </view>
-  
-       <view class="tr6">
-          <view class="td6"><text>今天天气真好.。。。。。</text></view>
-          <view class="td7"><image src="https://img2018.cnblogs.com/blog/1238131/201904/1238131-20190403182305644-1789918961.jpg"/></view>
-       </view>
-   </view>
-    <view class="divLine3"></view>
-   <view class="tr5" >
-       <view class="td5">
-       <text class="hello">4月</text><text class="hello1">31日</text>
-       <view class="hello2"><image src="../../image/share.png"/></view>
-       </view>
-  
-       <view class="tr6">
-          <view class="td6"><text>今天天气真好.。。。。。</text></view>
-          <view class="td7"><image src="https://img2018.cnblogs.com/blog/1238131/201904/1238131-20190403182323329-1304534958.jpg"/></view>
-       </view>
-   </view>
-    <view class="divLine3"></view>
-   <view class="tr5" >
-       <view class="td5">
-       <text class="hello">4月</text><text class="hello1">30日</text>
-       <view class="hello2"><image src="../../image/share.png"/></view>
-       </view>
-  
-       <view class="tr6">
-          <view class="td6"><text>今天天气真好.。。。。。</text></view>
-          <view class="td7"><image src="https://img2018.cnblogs.com/blog/1238131/201904/1238131-20190403182340135-193336783.jpg"/></view>
-       </view>
-   </view>
-
+    
 
 </view>

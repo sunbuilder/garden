@@ -1,6 +1,8 @@
-<view wx:for="{{array}}">
-<navigator url="../state/state">
+
+<view wx:for="{{goodsList}}">
+
 <view class="table">
+<navigator url="../state/state">
    <view class="tr" >
    <view class="td"><image  class="userinfo-avatar" mode="cover" src="{{item.head}}"></image></view>
   
@@ -22,30 +24,32 @@
   </view>
  
 </view>
-
+</navigator>
    <view class="divLine"></view>
    <view class="tr4">
       <view class="td4">
           <image src="../../image/share(1).png"mode="aspectFill" />
       </view>
-      <view class="td4">
+      <view class="td5">
             <text>{{item.see}}</text>
       </view>
       <view class="td4">
             <image src="../../image/note.png"mode="aspectFill" />
        </view>
-      <view class="td4">
+      <view class="td5">
             <text>{{item.comment}}</text>
        </view>
+      
        <view class="td4">
-            <image src="../../image/goods.png"mode="aspectFill" />
+            <image class='fav-icon' catchtap='onCollectionTap' src="../../image/goods{{item.collected?'1':''}}.png" data-index='{{index}}'></image>
        </view>
-      <view class="td4">
+      <view class="td5">
             <text>{{item.like}}</text>
        </view>
+       
 </view>
    <view class="divLine1"></view>
 </view>
 
-</navigator>
+
 </view>
