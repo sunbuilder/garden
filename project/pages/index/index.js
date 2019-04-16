@@ -45,9 +45,9 @@ Page({
     wx.request({
       url: url,
       data: {
-        'month':month,  //月
-        'date':date,    //日
-        'version':version,//日记内容
+        'month':month,  
+        'date':date,    
+        'version':version,
         'imgArr':imgarr    //图片
         
         
