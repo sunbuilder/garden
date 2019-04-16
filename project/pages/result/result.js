@@ -1,22 +1,28 @@
 Page({
   data: {
-    
+
    
     array2: [
       {
 
-        
+
         imgArr2:
           '../../image/3.jpg',
-        head2:'养花的100种小技巧',
-        number2:'100'
+        head2: '养花的100种小技巧',
+        number2: '100',
+        time: '2019.4.11 13.55',
+        id: '牡丹',
+        imgArr: '../../image/10.jpg'
 
       },
       {
         imgArr2:
           '../../image/12.jpg',
         head2: '养花的100种小技巧',
-        number2: '100'
+        number2: '100',
+         time: '2019.4.11 13.55',
+        id: '牡丹',
+        imgArr: '../../image/12.jpg'
 
       }
       ,
@@ -24,34 +30,17 @@ Page({
         imgArr2:
           '../../image/10.jpg',
         head2: '养花的100种小技巧',
-        number2: '100'
+        number2: '100',
+       time: '2019.4.11 13.55',
+        id: '牡丹',
+        imgArr: '../../image/3.jpg'
+
 
       }
-    ],
-    brand: [
-      {
-
-        imgArr1:
-          '../../image/3.jpg'
-
-      },
-      {
-
-        imgArr1:
-          '../../image/10.jpg'
-
-      }
-      ,
-      {
-
-        imgArr1:
-          '../../image/9.jpg'
-
-      }
-     
-    ],
+    ]
+    
   },
-  
+
   onLoad: function () {
     wx.request({
       url: url,
@@ -79,7 +68,7 @@ Page({
     })
   }
 
-,
+  ,
   //搜索方法 key为用户输入的查询字段
   search: function (key) {
     /*console.log('搜索函数触发')*/
@@ -112,8 +101,8 @@ Page({
       }
     })
   },
-//搜素时触发，调用search: function (key)，传入输入的e.detail.value值
-wxSearchInput: function (e) {
+  //搜素时触发，调用search: function (key)，传入输入的e.detail.value值
+  wxSearchInput: function (e) {
     this.search(e.detail.value);
   }
 

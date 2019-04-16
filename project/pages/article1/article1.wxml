@@ -4,7 +4,7 @@
 <view class="style5">
 <view class="style3">
 <view class="style2"><text>{{showTime}}</text></view>
-<view class="style2"><text>阅读量：{{showNumber}}</text></view>
+<view class="style2"><text>阅读量：1000</text></view>
 
 </view>
 <view class="style4">
@@ -13,7 +13,8 @@
 </view>
  <view class="divLine"></view>
  <view class="divLine1"></view>
- <view class="divLine"></view>
+  <view class="divLine"></view>
+  
  <view class="userinfo">
       <text class="userinfo-nickname">{{showTitle}}</text>
   </view>

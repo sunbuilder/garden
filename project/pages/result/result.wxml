@@ -1,0 +1,35 @@
+
+<view class="style2">
+      <input confirm-type="search" maxlength="30" bindinput='wxSearchInput' value='{{keyword}}' bindconfirm='wxSearchFn' bindfocus="wxSerchFocus" bindblur="wxSearchBlur" placeholder='请输入搜索内容'></input>
+      <button class='search' bindtap="wxSearchFn" hover-class='button-hover'><image src="../../image/search.png" /></button>
+      </view>
+<view>搜索结果：</view>
+<view class="divLine2"></view>
+<view class="divLine1"></view>
+<view class="divLine2"></view>
+<view class="tr7" >
+<view class="td8">*植物百科*</view>
+<view class="tr8">*养花知识*</view>
+</view>
+<view wx:for="{{array2}}">
+<view class="divLine2"></view>
+<view class="tr" >
+<view class="td"><image  class="userinfo-avatar" mode="cover" src="{{item.imgArr}}"></image></view>
+<view class="tr1">
+  
+   <view class="td1"><text class="hello">{{item.id}}</text></view>
+   <view class="td2"> <text class='user_msg'>{{item.time}} </text></view>
+   </view>
+ 
+  <view class="td9"></view>
+  <view class="tr1">
+   <view class="td1"><text class="hello">{{item.head2}}</text></view>
+   <view class="td2"> <text class='user_msg'>浏览次数：{{item.number2}}  </text></view>
+   </view>
+   <view class="td"><image  class="userinfo-avatar1" mode="cover" src="{{item.imgArr2}}"></image></view>
+  
+  </view>
+ <view class="divLine2"></view>
+  <view class="divLine"></view>
+  </view>
+

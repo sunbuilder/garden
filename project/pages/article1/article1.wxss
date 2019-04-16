@@ -55,7 +55,6 @@
 .style1{
    text-indent:2em
 }
-
 .userinfo {
   display: flex;
   flex-direction: column;

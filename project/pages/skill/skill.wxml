@@ -36,8 +36,9 @@
 </scroll-view>
 
 
-<view class="style"wx:for="{{array}}">
-<navigator url="../article/article">
+<view class="style">
+<block wx:for='{{brand}}' wx:key="{{index}}">
+ <navigator url="/pages/article/article?goodsId={{index}}">
     <view class="style1">
         <image src="{{item.imgArr}}" ></image>
     </view>
@@ -62,60 +63,6 @@
             <text>{{item.like}}</text>
        </view>
 </view>
-</navigator>
-</view>
-
-
-
-<view class="style">
-    <view class="style1">
-        <image src="../../image/12.jpg" ></image>
-    </view>
-    <view class="style2">
-        <text>标题.如何养花</text>
-    </view>
-    <view class="tr4">
-     
-      <view class="td3">
-            <text>2019.3.31  19.15</text>
-      </view>
-      <view class="td4">
-            <image src="../../image/share(1).png"mode="aspectFill" />
-       </view>
-      <view class="td4">
-            <text>11</text>
-       </view>
-       <view class="td4">
-            <image src="../../image/goods.png"mode="aspectFill" />
-       </view>
-      <view class="td4">
-            <text>11</text>
-       </view>
-</view>
-</view>
-<view class="style">
-    <view class="style1">
-        <image src="../../image/17.jpg" ></image>
-    </view>
-    <view class="style2">
-        <text>标题.如何养花</text>
-    </view>
-    <view class="tr4">
-     
-      <view class="td3">
-            <text>2019.3.31  19.15</text>
-      </view>
-      <view class="td4">
-            <image src="../../image/note.png"mode="aspectFill" />
-       </view>
-      <view class="td4">
-            <text>11</text>
-       </view>
-       <view class="td4">
-            <image src="../../image/goods.png"mode="aspectFill" />
-       </view>
-      <view class="td4">
-            <text>11</text>
-       </view>
-</view>
+  </navigator>
+        </block>
 </view>

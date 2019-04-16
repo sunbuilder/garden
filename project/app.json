@@ -23,7 +23,10 @@
     "pages/choose/choose",
     "pages/detail/detail",
     "pages/revise/revise",
-    "pages/ceshi/ceshi"
+    "pages/ceshi/ceshi",
+    "pages/result/result",
+    "pages/article1/article1",
+    "pages/posts/post"
 
 
    

@@ -24,3 +24,4 @@
     </view>
    </view>
 </block>
+<image  catchtap='handleCollection' wx:if="{{!isCollected}}" src="../../image/shou.png"></image>

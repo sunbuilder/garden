@@ -1,7 +1,11 @@
+const app = getApp()
+
+
+
 Page({
   data: {
-    
-    array: [
+   
+    brand: [
       {
        
         version: '养花的方法',
@@ -17,6 +21,15 @@ Page({
         time: '2019.4.11 9.26',
         imgArr:
           '../../image/10.jpg',
+        comment: '30',
+        like: '100'
+
+      },
+      {
+        version: '养花的方法',
+        time: '2019.4.11 9.26',
+        imgArr:
+          '../../image/12.jpg',
         comment: '30',
         like: '100'
 
@@ -48,8 +61,10 @@ Page({
         console.log(".....fail.....");
       }
     })
+  },
+onLoad: function (options) {
+    var goodsId = options.goodsId;
   }
-
 
 
 })

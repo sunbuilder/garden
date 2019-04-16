@@ -2,8 +2,11 @@
 
 <view class="style2">
       <input confirm-type="search" maxlength="30" bindinput='wxSearchInput' value='{{keyword}}' bindconfirm='wxSearchFn' bindfocus="wxSerchFocus" bindblur="wxSearchBlur" placeholder='请输入搜索内容'></input>
+      <navigator url="../result/result">
       <button class='search' bindtap="wxSearchFn" hover-class='button-hover'><image src="../../image/search.png" /></button>
+       </navigator>
       </view>
+      
 
     <view class="contain">
 <navigator url="../skill/skill">
@@ -42,8 +45,8 @@
 
  <scroll-view scroll-x class="scroll-header1">
 
-         <view wx:for="{{array1}}">
-         <navigator url="../detail/detail">
+         <view wx:for="{{brand}}" wx:key="{{index}}">
+          <navigator url="/pages/article/article?goodsId={{index}}">
           <view class="x3"><image src="{{item.imgArr1}}"/>
         
         </view>
@@ -55,7 +58,8 @@
 <view class="divLine2"></view>
 <view class="divLine1"></view>
 
-<view wx:for="{{array2}}">
+<view wx:for="{{array2}}" wx:key="{{index}}">
+          <navigator url="/pages/article1/article1?goodsId={{index}}">
 <view class="divLine2"></view>
 <view class="tr" >
 <view class="tr1">
@@ -67,9 +71,6 @@
   </view>
  <view class="divLine2"></view>
   <view class="divLine"></view>
+   </navigator>
   </view>
 
-  <view class='search-view'>
-  <input class='input' confirm-type="search" maxlength="30" bindinput='wxSearchInput' value='{{keyword}}' bindconfirm='wxSearchFn' bindfocus="wxSerchFocus" bindblur="wxSearchBlur" placeholder='请输入搜索内容'></input>
-  <button class='search' bindtap="wxSearchFn" hover-class='button-hover'>搜索</button>
-</view>
