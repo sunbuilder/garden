@@ -78,7 +78,7 @@
 
  <view class="free-btns" style="margin-top: 10vh;background:none;">
   <button class="free-btn" bindtap="toggleDialog">
-   选定国家：{{value}}
+   选定国家：{{value1}}
   </button>
  </view>
  
@@ -100,6 +100,8 @@
      </radio-group>
      
     </form>
+    
+
  
    </view>
  </view>
