@@ -98,7 +98,7 @@
 
    <view class="tr1">
         <view class="board1">       
-         <navigator url="../posts/post">
+         <navigator url="../write/write">
          <view class="board-item">
       <text>写日记</text>
       <image src="../../image/8.png"mode="widthFix" />

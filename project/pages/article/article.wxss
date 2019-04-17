@@ -49,7 +49,7 @@
 .style1 text{
   font-family: "华文仿宋";
   font-size:35rpx;
-  color:darkgray;
+  color:black;
    
 }
 .style1{
@@ -60,5 +60,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-   color:darkgray;
+   color:black;
+   font-size:40rpx;
 }
