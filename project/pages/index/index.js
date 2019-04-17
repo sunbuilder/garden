@@ -1,64 +1,120 @@
 Page({
-  data:{
-    length:0,
-    imgUrls:[
+  data: {
+    length: 0,
+    imgUrls: [
       '../../image/1.jpg',
       '../../image/3.jpg',
       '../../image/9.jpg'
     ],
     array1: [
       {
-        
+
         imgArr1:
           '../../image/p2.png'
 
       },
       {
-       
+
         imgArr1:
           '../../image/p1.png'
 
       }
     ],
-    array:[
-      {
-        month:'5月',
-        date:'3日',
-        version:'今天天气好',
-        imgArr: 
-'https://img2018.cnblogs.com/blog/1238131/201904/1238131-20190403182509903-262101227.jpg'
-      
-      },
-      {
-        month: '5月',
-        date: '3日',
-        version: '今天天气好',
-        imgArr:
-          'https://img2018.cnblogs.com/blog/1238131/201904/1238131-20190403182509903-262101227.jpg'
 
-      }
-    ]
+
   },
+  getMsg: function (event) {
+    var id = event.currentTarget.dataset.diaryid;
 
+    wx.navigateTo({
+      url: '../detail/detail?diaryid=' + id,
+    })
+  }
+  ,
+  change: function (event) {
+    var id = event.currentTarget.dataset.diaryid;
 
-  onLoad: function () {
+    wx.setStorageSync("diaryid", id);
+    var that = this;
     wx.request({
-      url: url,
+      url: getApp().globalData.path + 'getLoglist.action' + getApp().globalData.path2, //仅为示例，并非真实的接口地址
       data: {
-        'month':month,  
-        'date':date,    
-        'version':version,
-        'imgArr':imgarr    //图片
-        
-        
+        "diary": {
+          "diaryId": id
+        }
+      },
+      method: "post",
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function (cos) {
+        console.log(cos.data)
+        that.setData({
+          logList: cos.data
+        })
+      },
+
+    })
+  }
+  ,
+
+
+  onLoad: function (msg) {
+    if(msg.msg)
+    wx.showToast({
+      title: msg.msg,
+      icon: 'success',
+      duration: 1000
+    })
+
+    var openid = wx.getStorageSync("openid");
+
+    if (openid.length == 0) {
+      console.log(getApp())
+      wx.login({
+        success(res) {
+
+          if (res.code) {
+            // 发起网络请求
+            wx.request({
+              url: 'http://localhost:8080/garden/login',
+              data: {
+                code: res.code
+
+              },
+
+              success: function (co) {
+                openid = co.data;
+                wx.setStorageSync("openid", co.data);
+              }
+            })
+          } else {
+            console.log('登录失败！' + res.errMsg)
+
+          }
+        }
+      })
+
+    }
+    var that = this;
+    wx.request({
+      url: getApp().globalData.path + "index",
+      data: {
+
+        "userId": wx.getStorageSync("openid")
 
       },
-      method: 'post',
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
+      method: 'get',
+
       success: function (res) {
-        console.log(res.data);
+
+        wx.setStorageSync("diaryid", res.data[0].diary.diaryId);
+        console.log(res.data)
+        that.setData({
+          diaryList: res.data,
+          logList: res.data[0].logList
+        })
+
       },
       fail: function (res) {
         console.log(".....fail.....");

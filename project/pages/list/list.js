@@ -115,6 +115,28 @@ Page({
 //搜素时触发，调用search: function (key)，传入输入的e.detail.value值
 wxSearchInput: function (e) {
     this.search(e.detail.value);
+  },
+  onLoad: function () {
+    var that = this;
+    wx.request({
+
+      url: "http://localhost:8080/garden/recommendTech",
+
+
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success: function (res) {
+
+        that.setData({
+          techlist: res.data
+        })
+      },
+      fail: function (res) {
+        console.log(".....fail.....");
+      }
+    })
   }
+
 
 })

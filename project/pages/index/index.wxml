@@ -21,7 +21,7 @@
   </block>
 </swiper>
 </view>
-
+<!-- //啊是大swiper -->
 <view class="contain">
   <view class="divLine"></view>
 </view>
@@ -34,20 +34,19 @@
         <image src="../../image/biji.png" />
    </view>
   <view class="divLine1"></view>
-
+<!-- 小花 -->
    <view class="tr1">
         <view class="board">
            <scroll-view scroll-x class="scroll-header1">
-
-         <view wx:for="{{array1}}">
-         <navigator url="../detail/detail">
-          <view class="x3"><image src="{{item.imgArr1}}"/>
-        
+         <view wx:for="{{diaryList}}" wx:for-item="item">
+        <view  catchtap="getMsg" data-diaryid="{{item.diary.diaryId}}">
+          <view class="x3" ><image src="../../image/p2.png"/>
         </view>
-        </navigator>
-            
+        </view>
+       
          
           </view>
+  
          </scroll-view>
         </view>
         
@@ -56,24 +55,25 @@
   </view>
 
   <view class="tr2" >
-   <view class="td2">
-   <navigator url="../album/album">
+   <view class="td2" >
+      <navigator url="../album/album">
       <image src="../../image/tuku.png"/>
-      </navigator>
+          </navigator>
    </view>
   <view class="divLine2"></view>
    <view class="tr3">
-   <navigator url="../album/album">
-        <scroll-view scroll-x class="scroll-header">
 
-         <view wx:for="{{array}}">
-            <view class="x3"><image src="{{item.imgArr}}"/></view>
+        <scroll-view scroll-x class="scroll-header">
+<!-- 日化 -->
+         <block wx:for="{{diaryList}}" wx:for-index="xx" wx:for-item="item">
+            <view class="x3" catchtap='change' data-diaryid='{{item.diary.diaryId}}' >
+            <image src="{{item.diary.diaryImage}}"/></view>
             
+              </block>
          
-          </view>
-         
+        
           </scroll-view>
-      </navigator>
+  
    </view>
   </view>
 <view wx:if="{{length==1}}">
@@ -98,38 +98,35 @@
 
    <view class="tr1">
         <view class="board1">       
-         <navigator url="../posts/post">
+         <navigator url="../write/write">
          <view class="board-item">
       <text>写日记</text>
       <image src="../../image/8.png"mode="widthFix" />
   </view>
         </navigator>
-
+                 
         
-        </view>
+      </view>
         
    </view>
-
   </view>
 
 
-<view wx:for="{{array}}">
-   <view class="divLine3"></view>
-
+ <block wx:for="{{logList}}" wx:for-index="xx" wx:for-item="item" data-diaryid='{{diaryId}}'>
+    <view class="divLine3"></view>
    <view class="tr5" >
        <view class="td5">
-       <text class="hello">{{item.month}}</text><text class="hello1">{{item.date}}</text>
+       <text class="hello">{{item.mouth}}月</text><text class="hello1">{{item.day}}日</text>
        <view class="hello2"><image src="../../image/share.png"/></view>
        </view>
   
        <view class="tr6">
-          <view class="td6"><text>{{item.version}}</text></view>
-          <view class="td7"><image class='img' src='{{item.imgArr}}'></image></view>
+          <view class="td6"><text>{{item.diarylog.logDescription}}</text></view>
+          <view class="td7"><image src="{{item.diarylog.logImage}}"/></view>
        </view>
    </view>
-   </view>
+   </block>
 
-
-    
+   
 
 </view>

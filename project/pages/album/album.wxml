@@ -1,7 +1,8 @@
 <view class='imgList'>      
   <view class='imgList-li'>
-    <image class='img' src='{{item}}' data-index='{{index}}' bindtap='previewImg'wx:for='{{imgArr}}'></image>
-   
+  <block wx:for="{{image}}" wx:for-item="item" wx:for-index="index">
+    <image class='img' src='{{item.diary.diaryImage}}' data-index='{{index}}' bindtap='previewImg'></image>
+</block>
   </view>
  
 </view>

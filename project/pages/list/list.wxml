@@ -7,8 +7,7 @@
        </navigator>
       </view>
       
-
-    <view class="contain">
+ <view class="contain">
 <navigator url="../skill/skill">
     <view class="">
     <image class="userinfo-avatar"src="../../image/24.jpg" background-size="cover"></image>
@@ -45,8 +44,8 @@
 
  <scroll-view scroll-x class="scroll-header1">
 
-         <view wx:for="{{brand}}" wx:key="{{index}}">
-          <navigator url="/pages/article/article?goodsId={{index}}">
+         <view wx:for="{{array1}}">
+         <navigator url="../detail/detail">
           <view class="x3"><image src="{{item.imgArr1}}"/>
         
         </view>
@@ -58,19 +57,18 @@
 <view class="divLine2"></view>
 <view class="divLine1"></view>
 
-<view wx:for="{{array2}}" wx:key="{{index}}">
-          <navigator url="/pages/article1/article1?goodsId={{index}}">
+<block wx:for="{{techlist}}" wx:for-item="item">
 <view class="divLine2"></view>
 <view class="tr" >
 <view class="tr1">
-   <view class="td1"><text class="hello">{{item.head2}}</text></view>
-   <view class="td2"> <text class='user_msg'>浏览次数：{{item.number2}}  </text></view>
+   <view class="td1"><text class="hello">{{item.tech.techName}}</text></view>
+   <view class="td2"> <text class='user_msg'>浏览次数：{{item.tech.techViewnum}}  </text></view>
    </view>
-   <view class="td"><image  class="userinfo-avatar1" mode="cover" src="{{item.imgArr2}}"></image></view>
+   <view class="td"><image  class="userinfo-avatar1" mode="cover" src="{{item.tech.techImage}}"></image></view>
   
   </view>
  <view class="divLine2"></view>
   <view class="divLine"></view>
-   </navigator>
-  </view>
+  </block>
 
+  

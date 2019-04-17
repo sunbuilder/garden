@@ -3,7 +3,7 @@
 
 <view class="productStatus">
   <span>
-    <em><button  form-type="submit"class="but">删除</button></em>
+    <em><button  form-type="submit"class="but">保存</button></em>
   </span>
 </view>
 
@@ -14,7 +14,7 @@
     
     
       <image class="userinfo-avatar" src="../../image/1.jpg" mode="cover"></image>
-      <text class="userinfo-nickname">--基本资料--</text>
+      <text class="userinfo-nickname" ></text>
     
   </view>
 
@@ -25,7 +25,7 @@
   <view class="board-item">
   <image class="userinfo-avatar1"src="../../image/p1.png" background-size="cover"></image>
      <view class="board-text"> <text >植物姓名</text></view>
-       <view ><input type="text" name="name"placeholder="未填写"class="x" /></view> 
+       <view ><input type="text" name="plantname"placeholder="未填写"class="x" value='{{diary.diaryPlantname}}' /></view> 
   </view>
   
    </view>
@@ -34,7 +34,7 @@
   <view class="board-item">
   <image class="userinfo-avatar1"src="../../image/p2.png" background-size="cover"></image>
       <view class="board-text"> <text >栽培空间</text></view>
-       <view ><input  name="space"placeholder="未填写"class="x" /></view> 
+       <view ><input  name="diaryspace"placeholder="未填写"class="x" value='{{diary.diarySpace}}' /></view> 
   </view>
   
    </view>
@@ -43,7 +43,7 @@
   <view class="board-item">
   <image class="userinfo-avatar1"src="../../image/p3.png" background-size="cover"></image>
      <view class="board-text"> <text >栽培方式</text></view>
-       <view ><input name="mode"placeholder="未填写"class="x"/></view> 
+       <view ><input name="diarymethod"placeholder="未填写"class="x" value='{{diary.diaryMethod}}'/></view> 
   </view>
   
    </view>
@@ -52,7 +52,7 @@
   <view class="board-item">
   <image class="userinfo-avatar1"src="../../image/p4.png" background-size="cover"></image>
      <view class="board-text"> <text >所在城市</text></view>
-       <view ><input name="city"placeholder="未填写"class="x" /></view> 
+       <view ><input name="diarycity"placeholder="未填写"class="x" value="{{diary.diaryCity}}"/></view> 
   </view>
   
    </view>
