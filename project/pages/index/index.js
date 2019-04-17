@@ -20,7 +20,7 @@ Page({
 
       }
     ],
-
+    
 
   },
   getMsg: function (event) {
