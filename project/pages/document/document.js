@@ -45,14 +45,36 @@ Page({
         }
       })
 
-  }, reg: function (e) {
-    console.log(e.detail.value);
+  },
+  reg: function (e) {
+    wx.request({
+      url: 'url',
+      data: {
+        'imgArr': e.detail.value.imgArr,
+        'name': e.detail.value.name,
+        'space': e.detail.value.space,
+        'mode': e.detail.value.mode,
+        'city': e.detail.value.city,
+        'sun': e.detail.value.sun,
+        'turang': e.detail.value.turang,
+        'rain': e.detail.value.rain,
+        'time': e.detail.value.time
+      },
+      method: 'POST',
+      header: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      success: function (res) {
+        console.log(res.data)
+      }
+    });
 
     wx.showToast({
-      title:"成功",
+      title: "成功",
       icon: "success",
       duration: 2000
     });
   }
+
 
 })

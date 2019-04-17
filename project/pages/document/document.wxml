@@ -6,7 +6,7 @@
   <view class="userinfo">
     
     
-      <image class="userinfo-avatar" src="../../image/1.jpg" mode="cover"bindtap='clickImg'></image>
+      <image class="userinfo-avatar" src="../../image/1.jpg" mode="cover"bindtap='clickImg' name="imgArr"></image>
       <text class="userinfo-nickname">--基本资料--</text>
     
   </view>
