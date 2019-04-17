@@ -1,0 +1,23 @@
+<view class="style">
+  <image src="{{showImg}}"/>
+</view>
+<view class="style5">
+<view class="style3">
+<view class="style2"><text>{{showTime}}</text></view>
+<view class="style2"><text>阅读量：{{showNumber}}</text></view>
+
+</view>
+<view class="style4">
+<image  catchtap='handleCollection' wx:if="{{!isCollected}}" src="../../image/shou.png"></image>
+ <image wx:if="{{isCollected}}" catchtap='handleCollection' src="../../image/shou1.png"></image></view>
+</view>
+ <view class="divLine"></view>
+ <view class="divLine1"></view>
+ <view class="divLine"></view>
+ <view class="userinfo">
+      <text class="userinfo-nickname">{{showTitle}}</text>
+  </view>
+  <view class="divLine"></view>
+<view class="style1">
+   <text>{{showDesc}}</text>
+</view>
