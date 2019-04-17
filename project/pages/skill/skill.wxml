@@ -1,0 +1,43 @@
+ <scroll-view scroll-x class="scroll-header">
+<block wx:for="{{techType}}" wx:for-item="item" >
+<view id="green" class="scroll-view-item bc_green" catchtap='getArticle' data-techtype='{{item.type}}'>
+    
+   <view class="td1"><button>{{item.type}}</button></view>
+   
+  
+</view>
+</block>
+
+</scroll-view>
+
+
+<block wx:for="{{tech}}" wx:for-item="item" wx:for-index="xx">
+<view class="style" catchtap='techdescription' data-techid="{{item.tech.techId}}">
+<navigator url="../article/article">
+    <view class="style1">
+        <image src="../../image/3.jpg" ></image>
+    </view>
+    <view class="style2">
+        <text>{{item.tech.techName}}</text>
+    </view>
+    <view class="tr4">
+     
+      <view class="td3">
+            <text>{{item.tech.techDate}}</text>
+      </view>
+      <view class="td4">
+            <image src="../../image/note.png"mode="aspectFill" />
+       </view>
+      <view class="td4">
+            <text>{{item.tech.techViewnum}}</text>
+       </view>
+       <view class="td4">
+            <view><image src="../../image/goods.png"mode="aspectFill" /></view>
+       </view>
+      <view class="td4">
+            <text>{{item.tech.techPointnum}}</text>
+       </view>
+</view>
+</navigator>
+</view>
+</block>
