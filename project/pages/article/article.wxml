@@ -1,10 +1,10 @@
 <view class="style">
-  <image src="{{showImg}}"/>
+  <image src="{{tech.techImage}}"/>
 </view>
 <view class="style5">
 <view class="style3">
-<view class="style2"><text>{{showTime}}</text></view>
-<view class="style2"><text>阅读量：{{showNumber}}</text></view>
+<view class="style2"><text>{{tech.techDate}}</text></view>
+<view class="style2"><text>阅读量：{{tech.techViewnum}}</text></view>
 
 </view>
 <view class="style4">
@@ -15,9 +15,9 @@
  <view class="divLine1"></view>
  <view class="divLine"></view>
  <view class="userinfo">
-      <text class="userinfo-nickname">{{showTitle}}</text>
+      <text class="userinfo-nickname">{{tech.techName}}</text>
   </view>
   <view class="divLine"></view>
 <view class="style1">
-   <text>{{showDesc}}</text>
+   <text>{{tech.techDescription}}</text>
 </view>
