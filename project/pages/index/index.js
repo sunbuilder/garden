@@ -77,7 +77,7 @@ Page({
           if (res.code) {
             // 发起网络请求
             wx.request({
-              url: 'http://localhost:8080/garden/login',
+              url: getApp().globalData.path + 'http://192.168.31.153:8080/garden/login' + getApp().globalData.path2,
               data: {
                 code: res.code
 
@@ -98,7 +98,7 @@ Page({
     }
     var that = this;
     wx.request({
-      url: getApp().globalData.path + "index",
+      url: getApp().globalData.path + "index" + getApp().globalData.path2,
       data: {
 
         "userId": wx.getStorageSync("openid")

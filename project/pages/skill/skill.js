@@ -30,7 +30,7 @@ Page({
 
     var that = this;
     wx.request({
-      url: getApp().globalData.path + 'getAllTechnique?type=' + type,
+      url: getApp().globalData.path + 'getAllTechnique?type=' + type+getApp().globalData.path2,
       header: {
         'content-type': 'application/json'
       },
