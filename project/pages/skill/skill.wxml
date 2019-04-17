@@ -1,2 +1,68 @@
-<!--pages/skill/skill.wxml-->
-<text>pages/skill/skill.wxml</text>
+ <scroll-view scroll-x class="scroll-header">
+<view id="green" class="scroll-view-item bc_green">
+    
+   <view class="td1"><button>全部</button></view>
+   
+  
+</view>
+<view id="red" class="scroll-view-item bc_red">
+     <view class="td1"><button>多肉植物</button></view>
+     
+</view>
+<view id="yellow" class="scroll-view-item bc_yellow">
+     <view class="td1"><button >观赏植物</button></view>
+</view>
+<view id="blue" class="scroll-view-item bc_blue">
+     <view class="td1"><button >观叶植物</button></view>
+</view>
+<view id="blue" class="scroll-view-item bc_blue">
+    <view class="td1"><button >草本植物</button></view>
+</view>
+<view id="blue" class="scroll-view-item bc_blue">
+    <view class="td1"><button>木本植物</button></view>
+</view>
+<view id="blue" class="scroll-view-item bc_blue">
+    <view class="td1"><button>水生植物</button></view>
+</view>
+<view id="blue" class="scroll-view-item bc_blue">
+    <view class="td1"><button>室内植物</button></view>
+</view>
+<view id="blue" class="scroll-view-item bc_blue">
+    <view class="td1"><button >水培植物</button></view>
+</view>
+<view id="blue" class="scroll-view-item bc_blue">
+    <view class="td1"><button >其他</button></view>
+</view>
+</scroll-view>
+
+
+<view class="style">
+<block wx:for='{{brand}}' wx:key="{{index}}">
+ <navigator url="/pages/article1/article1?goodsId={{index}}">
+    <view class="style1">
+        <image src="{{item.imgArr}}" ></image>
+    </view>
+    <view class="style2">
+        <text>{{item.version}}</text>
+    </view>
+    <view class="tr4">
+     
+      <view class="td3">
+            <text>{{item.time}}</text>
+      </view>
+      <view class="td4">
+            <image src="../../image/share(1).png"mode="aspectFill" />
+       </view>
+      <view class="td4">
+            <text>{{item.comment}}</text>
+       </view>
+       <view class="td4">
+            <image src="../../image/goods.png"mode="aspectFill" />
+       </view>
+      <view class="td4">
+            <text>{{item.like}}</text>
+       </view>
+</view>
+  </navigator>
+        </block>
+</view>
