@@ -37,7 +37,7 @@
 
 
 <view class="style"wx:for="{{array}}">
-<navigator url="../article/article">
+ <navigator url="/pages/article2/article2?goodsId={{index}}">
     <view class="style1">
         <image src="{{item.imgArr}}" ></image>
     </view>

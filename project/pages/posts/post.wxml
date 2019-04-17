@@ -1,6 +1,0 @@
-<import src="post-item/post-item-template.wxml"/>
-<view>
-<block wx:for="{{postList}}">
-<template is="postItem"data="{{item}}"bindtap="detail" data-id="{{item.postId}}"/>
-</block>
-</view>

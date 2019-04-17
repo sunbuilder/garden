@@ -7,24 +7,24 @@ Page({
 
         
         imgArr2:
-          '../../image/3.jpg',
-        head2:'养花的100种小技巧',
-        number2:'100'
+          '../../image/17.jpg',
+        head2:'新手养花小技巧',
+        number2:'2030'
 
       },
       {
         imgArr2:
           '../../image/12.jpg',
-        head2: '养花的100种小技巧',
-        number2: '100'
+        head2: '这样养殖让花开更美',
+        number2: '2030'
 
       }
       ,
       {
         imgArr2:
-          '../../image/10.jpg',
-        head2: '养花的100种小技巧',
-        number2: '100'
+          '../../image/5.jpg',
+        head2: '最不起眼的养花小技巧',
+        number2: '2030'
 
       }
     ],

@@ -31,7 +31,7 @@ Page({
           '../../image/10.jpg',
         head2: '养花的100种小技巧',
         number2: '100',
-       time: '2019.4.11 13.55',
+        time: '2019.4.11 13.55',
         id: '牡丹',
         imgArr: '../../image/3.jpg'
 
@@ -46,11 +46,12 @@ Page({
       url: url,
       data: {
 
-        'version': version,//文章标题
-        'imgArr': imgarr,  //封面
-        'time': time,//时间
-        'comment': comment,//浏览次数
-        'like': like //点赞
+        'imgArr2': imgArr2,//养花知识图片
+        'head2': head2,  //养花知识标题
+        'number2': number2,//浏览次数
+        'time': time,//植物百科时间
+        'id': id,//植物百科标题
+        'imgArr:': imgArr //植物百科图片
 
 
 
