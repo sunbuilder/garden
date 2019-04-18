@@ -1,6 +1,6 @@
 Page({
   data:{
-    length:0,
+    length:1,
     imgUrls:[
       '../../image/1.jpg',
       '../../image/3.jpg',

@@ -22,12 +22,22 @@
 </swiper>
 </view>
 <!-- //啊是大swiper -->
+
 <view class="contain">
   <view class="divLine"></view>
 </view>
  </view>
  </navigator>
-
+ <view wx:if="{{length==1}}">
+<view class="con ">
+<view class="userinfo">
+      <image  class="userinfo-avatar" src="../../image/01.jpg" mode="cover"></image>
+      <text>点击黄色图标</text>
+       <text>创建你的第一本日记哟</text>
+      </view>
+ </view>
+</view>
+<view wx:else>
  <view class="tr" >
 
    <view class="td"> 
@@ -76,18 +86,8 @@
   
    </view>
   </view>
-<view wx:if="{{length==1}}">
-<view class="con ">
-<view class="userinfo">
-      <image  class="userinfo-avatar" src="../../image/01.png" mode="cover"></image>
-      <text>点击黄色图标</text>
-       <text>创建你的第一本日记哟</text>
-      </view>
- </view>
-</view>
 
 
-<view wx:else>
 <view class="divLine4"></view>
 <view class="tr" >
 

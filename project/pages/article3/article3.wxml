@@ -22,42 +22,42 @@
   <view class="board">
     <view class="board-item">
         <view class="board-text"> <text >别名</text></view> 
-        <view> <text >所在城市</text></view>
+        <view> <text >{{showOrtherName}}</text></view>
      </view>
    </view>
      <view class="cartLeft"></view>
       <view class="board">
     <view class="board-item">
         <view class="board-text"> <text >界:</text></view> 
-        <view> <text >所在城市</text></view>
+        <view> <text >{{showJie}}</text></view>
      </view>
    </view>
      <view class="cartLeft"></view>
       <view class="board">
     <view class="board-item">
         <view class="board-text"> <text >目:</text></view> 
-        <view> <text >所在城市</text></view>
+        <view> <text >{{showMu}}</text></view>
      </view>
    </view>
      <view class="cartLeft"></view>
       <view class="board">
     <view class="board-item">
         <view class="board-text"> <text >科:</text></view> 
-        <view> <text >所在城市</text></view>
+        <view> <text >{{showKe}}</text></view>
      </view>
    </view>
      <view class="cartLeft"></view>
       <view class="board">
     <view class="board-item">
         <view class="board-text"> <text >属:</text></view> 
-        <view> <text >所在城市</text></view>
+        <view> <text >{{showShu}}</text></view>
      </view>
    </view>
      <view class="cartLeft"></view>
       <view class="board">
     <view class="board-item">
         <view class="board-text"> <text >种:</text></view> 
-        <view> <text >所在城市</text></view>
+        <view> <text >{{showZhong}}</text></view>
      </view>
    </view>
    <view class="cartLeft"></view>
@@ -67,7 +67,7 @@
         <view class="board-text"> <text >植物学史:</text></view> 
      </view>
    
-   <view> <text>    根据经典的记载，中国栽培菊花历史已有3000多年。最早的记载见之于《周官》、《埠雅》。《礼记·月令篇》：“季秋之月，鞠有黄华”，说明菊花是秋月开花，当时都是野生种，花是黄色的。从周朝至春秋战国时代的《诗经》和屈原的《离骚》中都有菊花的记载。《离骚》有“朝饮木兰之堕露兮，夕餐秋菊之落英”之句。说明菊花与中华民族的文化，早就结下不解之缘，在秦朝的首都咸阳，曾出现过菊花展销的盛大市场，可见当时栽培菊花之盛了。 [1] 
+   <view> <text>   根据经典的记载，中国栽培菊花历史已有3000多年。最早的记载见之于《周官》、《埠雅》。《礼记·月令篇》：“季秋之月，鞠有黄华”，说明菊花是秋月开花，当时都是野生种，花是黄色的。从周朝至春秋战国时代的《诗经》和屈原的《离骚》中都有菊花的记载。《离骚》有“朝饮木兰之堕露兮，夕餐秋菊之落英”之句。说明菊花与中华民族的文化，早就结下不解之缘，在秦朝的首都咸阳，曾出现过菊花展销的盛大市场，可见当时栽培菊花之盛了。 [1] 
        汉朝《神农本草经》记载：“菊花久服能轻身延年”。《西京杂记》：“菊花舒时，并采茎叶，杂黍米酿之，至来年九月九日始熟，就饮焉，故谓之菊花酒”。“当时帝宫后妃皆称之为“长寿酒”，把它当作滋补药品，相互馈赠。这种习俗一直流行到三国时代。“蜀人多种菊，以苗可入莱，花可入药，园圃悉植之，郊野火采野菊供药肆”。从这些记载看来，中国栽培菊花最初是以食用和药用为目的的。 [1] </text></view>
   </view>
 </view>
