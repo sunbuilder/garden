@@ -1,10 +1,10 @@
 
 
 <view class="style2">
-      <input confirm-type="search" maxlength="30" bindinput='wxSearchInput' value='{{keyword}}' bindconfirm='wxSearchFn' bindfocus="wxSerchFocus" bindblur="wxSearchBlur" placeholder='请输入搜索内容'></input>
-      <navigator url="../result/result">
+      <input confirm-type="search" maxlength="30"   value='{{keyword}}'   placeholder='请输入搜索内容'></input>
+     
       <button class='search' bindtap="wxSearchFn" hover-class='button-hover'><image src="../../image/search.png" /></button>
-       </navigator>
+
       </view>
       
 
@@ -24,7 +24,7 @@
     <navigator url="../sense/sense">
     <view class="">
     <image class="userinfo-avatar"src="../../image/23.jpg" background-size="cover"></image>
-    <view class="contain"><text class="style3">植物诊所</text></view>
+    <view class="contain"><text class="style3">植物百科</text></view>
     </view>
     </navigator>
      

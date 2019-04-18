@@ -28,7 +28,7 @@
 </view>
  </view>
  </navigator>
- <view wx:if="{{length==1}}">
+ <view wx:if="{{length==0}}">
 <view class="con ">
 <view class="userinfo">
       <image  class="userinfo-avatar" src="../../image/01.jpg" mode="cover"></image>
