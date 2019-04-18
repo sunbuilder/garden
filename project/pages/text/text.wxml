@@ -9,22 +9,22 @@
 <view class="table">
 <navigator url="../state/state">
    <view class="tr" >
-   <view class="td"><image  class="userinfo-avatar" mode="cover" src="{{item.head}}"></image></view>
+   <view class="td"><image  class="userinfo-avatar" mode="cover" src="{{item.user_image}}"></image></view>
   
    <view class="tr1">
-   <view class="td1"><text class="hello">{{item.id}}</text></view>
-   <view class="td2"><text class='user_msg'>{{item.time}}</text></view>
+   <view class="td1"><text class="hello">{{item.user_name}}</text></view>
+   <view class="td2"><text class='user_msg'>{{item.dynamic_date}}</text></view>
    </view>
   
   </view>
   <view class="divLine"></view>
   <view class="style">
-  <text class="hello1">{{item.version}}</text>
+  <text class="hello1">{{item.dynamic_description}}</text>
   </view>
   <view class="divLine"></view>
  <view class='imgList'>      
   <view class='imgList-li'>
-    <image class='img' src='{{item}}' data-index='{{index}}' bindtap='previewImg'wx:for='{{imgArr}}'></image>
+    <image class='img' src='{{item.dynamic_image}}' data-index='{{index}}' bindtap='previewImg'></image>
    
   </view>
  
@@ -36,20 +36,20 @@
           <image src="../../image/share(1).png"mode="aspectFill" />
       </view>
       <view class="td5">
-            <text>{{item.see}}</text>
+            <text>{{item.dynamic_viewnum}}</text>
       </view>
       <view class="td4">
             <image src="../../image/note.png"mode="aspectFill" />
        </view>
       <view class="td5">
-            <text>{{item.comment}}</text>
+            <text>{{item.dynamic_id}}</text>
        </view>
       
        <view class="td4">
             <image class='fav-icon' catchtap='onCollectionTap' src="../../image/goods{{item.collected?'1':''}}.png" data-index='{{index}}'></image>
        </view>
       <view class="td5">
-            <text>{{item.like}}</text>
+            <text>{{item.dynamic_pointnum}}</text>
        </view>
        
 </view>

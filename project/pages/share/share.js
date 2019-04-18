@@ -11,7 +11,7 @@ Page({
          var upload_picture_list = that.data.upload_picture_list
          //选择图片
          wx.chooseImage({
-             count: 3,
+             count: 1,
              sizeType: ['compressed'],
              sourceType: ['album', 'camera'],
              success: function(res) {

@@ -1,6 +1,5 @@
 Page({
   data: {
-
    
     array2: [
       {
@@ -39,27 +38,22 @@ Page({
     
   },
 
-  onLoad: function () {
+  onLoad: function (e) {
+    var that=this;
     wx.request({
-      url: url,
+      url: getApp().globalData.path + "search" + getApp().globalData.path2,
+      method:"post",
       data: {
-
-        'imgArr2': imgArr2,//养花知识图片
-        'head2': head2,  //养花知识标题
-        'number2': number2,//浏览次数
-        'time': time,//植物百科时间
-        'id': id,//植物百科标题
-        'imgArr:': imgArr //植物百科图片
-
-
+searchword:"菊"
 
       },
-      method: 'post',
-      header: {
-        'content-type': 'application/json' // 默认值
+      header:{
+        'content-type':'application/json'
       },
       success: function (res) {
-        console.log(res.data);
+       that.setData({
+          list:res.data
+       })
       },
       fail: function (res) {
         console.log(".....fail.....");
