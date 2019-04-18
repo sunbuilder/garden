@@ -7,7 +7,7 @@ Page({
     var that = this
     var msg;
     wx.uploadFile({
-      url: 'http://localhost:8080/garden/createDiarylog', //仅为示例，非真实的接口地址
+      url: getApp().globalData.path + 'createDiarylog' + getApp().globalData.path2, //仅为示例，非真实的接口地址
       filePath: that.data.photos[0],
       name: 'file',
       formData: {
@@ -19,13 +19,17 @@ Page({
         'content-type': 'multipart/form-data'
       },
       success: function (res) {
-          if(res.data=="ok"){
+        console.log(res.data)
             wx.reLaunch({
-              url: '../index/index',
+              url: '../index/index?msg=' +"添加成功",
             })
-          }
-
       },
+      fail:function(res){
+ 
+        wx.reLaunch({
+          url: '../index/index?msg=' + "添加失败",
+        })
+      }
 
     })
   }

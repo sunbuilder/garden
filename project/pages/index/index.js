@@ -59,24 +59,26 @@ Page({
 ,
  
 
-  onLoad: function () {
-
+  onLoad: function (msg) {
+    if (msg.msg)
+      wx.showToast({
+        title: msg.msg,
+        icon: 'success',
+        duration: 1000
+      })
     var openid = wx.getStorageSync("openid");
 
     if (openid.length == 0) {
-      console.log(getApp())
+  
       wx.login({
         success(res) {
-
           if (res.code) {
             // 发起网络请求
             wx.request({
-              url: getApp().globalData + path + 'http://localhost:8080/garden/login' + getApp().globalData + path2,
+              url: getApp().globalData.path + 'login' + getApp().globalData.path2,
               data: {
                 code: res.code
-              
-              },
-             
+              },         
               success: function (co) {
                openid=co.data;
                 wx.setStorageSync("openid", co.data);
@@ -92,7 +94,7 @@ Page({
     }
   var that=this;
     wx.request({
-      url: getApp().globalData.path+"index",
+      url: getApp().globalData.path+"index"+getApp().globalData.path2,
       data: {
         
           "userId": wx.getStorageSync("openid")
@@ -101,13 +103,16 @@ Page({
       method: 'get',
       
       success: function (res) {
-     
-        wx.setStorageSync("diaryid", res.data[0].diary.diaryId);
-        that.setData({
-          diaryList: res.data,
-          logList: res.data[0].logList
-        })
-  
+        console.log(res.data.length)
+        if(res.data.length!=0){
+          
+          wx.setStorageSync("diaryid", res.data[0].diary.diaryId);
+          that.setData({
+            diaryList: res.data,
+            logList: res.data[0].logList
+          })
+        }
+
       },
       fail: function (res) {
         console.log(".....fail.....");
