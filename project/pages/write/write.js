@@ -27,7 +27,7 @@ Page({
       fail:function(res){
  
         wx.reLaunch({
-          url: '../index/index?msg=' + "添加失败",
+          url: '../index/index?msg=' + "添加日志记录失败",
         })
       }
 
