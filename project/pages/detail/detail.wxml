@@ -3,7 +3,7 @@
 
 <view class="productStatus">
   <span>
-    <em><button  form-type="submit"class="but">保存</button></em>
+    <em><button  form-type="submit"class="but">删除</button></em>
   </span>
 </view>
 
@@ -13,7 +13,7 @@
   <view class="userinfo">
     
     
-      <image class="userinfo-avatar" src="../../image/1.jpg" mode="cover"></image>
+      <image class="userinfo-avatar" src="{{diary.diaryImage}}" mode="cover"></image>
       <text class="userinfo-nickname" ></text>
     
   </view>
@@ -65,22 +65,22 @@
 
     <view class="">
     <image class="userinfo-avatar1"src="../../image/sun.png" background-size="cover"></image>
-     <view class="contain"><text class="style">阳光</text></view>
+     <view class="contain"><text class="style">{{diary.diarySun}}</text></view>
     </view>
    
    <view class="">
     <image class="userinfo-avatar1"src="../../image/rain.png" background-size="cover"></image>
-    <view class="contain"><text class="style">水分</text></view>
+    <view class="contain"><text class="style">{{diary.diaryWater}}</text></view>
     </view>
    
   <view class="">
     <image class="userinfo-avatar1"src="../../image/turang.png" background-size="cover"></image>
-     <view class="contain"><text class="style">土壤</text></view>
+     <view class="contain"><text class="style">{{diary.diarySoil}}</text></view>
     </view>
  
    <view class="">
     <image class="userinfo-avatar1"src="../../image/time.png" background-size="cover"></image>
-    <view class="contain"><text class="style">花期</text></view>
+    <view class="contain"><text class="style">{{diary.diaryTime}}</text></view>
     </view>
    
   
