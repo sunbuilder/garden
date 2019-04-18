@@ -3,17 +3,43 @@ const app = getApp()
 
 Page({
   data: {
-  
+
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
 
   },
-  
+  //事件处理函数
+  bindViewTap: function () {
+    //wx.showModal({
+    // title: '测试',
+    // content: '测试文字',
+    // success(res){
+    // if(res.confirm){
+    //   wx.navigateTo({
+    //   url:'../talk/talk'
+    //  })
+    // }
+    //}
+    //})
+
+    wx.chooseImage({
+      count: 1,
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album', 'camera'],
+      success(res) {
+        // tempFilePath可以作为img标签的src属性显示图片
+        const tempFilePaths = res.tempFilePaths
+      }
+    })
+
+
+  },
   onLoad: function () {
-    if (app.globalData.userInfo) {
+    console.log(wx.getStorageSync("userInfo"))
+    if (wx.getStorageSync("userInfo")) {
       this.setData({
-        userInfo: app.globalData.userInfo,
+        userInfo: wx.getStorageSync("userInfo"),
         hasUserInfo: true
       })
     } else if (this.data.canIUse) {
@@ -37,13 +63,33 @@ Page({
         }
       })
     }
+
   },
   getUserInfo: function (e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
+
+    wx.setStorageSync("userInfo", e.detail.userInfo)
+    console.log(e.detail.userInfo.avatarUrl)
+    console.log(wx.getStorageSync("openid"))
+    console.log(e.detail.userInfo.nickName)
+    wx.request({
+      url: getApp().globalData.path + 'addUserImageUrl' + getApp().globalData.path2,
+      data: {
+       userImage: e.detail.userInfo.avatarUrl,
+        userid: wx.getStorageSync("openid"),
+       userName:e.detail.userInfo.nickName
+      },
+      header:{
+        'content-type': 'application/json'},
+      method:"POST",
+      success: function (res) {
+console.log(res.data)
+
+      }
+    })
+
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
-  }
+  },
 })
