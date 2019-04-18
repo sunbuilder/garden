@@ -68,24 +68,40 @@ Page({
   getUserInfo: function (e) {
 
     wx.setStorageSync("userInfo", e.detail.userInfo)
+    var userImage = e.detail.userInfo.avatarUrl
+    var userId = wx.getStorageSync("openid")
+    var userName = e.detail.userInfo.nickName
     console.log(e.detail.userInfo.avatarUrl)
     console.log(wx.getStorageSync("openid"))
     console.log(e.detail.userInfo.nickName)
     wx.request({
-      url: getApp().globalData.path + 'addUserImageUrl' + getApp().globalData.path2,
-      data: {
-       userImage: e.detail.userInfo.avatarUrl,
-        userid: wx.getStorageSync("openid"),
-       userName:e.detail.userInfo.nickName
+      url: getApp().globalData.path + 'addUserUrl' + getApp().globalData.path2,
+      header:
+      {
+        'content-type': 'application/json'
       },
-      header:{
-        'content-type': 'application/json'},
-      method:"POST",
+      data: {
+
+        "userImage": userImage,
+        "userId": userId,
+        "userName": userName,
+
+        "id": userId
+
+      },
+      method: "post",
+      header: {
+        'content-type': 'application/json'
+      },
+
       success: function (res) {
-console.log(res.data)
+        console.log(res.data)
 
       }
+
     })
+
+
 
     this.setData({
       userInfo: e.detail.userInfo,
