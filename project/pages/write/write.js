@@ -30,6 +30,8 @@ Page({
     })
   }
   ,
+  
+
   chooseImg: function () {
     var that = this
     wx.chooseImage({

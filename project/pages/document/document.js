@@ -6,20 +6,21 @@ Page({
     items: [
      
       {name: '耐阴', value: '耐阴' },
-      {name: '散光', value: '散光' },
+      { name: '散光', value: '散光' },
       { name: '半日照', value: '半日照' },
-      { name: '全日照', value: '全日照' },
+      {name: '全日照', value: '全日照' },
     
      ],
     items1: [
 
-      { name: 'hhh', value: 'hhh' },
-      { name: '散光', value: '散光' },
-      { name: '半日照', value: '半日照' },
-      { name: '全日照', value: '全日照' },
+      { name1: '耐阴', value1: '耐阴' },
+      { name1: '散光', value1: '散光' },
+      { name1: '半日照', value1: '半日照' },
+      {name1: '全日照', value1: '全日照' },
 
     ]
-     
+
+  
 
   },
   clickImg: function () {
@@ -96,38 +97,38 @@ Page({
   /*点击变色*/
   click: function (e) {
     var id = e.currentTarget.dataset.id
-    var id1 = e.currentTarget.dataset.id1
     var that = this
     that.setData({
       id: id,
-       id1: id1
+    
     })
   },
   onLoad: function (options) {
     var that = this
     that.setData({
       value: '未填写',
-      value1: '天蝎'
+      value1: '填写',
     })
   },
   radioChange: function (e) {
-    console.log('radio发生change事件，携带value值为：', e.detail.value)
+    console.log( e.detail.value)
     var that = this
     that.setData({
       value: e.detail.value,
-      value1: e.detail.value1
+ 
     })
-    console.log(this.data.value, this.data.value1)
+    console.log(this.data.value)
   },
   radioChange1: function (e) {
-    console.log('radio发生change事件，携带value值为：', e.detail.value, e.detail.value1)
+    console.log(e.detail.value1)
     var that = this
     that.setData({
-      value: e.detail.value,
-      value1: e.detail.value1
+      value1: e.detail.value1,
+
     })
-    console.log(this.data.value, this.data.value1 )
+    console.log(this.data.value1)
   },
+
   toggleDialog() {
     this.setData({
       showDialog: !this.data.showDialog

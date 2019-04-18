@@ -74,8 +74,77 @@ align-items: center;
   width: 40rpx;
   height: 40rpx;
 }
-.x1{
-  background-color:yellow;
+
+
+.tr {
+  border: 0px solid darkgray;
+ display: flex;
+ width: 100%;
+ justify-content: center;
+ height: 6rem;
+ align-items: center;
 }
-
-
+.tr1 {
+  border: 0px solid darkgray;
+  width:60%;
+  height:6rem;
+  justify-content: center;
+ 
+}
+.td {
+  border: 0px solid darkgray;
+  width:40%;
+  height: 6rem;
+  justify-content: center;
+  text-align: center;
+}
+.td1 {
+  border: 0px solid darkgray;
+  width:100%;
+  height:5rem;
+ 
+}
+.td2 {
+  border: 0px solid darkgray;
+  width:100%;
+  height:1rem;
+ 
+}
+.divLine{
+ background: #E0E3DA;
+ width: 100%;
+ height: 1rpx;
+ 
+}
+.divLine1{
+ background: #E0E3DA;
+ width: 100%;
+ height: 10rpx;
+ 
+}
+.divLine2{
+ background: white;
+ width: 100%;
+ height: 20rpx;
+ 
+}
+.userinfo-avatar1{
+  width: 90%;
+  height: 100%;
+  margin: 10rpx;
+   border-radius: 5%;
+ 
+}
+.user_msg{
+  font-size: 30rpx;
+  color: darkgray;
+}
+.userinfo-nickname {
+  color:black;
+}
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}

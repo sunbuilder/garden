@@ -13,7 +13,7 @@ Page({
     //下面是先进行存储的不同产品数据；
     productsList: [
       {
-        time:'2019.4.13',title: '新手养花小技巧', number:'2030',img: '../../image/17.jpg', desc: '测试1' },
+        time:'2019.4.13',title: '风信子', number:'2030',img: '../../image/17.jpg', desc: '测试1' },
       {
         time: '2019.4.13', title: '这样养殖花开的更好', number: '2030', img: '../../image/12.jpg', desc: '测试2' },
       {

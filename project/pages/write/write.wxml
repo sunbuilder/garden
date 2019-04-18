@@ -17,10 +17,10 @@
  <view class="style2">
     <view class="picture_list">
  
-   
-        <image  src="{{photos}}" mode="aspectFill"></image>
-   
-  
+   <view class="picture_item" wx:key="{{index}}">
+        <image  src="{{photos}}"mode="aspectFill"></image>
+       
+  </view>
      <view class='picture_item'>
        <view class="add-image" bindtap="chooseImg">
          <text>+</text>

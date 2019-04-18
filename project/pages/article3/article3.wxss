@@ -5,6 +5,8 @@
 .style image{
   height:450rpx;
   width:100%;
+  border-radius: 50%;
+
 }
 .divLine{
   background: white;
@@ -49,15 +51,49 @@
 .style1 text{
   font-family: "华文仿宋";
   font-size:35rpx;
-  color:darkgray;
+  color:black;
    
 }
-.style1{
-   text-indent:2em
-}
+
 .userinfo {
   display: flex;
   flex-direction: column;
   align-items: center;
-   color:darkgray;
+  color:black;
+   font-size:40rpx;
+}
+.cartLeft{
+
+width: 100%;
+
+height: 1rpx;
+
+border-bottom: 1rpx dashed #a7a8a8;
+
+}
+.board{
+  display:flex;
+  -webkit-flex-direction:column;
+  -moz-flex-direction:column;
+  -ms-flex-direction:column;
+  -o--flex-direction:column; 
+  flex-direction: column;
+
+}
+.board-item{
+  display:flex;
+  flex:1;
+ justify-items: center;
+  padding:20rpx;
+
+  align-items: center
+}
+
+.board-text{
+  display:flex;
+  flex:1;
+  width: 240rpx;
+  height: 30rpx;
+
+  text-align: center;
 }
