@@ -1,24 +1,49 @@
 Page({
+  uhide: false,
   data: {
-   
+    array1: [
+      {
+
+
+      imgArr2:
+        '../../image/3.jpg',
+      head2: '养花的100种小技巧',
+      number2: '100',
+     
+
+    },
+      {
+    imgArr2:
+      '../../image/12.jpg',
+    head2: '养花的100种小技巧',
+    number2: '100',
+    
+
+  }
+  ,
+  {
+    imgArr2:
+      '../../image/10.jpg',
+    head2: '养花的100种小技巧',
+    number2: '100',
+
+
+
+  }
+    ],
+
     array2: [
       {
 
 
-        imgArr2:
-          '../../image/3.jpg',
-        head2: '养花的100种小技巧',
-        number2: '100',
+       
         time: '2019.4.11 13.55',
         id: '牡丹',
         imgArr: '../../image/10.jpg'
 
       },
       {
-        imgArr2:
-          '../../image/12.jpg',
-        head2: '养花的100种小技巧',
-        number2: '100',
+        
          time: '2019.4.11 13.55',
         id: '牡丹',
         imgArr: '../../image/12.jpg'
@@ -26,13 +51,9 @@ Page({
       }
       ,
       {
-        imgArr2:
-          '../../image/10.jpg',
-        head2: '养花的100种小技巧',
-        number2: '100',
         time: '2019.4.11 13.55',
         id: '牡丹',
-        imgArr: '../../image/3.jpg'
+        imgArr: '../../image/10.jpg'
 
 
       }
@@ -101,6 +122,36 @@ searchword:"菊"
   //搜素时触发，调用search: function (key)，传入输入的e.detail.value值
   wxSearchInput: function (e) {
     this.search(e.detail.value);
+  }
+  ,
+
+  toggleBtn: function () {
+    var that = this;
+    var toggleBtnVal = that.data.uhide;
+    if (toggleBtnVal) {
+      that.setData({
+        uhide: false
+      })
+    } else {
+      that.setData({
+        uhide: true
+      })
+    }
+    
+  }
+  ,
+  toggleBtn1: function () {
+    var that = this;
+    var toggleBtnVal = that.data.uhide1;
+    if (toggleBtnVal) {
+      that.setData({
+        uhide1: false
+      })
+    } else {
+      that.setData({
+        uhide1: true
+      })
+    }
   }
 
 })

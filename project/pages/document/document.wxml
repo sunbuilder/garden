@@ -12,7 +12,7 @@
   </view>
 
  </view>
-
+<!--  名称，空间等-->
   <view class="board">
  
   <view class="board-item">
@@ -20,27 +20,24 @@
      <view class="board-text"> <text >植物姓名</text></view>
        <view ><input type="text" name="name"placeholder="未填写"class="x" /></view> 
   </view>
-  
    </view>
+
    <view class="board">
- 
   <view class="board-item">
   <image class="userinfo-avatar1"src="../../image/p2.png" background-size="cover"></image>
       <view class="board-text"> <text >栽培空间</text></view>
        <view ><input  name="space"placeholder="未填写"class="x" /></view> 
   </view>
-  
    </view>
+
    <view class="board">
-  
   <view class="board-item">
   <image class="userinfo-avatar1"src="../../image/p3.png" background-size="cover"></image>
      <view class="board-text"> <text >栽培方式</text></view>
        <view ><input name="mode"placeholder="未填写"class="x"/></view> 
   </view>
-  
    </view>
-   
+
   <view class="board">
   <view class="board-item">
   <image class="userinfo-avatar1"src="../../image/p4.png" background-size="cover"></image>
@@ -49,77 +46,45 @@
   </view>
    </view>
 
-    <view class="board-item1">
+<!--  阳光 水分等-->
+<view class="board-item1">
+
   <image class="userinfo-avatar1"src="../../image/sun.png" background-size="cover"></image>
-     
-       <view ><input name="sun"placeholder="未填写"class="x" /></view> 
-        <text>--------------</text>
-       <image class="userinfo-avatar1"src="../../image/turang.png" background-size="cover"></image>
-     
-       <view ><input name="turang"placeholder="未填写"class="x" /></view> 
+     <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+       <view class="picker">
+           {{array[index]}}
+        </view>
+    </picker> 
+
+    <text>--------------</text>
+
+    <image class="userinfo-avatar1"src="../../image/turang.png" background-size="cover"></image>
+    <picker bindchange="bindPickerChange1" value="{{index1}}" range="{{array1}}">
+       <view class="picker">
+           {{array1[index1]}}
+        </view>
+    </picker>
   </view>
  
-    <view class="board-item1">
+<view class="board-item1">
+
   <image class="userinfo-avatar1"src="../../image/rain.png" background-size="cover"></image>
-     
-       <view ><button class="free-btn" bindtap="toggleDialog">
-   {{value}}
-  </button></view> 
-       <text>--------------</text>
-       <image class="userinfo-avatar1"src="../../image/time.png" background-size="cover"></image>
-     
-       <view ><button class="free-btn" bindtap="toggleDialog">
-   {{value1}}
-  </button></view> 
-  </view>
+    <picker bindchange="bindPickerChange2" value="{{index2}}" range="{{array2}}">
+       <view class="picker">
+           {{array2[index2]}}
+        </view>
+    </picker>
+
+  <text>--------------</text>
+
+  <image class="userinfo-avatar1"src="../../image/time.png" background-size="cover"></image>
+     <picker bindchange="bindPickerChange3" value="{{index3}}" range="{{array3}}">
+       <view class="picker">
+           {{array3[index3]}}
+        </view>
+    </picker>
+</view>
  
    <view><button type="primary" form-type="submit"class='btn'open-type='openSetting'><image class='btnImg' src='../../image/00.gif'></image>
     <view>申请种植</view></button></view>
    </form>
-
-
- <view class="free-dialog {{ showDialog ? 'free-dialog--show' : '' }}">
-  <view class="free-dialog__mask" bindtap="toggleDialog" />
-  <view class="free-dialog__container">
-   <view style="padding: 5% 5% 15%;">
-    <form bindsubmit='submit' bindreset="reset">
-     <view bindtap='freetoBack' class="free-button free-dialog-reset">取消</view>
-     <view bindtap='freeBack' class="free-button free-dialog-submit">确定</view>
- 
-     <radio-group class='free-radios' bindchange="radioChange">
-      <label value="id:{{item.id}}" class="free-radio" bindtap="click" wx:for="{{items}}" wx:key="{{items}}" data-id="{{index}}" style="{{index==id?'background:#48c23d;color:#fff;':'background:#fff;color:#000;'}}">
-       <radio value="{{item.name}}" name="{{item.value}}"></radio>
-       
-       <label class="free-text">{{item.value}}</label>
-      </label>
-  
-     </radio-group>
-     
-    </form>
- 
-   </view>
- </view>
-</view>
-
-<view class="free-dialog {{ showDialog ? 'free-dialog--show' : '' }}">
-  <view class="free-dialog__mask" bindtap="toggleDialog" />
-  <view class="free-dialog__container">
-   <view style="padding: 5% 5% 15%;">
-    <form bindsubmit='submit' bindreset="reset">
-     <view bindtap='freetoBack' class="free-button free-dialog-reset">取消</view>
-     <view bindtap='freeBack' class="free-button free-dialog-submit">确定</view>
- 
-     <radio-group class='free-radios' bindchange="radioChange">
-      <label value="id:{{item.id}}" class="free-radio" bindtap="click" wx:for="{{items}}" wx:key="{{items}}" data-id="{{index}}" style="{{index==id?'background:#48c23d;color:#fff;':'background:#fff;color:#000;'}}">
-       <radio value="{{item.name1}}" name="{{item.value1}}"></radio>
-       
-       <label class="free-text">{{item.value1}}</label>
-      </label>
-  
-     </radio-group>
-     
-    </form>
- 
-   </view>
- </view>
-</view>
