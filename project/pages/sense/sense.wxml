@@ -1,6 +1,6 @@
  <scroll-view scroll-x class="scroll-header">
- <block wx:for="typelist" wx:for-item="{{item}}" >
-<view id="green" class=" scroll-view-item bc_green">  
+ <block wx:for="{{typelist}}" wx:for-item="item" >
+<view id="green" class=" scroll-view-item bc_green" bindtap='change' data-type="{{item.type}}">  
    <view class="td1"><button>{{item.type}}</button></view> 
 </view>
 </block>

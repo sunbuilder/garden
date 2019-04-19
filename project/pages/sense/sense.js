@@ -1,7 +1,7 @@
 var typelist=require("skilltype.js")
 Page({
   data: {
-
+    plantlist:'',
     array2: [
       {
 
@@ -29,31 +29,46 @@ Page({
       }
     ],
   },
-  onLoad: function () {
-var that=this;
-
+  change:function(e){
+    var type=e.currentTarget.data.type;
+    var that=this;
     wx.request({
-      url: getApp().globalData.path + "search" + getApp().globalData.path2,
+      url: getApp().globalData.path + "getPlantListByType" + getApp().globalData.path2,
+      data:{
+        type=type
+      },
+      success:function(res){
+          that.setData({
+            plantlist:res.data
+          })
+      }
+    })
+  }
+  ,
+  onLoad: function () {
+ 
+var that=this;
+    that.setData({
+      typelist: typelist.type
+    })
+    wx.request({
+      url: getApp().globalData.path + "getAllPlantList" + getApp().globalData.path2,
       data: {
 
-        'version': version,//文章标题
-        'imgArr': imgarr,  //封面
-        'time': time,//时间
-        'comment': comment,//浏览次数
-        'like': like //点赞
+        // 'version': version,//文章标题
+        // 'imgArr': imgarr,  //封面
+        // 'time': time,//时间
+        // 'comment': comment,//浏览次数
+        // 'like': like //点赞
+      
 
 
-
-      },
-      method: 'post',
-      header: {
-        'content-type': 'application/json' // 默认值
       },
       success: function (res) {
-        that.setData({
-          typelist:typelist
-        })
-        console.log(res.data);
+        console.log(res.data)
+          that.setData({
+            plantlist:res.data
+          })
       },
       fail: function (res) {
         console.log(".....fail.....");

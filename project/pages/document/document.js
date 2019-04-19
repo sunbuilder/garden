@@ -66,7 +66,7 @@ Page({
         name: '1天'
       }
     ],
-    index2: 0,
+    index2: 5,
 
     array3: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月','无'],
     objectArray3: [
@@ -120,7 +120,7 @@ Page({
       },
      
     ],
-    index3: 0,
+    index3:12,
 
 
   },onLoad:function(res){
@@ -132,28 +132,28 @@ Page({
   bindPickerChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
-      index: this.data.array[e.detail.value]
+      index: e.detail.value
     })
   }
 ,
   bindPickerChange1: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
-      index1: this.data.array1[e.detail.value]
+      index1: e.detail.value
     })
   }
   ,
   bindPickerChange2: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
-      index2: this.data.array2[e.detail.value]
+      index2: e.detail.value
     })
   }
   ,
   bindPickerChange3: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
-      index3: this.data.array1[e.detail.value]
+      index3: e.detail.value
     })
   }
   ,
@@ -197,7 +197,7 @@ Page({
       },
       success: function (res) {
        wx.reLaunch({
-         url: '../index/index',
+         url: '../index/index?msg='+"添加成功",
        })
       }
     });

@@ -80,7 +80,7 @@
   <image class="userinfo-avatar1"src="../../image/time.png" background-size="cover"></image>
      <picker bindchange="bindPickerChange3" name="diaryTime" value="{{array3[index3]}}" range="{{array3}}">
        <view class="picker">
-           {{array3[12]}}
+           {{array3[index3]}}
         </view>
     </picker>
 </view>
