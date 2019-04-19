@@ -1,24 +1,48 @@
 Page({
   data: {
-   
+    array1: [
+      {
+
+
+      imgArr2:
+        '../../image/3.jpg',
+      head2: '养花的100种小技巧',
+      number2: '100',
+     
+
+    },
+      {
+    imgArr2:
+      '../../image/12.jpg',
+    head2: '养花的100种小技巧',
+    number2: '100',
+    
+
+  }
+  ,
+  {
+    imgArr2:
+      '../../image/10.jpg',
+    head2: '养花的100种小技巧',
+    number2: '100',
+
+
+
+  }
+    ],
+
     array2: [
       {
 
 
-        imgArr2:
-          '../../image/3.jpg',
-        head2: '养花的100种小技巧',
-        number2: '100',
+       
         time: '2019.4.11 13.55',
         id: '牡丹',
         imgArr: '../../image/10.jpg'
 
       },
       {
-        imgArr2:
-          '../../image/12.jpg',
-        head2: '养花的100种小技巧',
-        number2: '100',
+        
          time: '2019.4.11 13.55',
         id: '牡丹',
         imgArr: '../../image/12.jpg'
@@ -26,12 +50,10 @@ Page({
       }
       ,
       {
-        imgArr2:
-          '../../image/10.jpg',
-        head2: '养花的100种小技巧',
-        number2: '100',
-       
-    
+        time: '2019.4.11 13.55',
+        id: '牡丹',
+        imgArr: '../../image/10.jpg'
+
 
       }
     ]
