@@ -23,6 +23,12 @@ Page({
    
     
   },
+
+  onPullDownRefresh: function(){
+    console.log("sss")
+    wx.stopPullDownRefresh()
+  }
+,
   getMsg:function(event){
     var id = event.currentTarget.dataset.diaryid;
   

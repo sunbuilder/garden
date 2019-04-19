@@ -1,38 +1,10 @@
  <scroll-view scroll-x class="scroll-header">
-<view id="green" class="scroll-view-item bc_green">
-    
-   <view class="td1"><button>全部</button></view>
-   
-  
+ <block wx:for="typelist" wx:for-item="{{item}}" >
+<view id="green" class=" scroll-view-item bc_green">  
+   <view class="td1"><button>{{item.type}}</button></view> 
 </view>
-<view id="red" class="scroll-view-item bc_red">
-     <view class="td1"><button>多肉植物</button></view>
-     
-</view>
-<view id="yellow" class="scroll-view-item bc_yellow">
-     <view class="td1"><button >观赏植物</button></view>
-</view>
-<view id="blue" class="scroll-view-item bc_blue">
-     <view class="td1"><button >观叶植物</button></view>
-</view>
-<view id="blue" class="scroll-view-item bc_blue">
-    <view class="td1"><button >草本植物</button></view>
-</view>
-<view id="blue" class="scroll-view-item bc_blue">
-    <view class="td1"><button>木本植物</button></view>
-</view>
-<view id="blue" class="scroll-view-item bc_blue">
-    <view class="td1"><button>水生植物</button></view>
-</view>
-<view id="blue" class="scroll-view-item bc_blue">
-    <view class="td1"><button>室内植物</button></view>
-</view>
-<view id="blue" class="scroll-view-item bc_blue">
-    <view class="td1"><button >水培植物</button></view>
-</view>
-<view id="blue" class="scroll-view-item bc_blue">
-    <view class="td1"><button >其他</button></view>
-</view>
+</block>
+
 </scroll-view>
 <view class="divLine2"></view>
 <view class="divLine1"></view>

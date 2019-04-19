@@ -1,3 +1,4 @@
+var typelist=require("skilltype.js")
 Page({
   data: {
 
@@ -29,8 +30,10 @@ Page({
     ],
   },
   onLoad: function () {
+var that=this;
+
     wx.request({
-      url: url,
+      url: getApp().globalData.path + "search" + getApp().globalData.path2,
       data: {
 
         'version': version,//文章标题
@@ -47,6 +50,9 @@ Page({
         'content-type': 'application/json' // 默认值
       },
       success: function (res) {
+        that.setData({
+          typelist:typelist
+        })
         console.log(res.data);
       },
       fail: function (res) {
