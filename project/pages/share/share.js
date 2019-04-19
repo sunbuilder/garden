@@ -38,7 +38,7 @@ Page({
          var upload_picture_list = page.data.upload_picture_list
          //循环把图片上传到服务器 并显示进度       
          for (var j in upload_picture_list) {
-             if (upload_picture_list[j]['upload_percent'] == 0) {
+             if (upload_picture_list[j]['upload_percent'] == 1) {
         　　　　　　//调用函数
                  app.util.upload_file_server(app.api.up_pic, page, upload_picture_list, j)
         
@@ -65,11 +65,12 @@ function upload_file_server(url, that, upload_picture_list, j)
   //上传返回值
   const upload_task = wx.uploadFile({
     
-    url: url,  
+    url: getApp().globalData.path + 'createDiarylog' + getApp().globalData.path2,  
     filePath: upload_picture_list[j]['path'], //上传的文件本地地址    
     name: 'file',
     formData: {
-      'num': j
+      
+      "num": e.detail.value.description
     },
     //附近数据，这里为路径     
     success: function (res) {

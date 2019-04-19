@@ -1,3 +1,4 @@
+<form bindsubmit="uploadImg">
 <view  class="style1" >
 <view class="tr">
     <view class="td">
@@ -15,9 +16,8 @@
     <view class="picture_list">
  
       <view wx:for="{{upload_picture_list}}" class="picture_item" wx:key="{{index}}">
-        <image wx:if="{{item.upload_percent < 100}}" src="{{item.path}}" mode="aspectFill"></image>
-        <image wx:if="{{item.upload_percent == 100}}" src="{{item.path_server}}" mode="aspectFill"></image>
-        <view class="upload_progress" wx:if="{{item.upload_percent < 100}}" data-index="{{index}}" bindtap="previewImg">{{item.upload_percent}}%</view>
+        <image wx:if="{{item.upload_percent<1}}" src="{{item.path}}" mode="aspectFill"></image>
+        
         <text class='del' bindtap='deleteImg' data-src='{{image}}' style='display:{{isDel}}' data-index="{{index}}">×</text>
       </view>
   
@@ -29,5 +29,5 @@
    </view>
  </view>
     </view>
-
+</form>
 

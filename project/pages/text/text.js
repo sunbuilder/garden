@@ -1,13 +1,11 @@
 Page({
   data: {
     
-        imgArr: [
-          '../../image/16.jpg',
-          '../../image/10.jpg',
-          '../../image/12.jpg'
-        ]
-     ,
+     
+     
     goodsList: [
+      
+      
     ]
   },
   // 更改点赞状态

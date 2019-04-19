@@ -63,8 +63,7 @@ td{
 
 
 .add-image, .up-pic image {
-    margin-top: 2%;
-    margin-left: 2%;
+   
     width: 150rpx;
     height: 150rpx;
     color: #ddd;

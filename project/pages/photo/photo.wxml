@@ -35,7 +35,7 @@
 </view>
 </scroll-view>
 
-
+<view>
 <view class="style"wx:for="{{array}}">
  <navigator url="/pages/article2/article2?goodsId={{index}}">
     <view class="style1">
@@ -63,6 +63,8 @@
        </view>
 </view>
 </navigator>
+</view>
+<view class="load"bindtap="loadMore"data-lastid="{{lastid}}"><text>--加载更多--</text></view>
 </view>
 
 
