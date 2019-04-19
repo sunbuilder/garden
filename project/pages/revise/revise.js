@@ -1,6 +1,7 @@
 
 
 Page({
+ 
   data: {
     array: ['耐阴', '散光', '半日照', '全日照'],
     objectArray: [
@@ -208,6 +209,7 @@ Page({
       icon: "success",
       duration: 2000
     });
-  }
+  },
 
+ 
 })

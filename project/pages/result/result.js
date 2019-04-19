@@ -1,4 +1,5 @@
 Page({
+  uhide: false,
   data: {
     array1: [
       {
@@ -119,6 +120,36 @@ searchword:"菊"
   //搜素时触发，调用search: function (key)，传入输入的e.detail.value值
   wxSearchInput: function (e) {
     this.search(e.detail.value);
+  }
+  ,
+
+  toggleBtn: function () {
+    var that = this;
+    var toggleBtnVal = that.data.uhide;
+    if (toggleBtnVal) {
+      that.setData({
+        uhide: false
+      })
+    } else {
+      that.setData({
+        uhide: true
+      })
+    }
+    
+  }
+  ,
+  toggleBtn1: function () {
+    var that = this;
+    var toggleBtnVal = that.data.uhide1;
+    if (toggleBtnVal) {
+      that.setData({
+        uhide1: false
+      })
+    } else {
+      that.setData({
+        uhide1: true
+      })
+    }
   }
 
 })
