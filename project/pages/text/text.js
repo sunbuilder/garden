@@ -2,9 +2,6 @@ Page({
   data: {
     
         imgArr: [
-          '../../image/16.jpg',
-          '../../image/10.jpg',
-          '../../image/12.jpg'
         ]
      ,
     goodsList: [
@@ -23,6 +20,7 @@ Page({
           collectStatus = true
           message[i].collected = parseInt(message[i].collected) + 1
           message[i].like = parseInt(message[i].like) + 1
+          
         } else {
           collectStatus = false
           message[i].collected = parseInt(message[i].collected) - 1
@@ -42,7 +40,7 @@ Page({
   onLoad: function () {
     var that=this;
     wx.request({
-      url: 'http://192.168.31.44:8080/garden/selectDynamic',
+      url: 'http://localhost:8080/garden/selectDynamic',
       data: {
       },
       method: 'post',
