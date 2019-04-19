@@ -6,9 +6,8 @@
 
   <!--index.wxml-->
 <view class="tr7" >
-
+<!--植物百科下拉框-->
   <view class="container"> 
- 
   <view class='card b-shadow' id="journeyCar">
     <view class='card-content' bindtap='toggleBtn' id='toggleBtn'>
       <button>植物百科</button>
@@ -31,7 +30,7 @@
   </view>
   </view>
   <view class="container"> 
- 
+ <!--养花知识下拉框-->
   <view class='card b-shadow' >
     <view class='card-content' bindtap='toggleBtn1' >
       <button>养花知识</button>
@@ -66,6 +65,7 @@
 
 <view class="divLine2"></view>
 <view class="tr" >
+<!--植物百科搜索结果-->
      <view class="tt">
        <view wx:for="{{array2}}">
            <view class="tt2">
@@ -81,7 +81,7 @@
            <view class="divLine"></view>
            </view>
         </view>
-
+<!--养花知识结果-->
       <view class="tt1">
         <view wx:for="{{array1}}">
           <view class="tt2">
