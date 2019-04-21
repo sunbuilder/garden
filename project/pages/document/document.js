@@ -3,8 +3,8 @@
 Page({
   data: {
     array: ['耐阴', '散光', '半日照', '全日照','无'],
-    imgUrl:"http://garden16.oss-cn-beijing.aliyuncs.com/data/plant/xxx.jpg"
-    ,
+  
+    
     objectArray: [
       {
         id: 0,
@@ -159,7 +159,9 @@ Page({
   ,
 
   clickImg: function () {
+ 
     var that=this
+ 
     wx.chooseImage({
       count: 1,
       sizeType: ['original', 'compressed'],
@@ -173,8 +175,24 @@ Page({
       
 
   },
+  onLoad:function(res){
+    var that=this
+    wx.getImageInfo({
+      src: 'http://garden16.oss-cn-beijing.aliyuncs.com/data/1555161452390.jpg',
+      success: function (res) {
+        console.log(res)
+        that.setData({
+          imgUrl: res.path,
+
+        })
+      }
+    });
+  }
+  ,
   reg: function (e) {
+    var that=this;
     
+    console.log(this.data.imgUrl)
     wx.uploadFile({
       url: getApp().globalData.path + 'createDiary' + getApp().globalData.path2,
       name:"file",

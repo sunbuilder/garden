@@ -1,6 +1,7 @@
 Page({
   data:{
     diarylength:0,
+    loglength:0,
     imgUrls:[
       '../../image/1.jpg',
       '../../image/3.jpg',
@@ -56,7 +57,8 @@ Page({
       success: function (cos) {
         console.log(cos.data)
         that.setData({
-          logList: cos.data
+          logList: cos.data,
+          loglength:cos.data.length
         })
       },
 
@@ -111,12 +113,14 @@ Page({
       success: function (res) {
         console.log(res.data.length)
         if(res.data.length!=0){
-          that.data.diarylength=res.data.length
+       
           console.log(that.data.diarylength)
           wx.setStorageSync("diaryid", res.data[0].diary.diaryId);
           that.setData({
+            diarylength: res.data.length,
             diaryList: res.data,
-            logList: res.data[0].logList
+            logList: res.data[0].logList,
+            loglength:res.data[0].length
           })
         }else{
           that.data.diarylength=0;

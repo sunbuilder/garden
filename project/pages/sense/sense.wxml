@@ -10,6 +10,7 @@
 <view class="divLine1"></view>
 <view>
 
+
 <view wx:for="{{plantlist}}" wx:key="{{index}}">
           <navigator url="/pages/article3/article3?goodsId={{item.plant.plantId}}">
 
@@ -25,7 +26,5 @@
  <view class="divLine2"></view>
   <view class="divLine"></view>
    </navigator>
-  
   </view>
-  <view class="load"bindtap="loadMore"data-lastid="{{lastid}}"><text>--加载更多--</text></view>
 </view>
