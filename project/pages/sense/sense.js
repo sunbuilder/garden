@@ -55,7 +55,7 @@ var that=this;
       url: getApp().globalData.path + "getPlantList" + getApp().globalData.path2,
 
       success: function (res) {
-        console.log(res.data)
+
           that.setData({
             plantlist:res.data
           })

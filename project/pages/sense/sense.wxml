@@ -10,7 +10,7 @@
 <view class="divLine1"></view>
 
 <view wx:for="{{plantlist}}" wx:key="{{index}}">
-          <navigator url="/pages/article3/article3?goodsId={{index}}">
+          <navigator url="/pages/article3/article3?goodsId={{item.plant.plantId}}">
 <view class="divLine2"></view>
 <view class="tr" >
 <view class="td"><image  class="userinfo-avatar1" mode="cover" src="{{item.plant.plantImage}}"></image></view>
