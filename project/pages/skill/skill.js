@@ -95,11 +95,7 @@ Page({
       data: {
         lastid: lastid,
         limit: limit,
-        'version': version,//文章标题
-        'imgArr': imgarr,  //封面
-        'time': time,//时间
-        'comment': comment,//浏览次数
-        'like': like //点赞
+    
       },
       method: 'post',
       header: {

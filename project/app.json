@@ -1,12 +1,11 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/logs/logs",
     "pages/list/list",
     "pages/text/text",
     "pages/talk/talk",
     "pages/message/message",
-    "pages/collect/collect",
     "pages/feedback/feedback",
     "pages/skill/skill",
     "pages/photo/photo",
@@ -29,18 +28,16 @@
     "pages/article2/article2",
     "pages/article3/article3"
 
-
-   
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#8E8CD8",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"white",
-    "enablePullDownRefresh":true
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
   },
-  "tabBar":
-  {"list": [
+  "tabBar": {
+    "list": [
       {
         "pagePath": "pages/index/index",
         "text": "首页",
@@ -66,6 +63,5 @@
         "selectedIconPath": "image/27.jpg"
       }
     ]
-    
-    }
+  }
 }

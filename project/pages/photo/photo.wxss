@@ -79,5 +79,8 @@ align-items: center;
 .load{
   justify-content: center;
   text-align: center;
+  color:#aaa;
+  margin:30px;
+  font-size: 16px;
 
 }
