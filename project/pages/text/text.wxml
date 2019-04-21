@@ -7,7 +7,7 @@
 <view wx:for="{{goodsList}}">
 
 <view class="table">
-<navigator url="../state/state">
+<navigator url="../state/state?dynamic_id={{item.dynamic_id}}">
    <view class="tr" >
    <view class="td"><image  class="userinfo-avatar" mode="cover" src="{{item.user_image}}"></image></view>
   
@@ -55,9 +55,4 @@
 </view>
    <view class="divLine1"></view>
 </view>
-
-
 </view>
-
-
-

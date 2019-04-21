@@ -1,6 +1,7 @@
+var typelist=require("skilltype.js")
 Page({
   data: {
-
+    plantlist:'',
     array2: [
       {
        id:1,
@@ -28,54 +29,74 @@ Page({
         from: '小明'
 
       }
-    ],lastid:0
+    ],
+    lastid:0
   },
-  //下拉刷新
-  loadData: function(lastid){
-    var limit=2
-    var that=this
+//下拉刷新
+ loadData:function(lastid){
+   var limit=2
+   var that=this
+   wx.request({
+     url: getApp().globalData.path + "getAllPlantList" + getApp().globalData.path2,
+     data: {
+      
+       lastid: lastid,
+       limit: limit,
+       'version': version,//文章标题
+       'imgArr': imgarr,  //封面
+       'time': time,//时间
+       'comment': comment,//浏览次数
+       'like': like //点赞
+
+
+     },
+     success: function (res) {
+       var len = res.data.length
+       that.setData({ lastid: res.data[len - 1].id })
+       var dataArr = that.data.array2
+       var newData = dataArrr.concat(res.data);
+       that.setData({
+         array2: newData
+       })
+       console.log(res.data)
+       that.setData({
+         plantlist: res.data
+       })
+     },
+     fail: function (res) {
+       console.log(".....fail.....");
+     }
+   })
+
+ },
+  change:function(e){
+    var type=e.currentTarget.data.type;
+    var that=this;
     wx.request({
-      url: url,
-      data: {
-       lastid:lastid,
-       limit:limit,
-        'version': version,//文章标题
-        'imgArr': imgarr,  //封面
-        'time': time,//时间
-        'comment': comment,//浏览次数
-        'like': like //点赞
-
-
-
+      url: getApp().globalData.path + "getPlantListByType" + getApp().globalData.path2,
+      data:{
+        type=type
       },
-      method: 'post',
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
-      success: function (res) {
-        var len=res.data.length
-        that.setData({lastid:res.data[len-1].id})
-        var dataArr=that.data.array2
-        var newData=dataArrr.concat(res.data);
-        that.setData({
-          array2:newData
-        })
-      },
-      fail: function (res) {
-        console.log(".....fail.....");
+      success:function(res){
+          that.setData({
+            plantlist:res.data
+          })
       }
     })
+  }
+  ,
+  onLoad: function () {
+ 
+    var that=this;
+    this.loadData(0);
+    that.setData({
+      typelist: typelist.type
+    })
   },
-onLoad:function(){
-  var that=this
-  this.loadData(0);
-},
-loadMore:function(event){
-   var id=event.currentTarget.dataset.lastid
-   this.loadData(id);
-}
-   
-
-
+  //下拉刷新
+  loadMore: function (event) {
+    var id = event.currentTarget.dataset.lastid
+    this.loadData(id);
+  }
 
 })

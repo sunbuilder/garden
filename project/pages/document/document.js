@@ -2,7 +2,9 @@
 
 Page({
   data: {
-    array: ['耐阴', '散光', '半日照', '全日照'],
+    array: ['耐阴', '散光', '半日照', '全日照','无'],
+    imgUrl:"http://garden16.oss-cn-beijing.aliyuncs.com/data/plant/xxx.jpg"
+    ,
     objectArray: [
       {
         id: 0,
@@ -18,12 +20,13 @@ Page({
       },
       {
         id: 3,
-        name: '全日照'
-      }
+        name: '全日照',
+      },
+    
     ],
-    index: 0,
+    index: 4,
 
-    array1: ['有机肥', '缓解肥', '液体肥'],
+    array1: ['有机肥', '缓解肥', '液体肥','无'],
     objectArray1: [
       {
         id: 0,
@@ -38,9 +41,9 @@ Page({
         name: '液体肥'
       }
     ],
-    index1: 0,
+    index1:3,
 
-    array2: ['30天', '15天', '7天', '3天', '1天'],
+    array2: ['30天', '15天', '7天', '3天', '1天','无'],
     objectArray2: [
       {
         id: 0,
@@ -63,9 +66,9 @@ Page({
         name: '1天'
       }
     ],
-    index2: 0,
+    index2: 5,
 
-    array3: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
+    array3: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月','无'],
     objectArray3: [
       {
         id: 0,
@@ -117,10 +120,14 @@ Page({
       },
      
     ],
-    index3: 0,
+    index3:12,
 
 
-  },
+  },onLoad:function(res){
+    console.log(this.data.array[0])
+  }
+ 
+  ,
   
   bindPickerChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
@@ -152,54 +159,46 @@ Page({
   ,
 
   clickImg: function () {
+    var that=this
     wx.chooseImage({
       count: 1,
       sizeType: ['original', 'compressed'],
       sourceType: ['album', 'camera'],
-      success: ((res) => {
-        this.setData({ imgUrl: res.tempFilePaths })
+      success: function(res){
+        that.setData({ imgUrl: res.tempFilePaths[0] })
 
-      })
+      }
+    
     })
-      , wx.chooseImage({
-        success: function (res) {
-          var tempFilePaths = res.tempFilePaths
-          wx.uploadFile({
-            url: 'https://example.weixin.qq.com/upload', //仅为示例，非真实的接口地址
-            filePath: tempFilePaths[0],
-            name: 'file',
-            formData: {
-              'user': 'test'
-            },
-            success: function (res) {
-              var data = res.data
-              //do something
-            }
-          })
-        }
-      })
+      
 
   },
   reg: function (e) {
-    wx.request({
-      url: 'url',
-      data: {
-        'imgArr': e.detail.value.imgArr,
-        'name': e.detail.value.name,
-        'space': e.detail.value.space,
-        'mode': e.detail.value.mode,
-        'city': e.detail.value.city,
-        'sun': e.detail.value.sun,
-        'turang': e.detail.value.turang,
-        'rain': e.detail.value.rain,
-        'time': e.detail.value.time
+    
+    wx.uploadFile({
+      url: getApp().globalData.path + 'createDiary' + getApp().globalData.path2,
+      name:"file",
+      filePath:this.data.imgUrl,
+      formData: {
+        'diaryImage': this.data.imgUrl,
+        'diaryPlantname': e.detail.value.diaryPlantname,
+        'diarySpace': e.detail.value.diarySpace,
+        'diaryMethod': e.detail.value.diaryMethod,
+        'diaryCity': e.detail.value.diaryCity,
+        'diarySun': e.detail.value.diarySun,
+        'diarySoil': e.detail.value.diarySoil,
+        'diaryWater': e.detail.value.diaryWater,
+        'diaryTime': e.detail.value.diaryTime,
+        "diaryUserid":wx.getStorageSync("openid")
       },
       method: 'POST',
       header: {
-        'Content-Type': 'application/x-www-form-urlencoded'
+        'content-type': 'multipart/form-data'
       },
       success: function (res) {
-        console.log(res.data)
+       wx.reLaunch({
+         url: '../index/index?msg='+"添加成功",
+       })
       }
     });
 

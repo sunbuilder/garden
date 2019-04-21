@@ -74,8 +74,10 @@ searchword:"菊"
         'content-type':'application/json'
       },
       success: function (res) {
+        console.log(res.data)
        that.setData({
-          list:res.data
+         techlist:res.data.techlist,
+         plantlist:res.data.plantlist
        })
       },
       fail: function (res) {
