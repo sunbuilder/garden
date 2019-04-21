@@ -17,7 +17,7 @@
    </view>
   
   </view>
-  <view class="divLine"></view>
+  <view class="divLine2"></view>
   <view class="style">
   <text class="hello1">{{item.dynamic_description}}</text>
   </view>

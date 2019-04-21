@@ -21,9 +21,13 @@ Page({
         like: '100'
 
       }
-    ]
+    ],
+    lastid: 0
   },
-  onLoad: function () {
+  //下拉刷新
+  loadData: function (lastid) {
+    var limit = 2
+    var that = this
     wx.request({
       url: url,
       data: {
@@ -42,12 +46,26 @@ Page({
         'content-type': 'application/json' // 默认值
       },
       success: function (res) {
-        console.log(res.data);
+        var len = res.data.length
+        that.setData({ lastid: res.data[len - 1].id })
+        var dataArr = that.data.array2
+        var newData = dataArrr.concat(res.data);
+        that.setData({
+          array2: newData
+        })
       },
       fail: function (res) {
         console.log(".....fail.....");
       }
     })
+  },
+  onLoad: function () {
+    var that = this
+    this.loadData(0);
+  },
+  loadMore: function (event) {
+    var id = event.currentTarget.dataset.lastid
+    this.loadData(id);
   }
 
 

@@ -1,27 +1,11 @@
-<textarea class='the_prw_in' bindinput='bindblur' cursor-spacing="130" placeholder='说点什么吧...' maxlength="76">
- </textarea>
-<view class='the_prw_btn' bindtap='btn_send'>
- 留言
-</view>
-  
-<view>评论内容：</view>
- <block wx:for="{{pl_list}}" wx:key="index">
-  <view class='the_msg' wx:if='{{item.input_value!=null}}'>
-    <!-- <view class='msg_left'>
-  <view class='msg_avatar_v'>
- <image class='msg_avatar' src='{{msg_data.avatar}}'></image>
- </view>
-</view> -->
-<view class='msg_right'>
- <!-- <view class='msg_right_name'>
-   {{msg_data.nicename}}
- </view> -->
-<view class='msg_right_text'>
- <text>{{item.input_value}}</text>
-  </view>
-   <view class='gap'>
-   </view>
+<view class="item-box">
+  <view class="items">
+    <view wx:for="{{list}}"  wx:key="{{index}}"  class="item">
+      <view bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" data-index="{{index}}" style="{{item.txtStyle}}" class="inner txt">
+         <image class="style" src="{{item.icon}}"></image>
+          <view class="style1">{{item.txt}}</view>   
+      </view>
+      <view data-index="{{index}}" bindtap = "delItem" class="inner del"><text>删除</text></view>
     </view>
-   </view>
-</block>
-<image  catchtap='handleCollection' wx:if="{{!isCollected}}" src="../../image/shou.png"></image>
+  </view>
+</view>

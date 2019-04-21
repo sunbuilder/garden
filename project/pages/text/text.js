@@ -1,10 +1,12 @@
 Page({
   data: {
-    
         imgArr: [
         ]
      ,
+
     goodsList: [
+      
+      
     ]
   },
   // 更改点赞状态

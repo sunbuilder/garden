@@ -36,7 +36,7 @@
    </navigator>
    </view>
    <view class="board">
-  <navigator url="../collect/collect">
+  <navigator url="../ceshi/ceshi">
   <view class="board-item">
       <text>收藏</text>
       <image src="../../image/8.png"mode="aspectFill" />
