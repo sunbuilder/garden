@@ -6,51 +6,7 @@
   <!--index.wxml-->
 <view class="tr7" >
 <!--植物百科下拉框-->
-  <view class="container"> 
-  <view class='card b-shadow' id="journeyCar">
-    <view class='card-content' bindtap='toggleBtn' id='toggleBtn'>
-      <button>植物百科</button>
-    </view>
-    <view class='journey-item' wx:if="{{uhide}}">
-       <view wx:for="{{array2}}">
-           <view class="tt2">
-              <view class="td">
-                 <image  class="userinfo-avatar" mode="cover" src="{{item.imgArr}}"></image>
-              </view>
-              <view class="tr1">
-                   <view class="td1"><text class="hello">{{item.id}}</text></view>
-                   <view class="td2"><text class='user_msg'>{{item.time}} </text>                    </view>
-             </view>
-           </view>
-           <view class="divLine2"></view>
-           <view class="divLine"></view>
-           </view>
-    </view>
-  </view>
-  </view>
-  <view class="container"> 
- <!--养花知识下拉框-->
-  <view class='card b-shadow' >
-    <view class='card-content' bindtap='toggleBtn1' >
-      <button>养花知识</button>
-    </view>
-    <view class='journey-item' wx:if="{{uhide1}}">
-       <view wx:for="{{array2}}">
-           <view class="tt2">
-              <view class="td">
-                 <image  class="userinfo-avatar" mode="cover" src="{{item.imgArr}}"></image>
-              </view>
-              <view class="tr1">
-                   <view class="td1"><text class="hello">{{item.id}}</text></view>
-                   <view class="td2"><text class='user_msg'>{{item.time}} </text>                    </view>
-             </view>
-           </view>
-           <view class="divLine2"></view>
-           <view class="divLine"></view>
-           </view>
-    </view>
-  </view>
-  </view>
+  
   </view>
   <view class="divLine2"></view>
 <view>搜索结果：</view>

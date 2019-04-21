@@ -28,7 +28,7 @@
 </view>
  </view>
  </navigator>
- <view wx:if="{{length==0}}">
+ <view wx:if="{{diarylength==0}}">
 <view class="con ">
 <view class="userinfo">
       <image  class="userinfo-avatar" src="../../image/01.jpg" mode="cover"></image>
@@ -111,8 +111,17 @@
    </view>
   </view>
 
-
- <block wx:for="{{logList}}" wx:for-index="xx" wx:for-item="item" data-diaryid='{{diaryId}}'>
+ <view wx:if="{{loglength==0}}">
+<view class="con ">
+<view class="userinfo">
+      <image  class="userinfo-avatar" src="../../image/01.jpg" mode="cover"></image>
+      <text>点击黄色图标</text>
+       <text>创建你的第一天日记吧</text>
+      </view>
+ </view>
+</view>
+<view wx:else>
+ <block  wx:for="{{logList}}" wx:for-index="xx" wx:for-item="item" data-diaryid='{{diaryId}}'>
     <view class="divLine3"></view>
    <view class="tr5" >
        <view class="td5">
@@ -127,6 +136,6 @@
    </view>
    </block>
 
-   
+   </view>
 
 </view>

@@ -62,12 +62,13 @@ Page({
   },
 
   onLoad: function (e) {
+    console.log(e)
     var that=this;
     wx.request({
       url: getApp().globalData.path + "search" + getApp().globalData.path2,
       method:"post",
       data: {
-searchword:"菊"
+searchword:""
 
       },
       header:{
