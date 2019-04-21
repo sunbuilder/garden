@@ -1,5 +1,5 @@
 <view class="style2">
-      <input confirm-type="search" maxlength="30" bindinput='wxSearchInput' value='{{keyword}}' bindconfirm='wxSearchFn' bindfocus="wxSerchFocus" bindblur="wxSearchBlur" placeholder='请输入搜索内容'></input>
+      <input confirm-type="search" maxlength="30" bindinput='wxSearchInput' value='{{keyword}}' bindconfirm='wxSearchFn'  placeholder='请输入搜索内容'></input>
       <button class='search' bindtap="wxSearchFn" hover-class='button-hover'><image src="../../image/search.png" /></button>
       </view>
 
@@ -23,50 +23,45 @@
 <view class="tr" >
 <!--植物百科搜索结果-->
      <view class="tt">
-       <view wx:for="{{array2}}">
+       <view wx:for="{{plantlist}}">
+       <navigator url='../article3/article3?goodsId={{item.plant.plantId}}'>
            <view class="tt2">
               <view class="td">
-                 <image  class="userinfo-avatar" mode="cover" src="{{item.imgArr}}"></image>
+                 <image  class="userinfo-avatar" mode="cover" src="{{item.plant.plantImage}}"></image>
               </view>
               <view class="tr1">
-                   <view class="td1"><text class="hello">{{item.id}}</text></view>
-                   <view class="td2"><text class='user_msg'>{{item.time}} </text>                    </view>
+                   <view class="td1"><text class="hello">{{item.plant.plantName}}</text></view>
+                   <view class="td2"><text class='user_msg'>类别:{{item.plant.plantType}} </text>                    </view>
              </view>
            </view>
+           </navigator>
            <view class="divLine2"></view>
            <view class="divLine"></view>
            </view>
         </view>
 <!--养花知识结果-->
       <view class="tt1">
-        <view wx:for="{{array1}}">
+        <view wx:for="{{techlist}}">
+<navigator url='../article/article?id={{item.tech.techId}}'>
           <view class="tt2">
              <view class="tr1">
-               <view class="td1"><text class="hello">{{item.head2}}</text></view>
+               <view class="td1"><text class="hello">{{item.tech.techName}}</text></view>
                <view class="td2"> 
-                  <text class='user_msg'>浏览次数：{{item.number2}}  </text>
+                  <text class='user_msg'>浏览次数：{{item.tech.techViewnum}}  </text>
                </view>
              </view>
              <view class="td">
-                  <image  class="userinfo-avatar1" mode="cover" src="{{item.imgArr2}}"></image>
+                  <image  class="userinfo-avatar1" mode="cover" src="{{item.tech.techImage}}"></image>
              </view>
+             
            </view>
+           </navigator>
            <view class="divLine2"></view>
           <view class="divLine"></view>
         </view>
+     
       </view>
+
   </view>
  
-
-<view class="search_city_li" wx:for="{{searchArray}}" wx:for-item="item" wx:key="">
-   <view class="search_city_list" bindtap='showList' data-id='{{item.id}}'>
-          {{item.name}}
-    </view>
-
-    <view class=" {{item.isShow?'show':'hide'}}">
-      <view class="search_city_list_child" wx:for="{{item.child}}" wx:for-item="child" wx:key="">
-        <view class="list_child_cyty">{{child.name}}</view>
-       </view>
-    </view>
-</view>
 

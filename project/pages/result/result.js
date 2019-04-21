@@ -62,20 +62,19 @@ Page({
   },
 
   onLoad: function (e) {
-    console.log(e)
     var that=this;
     wx.request({
       url: getApp().globalData.path + "search" + getApp().globalData.path2,
       method:"post",
       data: {
-searchword:""
+searchword:e.word
 
       },
       header:{
         'content-type':'application/json'
       },
       success: function (res) {
-        console.log(res.data)
+        console.log(res)
        that.setData({
          techlist:res.data.techlist,
          plantlist:res.data.plantlist
@@ -90,33 +89,26 @@ searchword:""
   ,
   //搜索方法 key为用户输入的查询字段
   search: function (key) {
-    /*console.log('搜索函数触发')*/
     var that = this;
-    var newsList = wx.getStorage({
-      key: 'newsList',
-      success: function (res) {//从storage中取出存储的数据*/
-        /*console.log(res)*/
-        if (key == '') {//用户没有输入 全部显示
-          that.setData({
-            newsList: res.data
-          })
-          return;
-        }
-        var arr = [];//临时数组 用于存放匹配到的数据
-        for (let i in res.data) {
-          if (res.data[i].title.indexOf(key) >= 0) {//查找
-            arr.push(res.data[i])
-          }
-        }
-        if (arr.length == 0) {
-          that.setData({
-            newsList: []
-          })
-        } else {
-          that.setData({
-            newsList: arr//在页面显示找到的数据
-          })
-        }
+    wx.request({
+      url: getApp().globalData.path + "search" + getApp().globalData.path2,
+      method: "post",
+      data: {
+        searchword: key
+
+      },
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function (res) {
+        console.log(res.data)
+        that.setData({
+          techlist: res.data.techlist,
+          plantlist: res.data.plantlist
+        })
+      },
+      fail: function (res) {
+        console.log(".....fail.....");
       }
     })
   },

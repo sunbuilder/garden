@@ -46,7 +46,7 @@ Page({
         // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
         var tempFilePaths = res.tempFilePaths
         that.setData({
-          photos: tempFilePaths
+          photos: tempFilePaths[0]
         })
         console.log(that.data.photos)
       }

@@ -87,11 +87,13 @@ Page({
   },
 //搜素时触发，调用search: function (key)，传入输入的e.detail.value值
 wxSearchInput: function (e) {
-
-    this.search(e.detail.value);
+   this.setData({
+     word:e.detail.value
+   })
+    
   },
-wxSearchFn : function(e) {
-  console.log(e.detail.value)
-    this.search(e.detail.value);
+wxSearchFn : function() {
+
+  this.search(this.data.word);
   }
 })

@@ -34,7 +34,7 @@ Page({
     
      
      success:function(res){
-       console.log(res)
+
       if(res.data.collect=="true"){
         that.setData({
           isCollected:true,
