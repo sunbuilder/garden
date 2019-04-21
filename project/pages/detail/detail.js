@@ -76,6 +76,7 @@ var that=this;
       success: function (res) {
         that.setData({
           diary: res.data.diary,
+          
           username: wx.getStorageSync("userInfo")
         })
         console.log(res.data.diary)

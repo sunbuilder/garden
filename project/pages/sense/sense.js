@@ -29,14 +29,14 @@ Page({
       }
     ],
   },
-  change:function(e){
-    var type=e.currentTarget.data.type;
+  change:function(event){
+    var type = event.currentTarget.dataset.type;
     var that=this;
     wx.request({
       url: getApp().globalData.path + "getPlantListByType" + getApp().globalData.path2,
-      data:{
-        type=type
-      },
+     data:{
+       type:type
+     },
       success:function(res){
           that.setData({
             plantlist:res.data
@@ -52,18 +52,8 @@ var that=this;
       typelist: typelist.type
     })
     wx.request({
-      url: getApp().globalData.path + "getAllPlantList" + getApp().globalData.path2,
-      data: {
+      url: getApp().globalData.path + "getPlantList" + getApp().globalData.path2,
 
-        // 'version': version,//文章标题
-        // 'imgArr': imgarr,  //封面
-        // 'time': time,//时间
-        // 'comment': comment,//浏览次数
-        // 'like': like //点赞
-      
-
-
-      },
       success: function (res) {
         console.log(res.data)
           that.setData({
