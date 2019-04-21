@@ -80,7 +80,7 @@
  
    <view class="">
     <image class="userinfo-avatar1"src="../../image/time.png" background-size="cover"></image>
-    <view class="contain"><text class="style">{{diary.diaryTime}}</text></view>
+    <view class="contain"><text class="style">{{diary.diaryFlowering}}</text></view>
     </view>
    
   

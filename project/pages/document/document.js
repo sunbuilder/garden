@@ -206,7 +206,7 @@ Page({
         'diarySun': e.detail.value.diarySun,
         'diarySoil': e.detail.value.diarySoil,
         'diaryWater': e.detail.value.diaryWater,
-        'diaryTime': e.detail.value.diaryTime,
+        'diaryFlowering': e.detail.value.diaryTime,
         "diaryUserid":wx.getStorageSync("openid")
       },
       method: 'POST',
