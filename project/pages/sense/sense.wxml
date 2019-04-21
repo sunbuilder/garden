@@ -4,19 +4,15 @@
    <view class="td1"><button>{{item.type}}</button></view> 
 </view>
 </block>
-
 </scroll-view>
+
 <view class="divLine2"></view>
 <view class="divLine1"></view>
-<<<<<<< HEAD
 <view>
-<view wx:for="{{array2}}" wx:key="{{index}}">
-          <navigator url="/pages/article3/article3?goodsId={{index}}">
-=======
 
 <view wx:for="{{plantlist}}" wx:key="{{index}}">
           <navigator url="/pages/article3/article3?goodsId={{item.plant.plantId}}">
->>>>>>> 92f0ae416caa00d0d8fea26076e37a04d5b4b4c6
+
 <view class="divLine2"></view>
 <view class="tr" >
 <view class="td"><image  class="userinfo-avatar1" mode="cover" src="{{item.plant.plantImage}}"></image></view>
@@ -24,8 +20,7 @@
    <view class="td1"><text class="hello">{{item.plant.plantName}}</text></view>
    <view class="td2"> <text class='user_msg'>来自：绿色心情</text></view>
    </view>
-   
-  
+
   </view>
  <view class="divLine2"></view>
   <view class="divLine"></view>
