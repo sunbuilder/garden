@@ -1,36 +1,43 @@
-<modal hidden="{{hiddenmodalput}}" title="评论" confirm-text="确认" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm"> 
- <input type='text'placeholder="请输入内容" auto-focus/>
+<modal hidden="{{hiddenmodalput}}" title="评论" confirm-text="确认" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
+  <input type='text' placeholder="请输入内容" auto-focus/>
 </modal>
- 
+
 <view class="circle-float">
-   <view class="tr4">
-      <view class="td8">
-       <view class="container" class="zn-uploadimg"bindtap="modalinput">
-         <text>说点什么吧...</text>
-       </view>
-      </view>
-      <view class="td4">
-            <image src="../../image/note.png"mode="aspectFill" />
-      </view>
-      <view class="td9">
-            <text>{{comment}}</text>
-      </view>
-      <view class="td4">
-            <image class='fav-icon' catchtap='onCollectionTap' src="../../image/goods{{collected1?'1':''}}.png" data-index='{{index1}}'></image>
-      </view>
-      <view class="td9">
-            <text>{{like}}</text>
+  <view class="tr4">
+    <view class="td8">
+      <view class="container" class="zn-uploadimg" bindtap="modalinput">
+        <text>说点什么吧...</text>
       </view>
     </view>
+    <view class="td4">
+      <image src="../../image/note.png" mode="aspectFill" />
+    </view>
+    <view class="td9">
+      <text>{{item.dynamic_pointnum}}</text>
+    </view>
+    <view class="td4">
+      <image class='fav-icon' catchtap='onCollectionTap' src="../../image/goods{{collected1?'1':''}}.png" data-index='{{index1}}'></image>
+    </view>
+    <view class="td9">
+      <text>{{item.dynamic_pointnum}}</text>
+    </view>
+  </view>
 </view>
 
 
 <view class="table">
-  <view class="tr" >
-    <view class="td"><image  class="userinfo-avatar" mode="cover" src="{{head}}"></image></view>
+
+  <view class="tr">
+    <view class="td">
+      <image class="userinfo-avatar" mode="cover" src="{{head}}"></image>
+    </view>
     <view class="tr1">
-     <view class="td1"><text class="hello">{{id}}</text></view>
-     <view class="td2"><text class='user_msg'>{{time}}</text></view>
+      <view class="td1">
+        <text class="hello">{{id}}</text>
+      </view>
+      <view class="td2">
+        <text class='user_msg'>{{time}}</text>
+      </view>
     </view>
   </view>
 
@@ -39,9 +46,9 @@
     <text class="hello1">{{version}}</text>
   </view>
   <view class="divLine"></view>
-  <view class='imgList'>      
+  <view class='imgList'>
     <view class='imgList-li'>
-      <image class='img' src='{{item}}' data-index='{{index}}' bindtap='previewImg'wx:for='{{imgArr}}'></image>
+      <image class='img' src='{{item}}' data-index='{{index}}' bindtap='previewImg' wx:for='{{imgArr}}'></image>
     </view>
   </view>
 
@@ -50,48 +57,51 @@
   <view class="divLine1"></view>
   <view class="divLine2"></view>
   <view>
-      <text class="text1">评论列表</text>
+    <text class="text1">评论列表</text>
   </view>
   <view class="divLine2"></view>
 
   <view wx:for="{{goodsList}}">
 
-  <view class="divLine"></view>
+    <view class="divLine"></view>
 
-  <view class="tr5" >
-    <view class="td5"><image  class="userinfo-avatar1" mode="cover" src="{{item.heads}}"></image></view>
-    
-    <view class="tr6">
-      <view class="td6"><text class="hello2">{{item.ids}}</text></view>
-      <view class="td7"><text class='user_msg'>{{item.date}}</text></view>
+    <view class="tr5">
+      <view class="td5">
+        <image class="userinfo-avatar1" mode="cover" src="{{item.heads}}"></image>
+      </view>
+
+      <view class="tr6">
+        <view class="td6">
+          <text class="hello2">{{item.ids}}</text>
+        </view>
+        <view class="td7">
+          <text class='user_msg'>{{item.date}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="divLine2"></view>
+    <view>
+      <text class="usg">{{item.write}}</text>
+    </view>
+    <view class="divLine2"></view>
+
+    <view class="tr4">
+      <view class="td10">
+      </view>
+      <view class="td4">
+        <view class="container" class="zn-uploadimg" bindtap="modalinput">
+          <image src="../../image/note.png" mode="aspectFill" />
+        </view>
+      </view>
+      <view class="td9">
+        <text>{{item.comments}}</text>
+      </view>
+      <view class="td4">
+        <image class='fav-icon' catchtap='onCollectionTap' src="../../image/goods{{item.collected?'1':''}}.png" data-index='{{index}}'></image>
+      </view>
+      <view class="td9">
+        <text>{{item.likes}}</text>
+      </view>
     </view>
   </view>
-  <view class="divLine2"></view>
-  <view>
-    <text class="usg">{{item.write}}</text>
-  </view>
-  <view class="divLine2"></view>
-
-  <view class="tr4">
-    <view class="td10">
-  </view>
-  <view class="td4">
-    <view class="container" class="zn-uploadimg"bindtap="modalinput">
-      <image src="../../image/note.png"mode="aspectFill" />
-    </view>
-  </view>
-  <view class="td9">
-    <text>{{item.comments}}</text>
-  </view>
-  <view class="td4">
-    <image class='fav-icon' catchtap='onCollectionTap' src="../../image/goods{{item.collected?'1':''}}.png" data-index='{{index}}'></image>
-  </view>
-  <view class="td9">
-    <text>{{item.likes}}</text>
-  </view>
 </view>
-
-</view>
-</view>
-
-   
