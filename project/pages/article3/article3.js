@@ -22,21 +22,54 @@ Page({
     ]
   },
   onLoad: function (options) {
+    var that=this;
     var goodsId = options.goodsId;
-    this.setData({
-      showTitle: this.data.productsList[goodsId].title,
-      showImg: this.data.productsList[goodsId].img,
-      showDesc: this.data.productsList[goodsId].desc,
-      showTime: this.data.productsList[goodsId].time,
-      showNumber: this.data.productsList[goodsId].number,
-    });
+    wx.request({
+      url: getApp().globalData.path + 'getPlantById'+ getApp().globalData.path2,
+      header: {'content-type': 'application/x-www-form-urlencoded'},
+      data:{
+        id:goodsId,
+        userid:wx.getStorageSync("openid")
+      },
+    
+     
+     success:function(res){
+       console.log(res)
+      if(res.data.collect=="true"){
+        that.setData({
+          isCollected:true,
+          plant: res.data.plant
+        });
+      }else{
+        that.setData({
+          plant: res.data.plant
+        });
+      }
+     
+     }
+    })
+
+    
   },
   handleCollection() {
+    var that=this;
     let isCollected = !this.data.isCollected
-    this.setData({
-      // 下面本来是这样子的:isCollected=isCollected,可以简写
-      isCollected
+    wx.request({
+      url: getApp().globalData.path + 'collectPlant'  + getApp().globalData.path2,
+      data:{
+        userid:wx.getStorageSync("openid"),
+        plantid: that.data.plant.plantId
+      },
+      success:function(res){
+        if(res.data="ok"){
+          that.setData({
+            // 下面本来是这样子的:isCollected=isCollected,可以简写
+            isCollected
+          })
+        }
+    }
     })
+   
     //提示用户
     wx.showToast({
       title: isCollected ? '收藏成功' : '取消收藏',
