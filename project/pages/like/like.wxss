@@ -98,3 +98,8 @@
 .style2 text{
   font-size: 40rpx;
 }
+.hello2 image{
+  height:60rpx;
+  width:60rpx;
+  
+}

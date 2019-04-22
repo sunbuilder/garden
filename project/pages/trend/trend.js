@@ -89,7 +89,19 @@ Page({
         console.log(".....fail.....");
       }
     })
-  }
+  },
+//点击删除按钮事件
+  delItem: function (e) {
+    //获取列表中要删除项的下标
+    var index = e.target.dataset.index;
+    var goodsList = this.data.goodsList;
+    //移除列表中下标为index的项
+    goodsList.splice(index, 1);
+    //更新列表的状态
+    this.setData({
+      goodsList: goodsList
+    });
+  },
 
 
 })

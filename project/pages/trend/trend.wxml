@@ -2,16 +2,21 @@
 <view wx:for="{{goodsList}}">
 
 <view class="table">
-<navigator url="../state/state">
-   <view class="tr" >
-   <view class="td"><image  class="userinfo-avatar" mode="cover" src="{{item.head}}"></image></view>
+
+  <view class="tr" >
+      <view class="td">
+        <image  class="userinfo-avatar" mode="cover" src="{{item.head}}"></image>
+      </view>
   
-   <view class="tr1">
-   <view class="td1"><text class="hello">{{item.id}}</text></view>
-   <view class="td2"><text class='user_msg'>{{item.time}}</text></view>
-   </view>
-  
+     <view class="tr1">
+        <view class="td1"><text class="hello">{{item.id}}</text></view>
+        <view class="td2"><text class='user_msg'>{{item.time}}</text></view>
+     </view>
+    <view class="hello2"data-index="{{index}}" bindtap = "delItem">
+      <image src="../../image/delete.png"/>
+    </view>
   </view>
+  <navigator url="../state/state">
   <view class="divLine"></view>
   <view class="style">
   <text class="hello1">{{item.version}}</text>

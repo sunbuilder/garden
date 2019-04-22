@@ -148,3 +148,8 @@ font-size: 35rpx;
   height: 180rpx;
   border: 5px solid white;
 }
+.hello2 image{
+  height:60rpx;
+  width:60rpx;
+  
+}

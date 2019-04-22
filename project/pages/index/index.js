@@ -1,5 +1,6 @@
 Page({
   data:{
+    delBtnWidth: 180,
     diarylength:0,
     loglength:0,
     imgUrls:[
@@ -7,7 +8,7 @@ Page({
       '../../image/3.jpg',
       '../../image/9.jpg'
     ],
-    array1: [
+    logList: [
       {
         
         imgArr1:
@@ -68,6 +69,8 @@ Page({
  
 
   onLoad: function (msg) {
+    // 页面初始化 options为页面跳转所带来的参数
+   
     if (msg.msg)
       wx.showToast({
         title: msg.msg,
@@ -132,7 +135,22 @@ Page({
       }
     })
   }
+  ,
+  
 
+ 
+  //点击删除按钮事件
+  delItem: function (e) {
+    //获取列表中要删除项的下标
+    var index = e.target.dataset.index;
+    var logList = this.data.logList;
+    //移除列表中下标为index的项
+    logList.splice(index, 1);
+    //更新列表的状态
+    this.setData({
+      logList: logList
+    });
+  },
 
 
 })

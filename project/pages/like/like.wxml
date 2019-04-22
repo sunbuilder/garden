@@ -5,6 +5,7 @@
      <!-- 分割线 -->
   <view class="divLine"></view>
 </view>
+ <!-- 头像,id-->
  <view class="tr5" >
    <view class="td5"><image  class="userinfo-avatar1" mode="cover" src="{{item.imgArr}}"></image></view>
   
@@ -12,7 +13,11 @@
    <view class="td6"><text class="hello">{{item.id}}</text></view>
    <view class="td7"><text class='user_msg'>{{item.time}}</text></view>
    </view>
-   
+   <!-- 删除-->
+    <view class="hello2"data-index="{{index}}" bindtap = "delItem">
+        <image src="../../image/delete.png"/>
+    </view>
+    
    </view>
    <view class="td8">
         <text class="usg">点赞了这条评论</text>

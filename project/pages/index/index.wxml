@@ -121,19 +121,28 @@
  </view>
 </view>
 <view wx:else>
- <block  wx:for="{{logList}}" wx:for-index="xx" wx:for-item="item" data-diaryid='{{diaryId}}'>
-    <view class="divLine3"></view>
-   <view class="tr5" >
-       <view class="td5">
-       <text class="hello">{{item.mouth}}月</text><text class="hello1">{{item.day}}日</text>
-       <view class="hello2"><image src="../../image/share.png"/></view>
-       </view>
+ <block  wx:for="{{logList}}" wx:for-index="xx" wx:for-item="item" data-diaryid='{{diaryId}}' wx:key="{{index}}" >
   
-       <view class="tr6">
-          <view class="td6"><text>{{item.diarylog.logDescription}}</text></view>
-          <view class="td7"><image src="{{item.diarylog.logImage}}"/></view>
-       </view>
-   </view>
+      <view class="divLine3"></view>
+      <view class="tr5" >
+           <view class="td5">
+              <view>
+                <text class="hello">{{item.mouth}}月</text>
+              </view>
+               <view>
+                 <text class="hello1">{{item.day}}日</text>
+                </view>
+              <view class="hello2"data-index="{{index}}" bindtap = "delItem">
+                   <image src="../../image/delete.png"/>
+              </view>
+           </view>
+  
+            <view class="tr6">
+               <view class="td6"><text>{{item.diarylog.logDescription}}</text></view>
+               <view class="td7"><image src="{{item.diarylog.logImage}}"/></view>
+            </view>
+         </view>
+ 
    </block>
 
    </view>
