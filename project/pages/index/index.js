@@ -49,6 +49,7 @@ Page({
       data: {
         "diary": {
           "diaryId": id
+       
         }
       },
       method: "post",
@@ -80,7 +81,6 @@ Page({
     var openid = wx.getStorageSync("openid");
 
     if (openid.length == 0) {
-  
       wx.login({
         success(res) {
           if (res.code) {
@@ -123,7 +123,7 @@ Page({
             diarylength: res.data.length,
             diaryList: res.data,
             logList: res.data[0].logList,
-            loglength:res.data[0].length
+            loglength: res.data[0].logList.length
           })
         }else{
           that.data.diarylength=0;

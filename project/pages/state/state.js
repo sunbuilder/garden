@@ -1,25 +1,25 @@
 var app = getApp()
 Page({
-  bindblur: function (e) {
+  bindblur: function(e) {
     console.log(e.detail.value)
     bindblur = e.detail.value;
   },
 
   data: {
-   
-   dynamic:[
 
-   ],
-    id:[
-        '小明'
-        ],
-    head:[
+    dynamic: [],
+    pointnum:[],
+    commentnum:[],
+    id: [
+      '小明'
+    ],
+    head: [
       '../../image/27.jpg'
     ],
-    time:[
+    time: [
       '2019.4.11 17.41'
     ],
-    version:[
+    version: [
       '今天天气真好'
     ],
     imgArr: [
@@ -27,33 +27,32 @@ Page({
       '../../image/10.jpg',
       '../../image/12.jpg'
     ],
-    comment:[
+    comment: [
       '20'
     ],
- 
-   
-        like: ['10'],
-        collected1: [0],
 
-    
-    goodsList: [
-      {
+
+    like: ['10'],
+    collected1: [0],
+
+
+    goodsList: [{
         ids: '校长',
         date: '2019.4.11 16.22',
         write: '今天天气好',
-        comments:'20',
-        likes:'18',
-        heads:'../../image/27.jpg',
+        comments: '20',
+        likes: '18',
+        heads: '../../image/27.jpg',
         collected: 0
 
       },
-      
+
     ],
     hiddenmodalput: true,
     //可以通过hidden是否掩藏弹出框的属性，来指定那个弹出框
   },
   // 更改点赞状态
-  onCollectionTap: function (event) {
+  onCollectionTap: function(event) {
     // 获取当前点击下标
     var index = event.currentTarget.dataset.index;
     // data中获取列表
@@ -80,34 +79,34 @@ Page({
       goodsList: message
     })
   },
- 
- 
- 
-  
+
+
+
+
   //点击按钮痰喘指定的hiddenmodalput弹出框
-  modalinput: function () {
+  modalinput: function() {
     this.setData({
       hiddenmodalput: !this.data.hiddenmodalput
     })
   },
   //取消按钮
-  cancel: function () {
+  cancel: function() {
     this.setData({
       hiddenmodalput: true
     });
   },
   //确认
-  confirm: function () {
+  confirm: function() {
     this.setData({
       hiddenmodalput: true
     })
   },
 
 
-   onLoad: function (options) {
-     console.log(options)
-     var that = this
-     //根据动态id查询详细动态
+  onLoad: function(options) {
+    console.log(options)
+    var that = this
+    //根据动态id查询详细动态
     wx.request({
       url: 'http://localhost:8080/garden/findDynamicByDynamicId',
       data: {
@@ -117,33 +116,33 @@ Page({
       header: {
         'content-type': 'application/json' // 默认值
       },
-      success: function (res) {
+      success: function(res) {
         console.log(res.data);
-        dynamic:res.data
+        dynamic: res.data
       },
-      fail: function (res) {
+      fail: function(res) {
         console.log(".....fail.....");
       }
     })
 
     //根据动态id查询评论
-     wx.request({
-       url: 'http://localhost:8080/garden/findCommentByDynamicId',
-       data: {
-         "dynamic_id": options.dynamic_id
-       },
-       method: 'post',
-       header: {
-         'content-type': 'application/json' // 默认值
-       },
-       success: function (res) {
-         console.log(res.data);
-         goodsList:res.data
-       },
-       fail: function (res) {
-         console.log(".....fail.....");
-       }
-     })
+    wx.request({
+      url: 'http://localhost:8080/garden/findCommentByDynamicId',
+      data: {
+        "dynamic_id": options.dynamic_id
+      },
+      method: 'post',
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success: function(res) {
+        console.log(res.data);
+        goodsList: res.data
+      },
+      fail: function(res) {
+        console.log(".....fail.....");
+      }
+    })
   }
 
 })

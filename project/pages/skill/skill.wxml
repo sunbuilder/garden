@@ -13,9 +13,9 @@
 
 <block wx:for="{{tech}}" wx:for-item="item" wx:for-index="xx">
 <view class="style" catchtap='techdescription' data-techid="{{item.tech.techId}}">
-<navigator url="../article/article">
+<navigator url="../article/article?id={{item.tech.techId}}">
     <view class="style1">
-        <image src="../../image/3.jpg" ></image>
+        <image src="{{item.tech.techImage}}" ></image>
     </view>
     <view class="style2">
         <text>{{item.tech.techName}}</text>

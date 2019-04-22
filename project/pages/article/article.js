@@ -6,9 +6,9 @@ Page({
     // 是否收藏
     isCollected: false
   },
-  onLoad: function () {
+  onLoad: function (event) {
     console.log(getApp().globalData.path)
-    var id = wx.getStorageSync("techid");
+    var id = event.id
     var that = this;
     wx.request({
 

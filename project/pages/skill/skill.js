@@ -91,7 +91,7 @@ Page({
     var limit = 2
     var that = this
     wx.request({
-      url: url,
+      url: "url",
       data: {
         lastid: lastid,
         limit: limit,
