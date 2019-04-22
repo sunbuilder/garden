@@ -9,18 +9,6 @@
         <text>说点什么吧...</text>
       </view>
     </view>
-    <view class="td4">
-      <image src="../../image/note.png" mode="aspectFill" />
-    </view>
-    <view class="td9">
-      <text>{{item.dynamic_pointnum}}</text>
-    </view>
-    <view class="td4">
-      <image class='fav-icon' catchtap='onCollectionTap' src="../../image/goods{{collected1?'1':''}}.png" data-index='{{index1}}'></image>
-    </view>
-    <view class="td9">
-      <text>{{item.dynamic_pointnum}}</text>
-    </view>
   </view>
 </view>
 
@@ -67,7 +55,7 @@
 
     <view class="tr5">
       <view class="td5">
-        <image class="userinfo-avatar1" mode="cover" src="{{item.heads}}"></image>
+        <image class="userinfo-avatar1" mode="cover" src="{{item.user}}"></image>
       </view>
 
       <view class="tr6">
