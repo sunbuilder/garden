@@ -20,12 +20,12 @@ Page({
       },
       success: function (res) {
         console.log(res.data)
-            wx.reLaunch({
-              url: '../index/index?msg=' +"添加成功",
-            })
+        wx.reLaunch({
+          url: '../index/index?msg=' + "添加成功",
+        })
       },
-      fail:function(res){
- 
+      fail: function (res) {
+
         wx.reLaunch({
           url: '../index/index?msg=' + "添加日志记录失败",
         })
@@ -34,7 +34,7 @@ Page({
     })
   }
   ,
-  
+
 
   chooseImg: function () {
     var that = this
@@ -46,7 +46,7 @@ Page({
         // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
         var tempFilePaths = res.tempFilePaths
         that.setData({
-          photos: tempFilePaths[0]
+          photos: tempFilePaths
         })
         console.log(that.data.photos)
       }

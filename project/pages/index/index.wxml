@@ -132,7 +132,7 @@
                <view>
                  <text class="hello1">{{item.day}}日</text>
                 </view>
-              <view class="hello2"data-index="{{index}}" bindtap = "delItem">
+              <view class="hello2"data-index="{{item.diarylog.logId}}" bindtap = "delItem">
                    <image src="../../image/delete.png"/>
               </view>
            </view>

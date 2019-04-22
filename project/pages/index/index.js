@@ -141,15 +141,45 @@ Page({
  
   //点击删除按钮事件
   delItem: function (e) {
+    var that=this;
+    var index = e.currentTarget.dataset.index;
     //获取列表中要删除项的下标
-    var index = e.target.dataset.index;
-    var logList = this.data.logList;
-    //移除列表中下标为index的项
-    logList.splice(index, 1);
-    //更新列表的状态
-    this.setData({
-      logList: logList
-    });
+    wx.showModal({
+      title: '提示',
+      content: '确定要此纪录吗？',
+      success: function (sm) {
+        var they = that;
+        if (sm.confirm) {
+          // 用户点击了确定 可以调用删除方法了
+          wx.request({
+            url: getApp().globalData.path + 'deleteDiarylog' + getApp().globalData.path2,
+            data: {
+              logdiaryid: index
+            },
+            success: function (res) {
+              if(res.data=="ok"){
+              wx.showToast({
+                title: '删除成功',
+              })
+               
+                var logList = they.data.logList;
+                //移除列表中下标为index的项
+                logList.splice(index, 1);
+                //更新列表的状态
+                they.setData({
+                  logList: logList
+                });
+              }else{
+                wx.showToast({
+                  title: '删除失败',
+                })
+              }
+            }
+          })
+        }
+      }
+    })
+    
   },
 
 
