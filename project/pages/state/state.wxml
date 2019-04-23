@@ -14,7 +14,7 @@
 
 
 <view class="table">
-
+  
   <view class="tr">
     <view class="td">
       <image class="userinfo-avatar" mode="cover" src="{{head}}"></image>
@@ -49,31 +49,31 @@
   </view>
   <view class="divLine2"></view>
 
-  <view wx:for="{{goodsList}}">
+  <view wx:for="{{comment}}">
 
     <view class="divLine"></view>
 
     <view class="tr5">
       <view class="td5">
-        <image class="userinfo-avatar1" mode="cover" src="{{item.user}}"></image>
+        <image class="userinfo-avatar1" mode="cover" src="{{item.user_image}}"></image>
       </view>
 
       <view class="tr6">
         <view class="td6">
-          <text class="hello2">{{item.ids}}</text>
+          <text class="hello2">{{item.user_name}}</text>
         </view>
         <view class="td7">
-          <text class='user_msg'>{{item.date}}</text>
+          <text class='user_msg'>{{item.comment_date}}</text>
         </view>
       </view>
     </view>
     <view class="divLine2"></view>
     <view>
-      <text class="usg">{{item.write}}</text>
+      <text class="usg">{{item.comment_description}}</text>
     </view>
     <view class="divLine2"></view>
 
-    <view class="tr4">
+    <!--<view class="tr4">
       <view class="td10">
       </view>
       <view class="td4">
@@ -90,6 +90,6 @@
       <view class="td9">
         <text>{{item.likes}}</text>
       </view>
-    </view>
+    </view>-->
   </view>
 </view>
