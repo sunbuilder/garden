@@ -23,10 +23,11 @@
   </view>
   <view class="divLine"></view>
  <view class='imgList'>      
-  <view class='imgList-li'>
-    <image class='img' src='{{item}}' data-index='{{index}}' bindtap='previewImg'wx:for='{{imgArr}}'></image>
+ <view class='imgList-li'>
+    <image class='img' src='{{item.dynamic_image}}' data-index='{{index}}' bindtap='previewImg'></image>
    
   </view>
+ 
  
 </view>
 </navigator>

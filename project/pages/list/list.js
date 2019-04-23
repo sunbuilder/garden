@@ -1,6 +1,29 @@
 Page({
   data: {
-    
+    uhide: false,
+    list: [{
+      text: '多肉的养殖经验',
+
+    }, {
+      text: '多肉的养殖经验',
+
+    },
+    {
+      text: '多肉的养殖经验',
+
+    },
+    {
+      text: '多肉的养殖经验',
+
+    },
+    {
+      text: '多肉的养殖经验',
+
+    }, {
+      text: '多肉的养殖经验',
+
+    }
+    ],
    
     array2: [
       {
@@ -95,5 +118,22 @@ wxSearchInput: function (e) {
 wxSearchFn : function() {
 
   this.search(this.data.word);
-  }
+  },
+ 
+  //切换隐藏和显示
+  toggleBtn: function () {
+    var that = this;
+    var toggleBtnVal = that.data.uhide;
+    if (toggleBtnVal) {
+      that.setData({
+        uhide: false
+      })
+    } else {
+      that.setData({
+        uhide: true
+      })
+    }
+  },
+
+ 
 })

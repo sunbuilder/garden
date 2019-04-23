@@ -1,11 +1,16 @@
 <view class="item-box">
   <view class="items">
+    
     <view wx:for="{{list}}"  wx:key="{{index}}"  class="item">
       <view bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" data-index="{{index}}" style="{{item.txtStyle}}" class="inner txt">
-         <image class="style" src="{{item.icon}}"></image>
-          <view class="style1">{{item.txt}}</view>   
+        
+          <image class="style" src="{{item.icon}}"></image>
+        
+          <view class="style1">{{item.txt}}</view>  
+        
       </view>
       <view data-index="{{index}}" bindtap = "delItem" class="inner del"><text>删除</text></view>
     </view>
+    
   </view>
 </view>
