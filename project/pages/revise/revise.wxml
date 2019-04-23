@@ -6,8 +6,8 @@
   <view class="userinfo">
     
 
-<image class="userinfo-avatar" src="{{diary.diaryImage}}" mode="cover" bindtap='clickImg' name="imgArr"></image>
-
+<image class="userinfo-avatar" src="{{userImage}}" mode="cover" bindtap='clickImg' name="imgArr"></image>
+<view hidden='true'><input name='diaryImage' value='{{imgurl}}'></input></view>
 <!-- 隐藏 -->
   </view>
 
@@ -78,7 +78,7 @@
   <text>--------------</text>
 
   <image class="userinfo-avatar1"src="../../image/time.png" background-size="cover"></image>
-     <picker bindchange="bindPickerChange3" name="diaryTime" value="{{array3[index3]}}" range="{{array3}}">
+     <picker bindchange="bindPickerChange3" name="diaryFlowering" value="{{array3[index3]}}" range="{{array3}}">
        <view class="picker">
            {{array3[index3]}}
         </view>

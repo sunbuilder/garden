@@ -157,7 +157,7 @@ Page({
 onLoad:function(){
 
   var id=wx.getStorageSync("diaryid");
- var that=this;
+  var that=this;
   wx.request({
     url: getApp().globalData.path+'myDiary'+getApp().globalData.path2,
     data:{
@@ -165,8 +165,19 @@ onLoad:function(){
     },
     success:function(res){
      var diary=res.data.diary;
-    
+    wx.getImageInfo({
+      src: diary.diaryImage,
+      success:function(res){
+        console.log(diary.diaryImage)
+        console.log(res.path)
+        that.setData({
+       
+          imgurl:res.path
+        })
+      }
+    })
      that.setData({
+       userImage:res.data.diary.diaryImage,
        diary:res.data.diary
      })
       var array = that.data.array; var array1 = that.data.array1; var array2 = that.data.array2; var array3 = that.data.array3;
@@ -203,7 +214,6 @@ onLoad:function(){
       }
 
       if (diary.diaryTime != "无") {
-        console.log("ss")
         for (var i in array3) {
           if (array3[i] == diary.diaryFlowering) {
             that.setData({
@@ -226,7 +236,10 @@ onLoad:function(){
       sizeType: ['original', 'compressed'],
       sourceType: ['album', 'camera'],
       success: function (res) {
-        that.setData({ imgUrl: res.tempFilePaths[0] })
+        that.setData({ imgurl: res.tempFilePaths[0],
+          userImage: res.tempFilePaths[0]
+         })
+       
 
       }
 
@@ -237,44 +250,39 @@ onLoad:function(){
   reg: function (e) {
     var imgurl;
     var that = this;
-    wx.getImageInfo({
-      src: diary.diaryImage,
-      success: function (res) {
-       
-           imgurl= e.detail.value.diaryImage
-       
-      }
-    })
-    console.log(this.data.imgUrl)
+    
+    console.log(this.data.imgurl)
     wx.uploadFile({
       url: getApp().globalData.path + 'updateDiary' + getApp().globalData.path2,
-      name: "file",
-      filePath: this.data.diaryImage,
+      filePath: that.data.imgurl,
+      name: 'file',
       formData: {
-        dia:{
-        'diaryId':this.data.diary.diaryId,
-        'diaryImage': this.data.imgUrl,
-        'diaryPlantname': e.detail.value.diaryPlantname,
-        'diarySpace': e.detail.value.diarySpace,
-        'diaryMethod': e.detail.value.diaryMethod,
-        'diaryCity': e.detail.value.diaryCity,
-        'diarySun': e.detail.value.diarySun,
-        'diarySoil': e.detail.value.diarySoil,
-        'diaryWater': e.detail.value.diaryWater,
-        'diaryFlowering': e.detail.value.diaryTime,
+        "diaryId": this.data.diary.diaryId,
+        "diaryImage": this.data.imgurl,
+        "diaryPlantname": e.detail.value.diaryPlantname,
+        "diarySpace": e.detail.value.diarySpace,
+        "diaryMethod": e.detail.value.diaryMethod,
+        "diaryCity": e.detail.value.diaryCity,
+        "diarySun": e.detail.value.diarySun,
+        "diarySoil": e.detail.value.diarySoil,
+        "diaryWater": e.detail.value.diaryWater,
+        "diaryFlowering": e.detail.value.diaryFlowering,
         "diaryUserid": wx.getStorageSync("openid")
-        }
+
       },
-      method: 'POST',
       header: {
         'content-type': 'multipart/form-data'
       },
       success: function (res) {
+        console.log(res.data)
         wx.reLaunch({
-          url: '../index/index?msg=' + "修改成功",
+          url: '../index/index?msg=' + "添加成功",
         })
       }
-    });
+
+
+    })
+    
 
     wx.showToast({
       title: "成功",

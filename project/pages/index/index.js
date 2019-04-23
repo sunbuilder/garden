@@ -14,7 +14,6 @@ Page({
   },
 
   onPullDownRefresh: function(){
-    console.log("sss")
     wx.stopPullDownRefresh()
   }
 ,
@@ -44,7 +43,6 @@ Page({
         'content-type': 'application/json'
       },
       success: function (cos) {
-        console.log(cos.data)
         that.setData({
           logList: cos.data,
           loglength:cos.data.length
@@ -92,6 +90,14 @@ Page({
     }
   var that=this;
     wx.request({
+      url: getApp().globalData.path + 'randomTech' + getApp().globalData.path2,
+      success: function (res) {
+        that.setData({
+          techlist: res.data
+        })
+      }
+    })
+    wx.request({
       url: getApp().globalData.path+"index"+getApp().globalData.path2,
       data: {
         
@@ -101,7 +107,6 @@ Page({
       method: 'get',
       
       success: function (res) {
-        console.log(res.data.length)
         if(res.data.length!=0){
        
 

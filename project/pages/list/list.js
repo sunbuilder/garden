@@ -55,15 +55,15 @@ Page({
   onLoad: function () {
     var that = this;
     wx.request({
-
-      url: "http://localhost:8080/garden/recommendTech",
-
-
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
+      url: getApp().globalData.path + 'randowPlant' + getApp().globalData.path2,
+      success:function(res){
+        console.log(res.data)
+      }
+    })
+    wx.request({
+      url: getApp().globalData.path + 'recommendTech' + getApp().globalData.path2,
       success: function (res) {
-
+          console.log(res.data)
         that.setData({
           techlist: res.data
         })

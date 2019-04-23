@@ -14,10 +14,14 @@
   interval="8000"
   duration="1000"
 >
-  <block wx:for="{{imgUrls}}">
+  <block wx:for="{{techlist}}" wx:for-item="item">
+    <navigator url='../article/article?id={{item.techId}}'>
+
     <swiper-item>
-      <image src="{{item}}" class="slide-image" width="355" height="300" />
+    <image src="{{item.techImage}}" class="slide-image" width="355" height="300" />
+ 
     </swiper-item>
+       </navigator>
   </block>
 </swiper>
 </view>
