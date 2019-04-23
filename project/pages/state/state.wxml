@@ -17,26 +17,26 @@
   
   <view class="tr">
     <view class="td">
-      <image class="userinfo-avatar" mode="cover" src="{{head}}"></image>
+      <image class="userinfo-avatar" mode="cover" src="{{dynamic.user_image}}"></image>
     </view>
     <view class="tr1">
       <view class="td1">
-        <text class="hello">{{id}}</text>
+        <text class="hello">{{dynamic.user_name}}</text>
       </view>
       <view class="td2">
-        <text class='user_msg'>{{time}}</text>
+        <text class='user_msg'>{{dynamic.dynamic_date}}</text>
       </view>
     </view>
   </view>
 
   <view class="divLine"></view>
   <view class="style">
-    <text class="hello1">{{version}}</text>
+    <text class="hello1">{{dynamic.dynamic_description}}</text>
   </view>
   <view class="divLine"></view>
   <view class='imgList'>
     <view class='imgList-li'>
-      <image class='img' src='{{item}}' data-index='{{index}}' bindtap='previewImg' wx:for='{{imgArr}}'></image>
+      <image class='img' src='{{dynamic.dynamic_image}}' data-index='{{index}}' bindtap='previewImg' ></image>
     </view>
   </view>
 
