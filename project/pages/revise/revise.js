@@ -3,7 +3,9 @@
 Page({
  
   data: {
-    array: ['耐阴', '散光', '半日照', '全日照'],
+    array: ['耐阴', '散光', '半日照', '全日照', '无'],
+
+
     objectArray: [
       {
         id: 0,
@@ -19,12 +21,13 @@ Page({
       },
       {
         id: 3,
-        name: '全日照'
-      }
-    ],
-    index: 0,
+        name: '全日照',
+      },
 
-    array1: ['有机肥', '缓解肥', '液体肥'],
+    ],
+    index: 4,
+
+    array1: ['有机肥', '缓解肥', '液体肥', '无'],
     objectArray1: [
       {
         id: 0,
@@ -39,9 +42,9 @@ Page({
         name: '液体肥'
       }
     ],
-    index1: 0,
+    index1: 3,
 
-    array2: ['30天', '15天', '7天', '3天', '1天'],
+    array2: ['30天', '15天', '7天', '3天', '1天', '无'],
     objectArray2: [
       {
         id: 0,
@@ -64,9 +67,9 @@ Page({
         name: '1天'
       }
     ],
-    index2: 0,
+    index2: 5,
 
-    array3: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
+    array3: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月', '无'],
     objectArray3: [
       {
         id: 0,
@@ -118,7 +121,7 @@ Page({
       },
 
     ],
-    index3: 0,
+    index3: 12,
 
 
   },
@@ -151,56 +154,125 @@ Page({
     })
   }
   ,
+onLoad:function(){
 
+  var id=wx.getStorageSync("diaryid");
+ var that=this;
+  wx.request({
+    url: getApp().globalData.path+'myDiary'+getApp().globalData.path2,
+    data:{
+      diary:id
+    },
+    success:function(res){
+     var diary=res.data.diary;
+    
+     that.setData({
+       diary:res.data.diary
+     })
+      var array = that.data.array; var array1 = that.data.array1; var array2 = that.data.array2; var array3 = that.data.array3;
+     if(diary.diarySun!="无"){
+    
+       for(var i in array){
+    
+         if(array[i]==diary.diarySun){
+           that.setData({
+             index:i
+           })
+         }
+       }
+     }
+    
+      if (diary.diaryWater != "无") {
+        for (var i in array2) {
+          if (array2[i] == diary.diaryWater) {
+            that.setData({
+              index2: i
+            })
+          }
+        }
+      }
+
+      if (diary.diarySoil != "无") {
+        for (var i in array1) {
+          if (array1[i] == diary.diarySoil) {
+            that.setData({
+              index1: i
+            })
+          }
+        }
+      }
+
+      if (diary.diaryTime != "无") {
+        console.log("ss")
+        for (var i in array3) {
+          if (array3[i] == diary.diaryFlowering) {
+            that.setData({
+              index3: i
+            })
+          }
+        }
+      }
+       
+    }
+  })
+}
+,
   clickImg: function () {
+
+    var that = this
+
     wx.chooseImage({
       count: 1,
       sizeType: ['original', 'compressed'],
       sourceType: ['album', 'camera'],
-      success: ((res) => {
-        this.setData({ imgUrl: res.tempFilePaths })
+      success: function (res) {
+        that.setData({ imgUrl: res.tempFilePaths[0] })
 
-      })
+      }
+
     })
-      , wx.chooseImage({
-        success: function (res) {
-          var tempFilePaths = res.tempFilePaths
-          wx.uploadFile({
-            url: 'https://example.weixin.qq.com/upload', //仅为示例，非真实的接口地址
-            filePath: tempFilePaths[0],
-            name: 'file',
-            formData: {
-              'user': 'test'
-            },
-            success: function (res) {
-              var data = res.data
-              //do something
-            }
-          })
-        }
-      })
+
 
   },
   reg: function (e) {
-    wx.request({
-      url: 'url',
-      data: {
-        'imgArr': e.detail.value.imgArr,
-        'name': e.detail.value.name,
-        'space': e.detail.value.space,
-        'mode': e.detail.value.mode,
-        'city': e.detail.value.city,
-        'sun': e.detail.value.sun,
-        'turang': e.detail.value.turang,
-        'rain': e.detail.value.rain,
-        'time': e.detail.value.time
+    var imgurl;
+    var that = this;
+    wx.getImageInfo({
+      src: diary.diaryImage,
+      success: function (res) {
+       
+           imgurl= e.detail.value.diaryImage
+       
+      }
+    })
+    console.log(this.data.imgUrl)
+    wx.uploadFile({
+      url: getApp().globalData.path + 'updateDiary' + getApp().globalData.path2,
+      name: "file",
+      filePath: this.data.diaryImage,
+      formData: {
+        dia:{
+        'diaryId':this.data.diary.diaryId,
+        'diaryImage': this.data.imgUrl,
+        'diaryPlantname': e.detail.value.diaryPlantname,
+        'diarySpace': e.detail.value.diarySpace,
+        'diaryMethod': e.detail.value.diaryMethod,
+        'diaryCity': e.detail.value.diaryCity,
+        'diarySun': e.detail.value.diarySun,
+        'diarySoil': e.detail.value.diarySoil,
+        'diaryWater': e.detail.value.diaryWater,
+        'diaryFlowering': e.detail.value.diaryTime,
+        "diaryUserid": wx.getStorageSync("openid")
+        }
       },
       method: 'POST',
       header: {
-        'Content-Type': 'application/x-www-form-urlencoded'
+        'content-type': 'multipart/form-data'
       },
       success: function (res) {
-        console.log(res.data)
+        wx.reLaunch({
+          url: '../index/index?msg=' + "修改成功",
+        })
       }
     });
 
@@ -209,7 +281,7 @@ Page({
       icon: "success",
       duration: 2000
     });
-  },
+  }
 
  
 })

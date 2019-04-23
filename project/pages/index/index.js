@@ -8,20 +8,7 @@ Page({
       '../../image/3.jpg',
       '../../image/9.jpg'
     ],
-    logList: [
-      {
-        
-        imgArr1:
-          '../../image/p2.png'
-
-      },
-      {
-       
-        imgArr1:
-          '../../image/p1.png'
-
-      }
-    ],
+  logList:[]
    
     
   },
@@ -117,7 +104,7 @@ Page({
         console.log(res.data.length)
         if(res.data.length!=0){
        
-          console.log(that.data.diarylength)
+
           wx.setStorageSync("diaryid", res.data[0].diary.diaryId);
           that.setData({
             diarylength: res.data.length,
@@ -163,8 +150,13 @@ Page({
               })
                
                 var logList = they.data.logList;
-                //移除列表中下标为index的项
-                logList.splice(index, 1);
+                logList.splice(e.currentTarget.dataset.number,1)
+                if(logList.length==0){
+                  they.setData({
+                    loglength: 0
+                  })
+                 
+                }
                 //更新列表的状态
                 they.setData({
                   logList: logList
