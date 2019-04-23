@@ -209,8 +209,8 @@ border-radius: 5%;
 
 
 .card-content image {
-  width: 100%;
- height:100rpx;
+  width: 90%;
+ height:60rpx;
   border-radius: 10rpx;
 }
 .card b-shadow{
