@@ -1,12 +1,5 @@
 Page({
   data: {
-
-    imgArr: [
-      '../../image/16.jpg',
-      '../../image/10.jpg',
-      '../../image/12.jpg'
-    ]
-    ,
     goodsList: [
       {
         time: '2019.4.11 13.55',
@@ -17,21 +10,9 @@ Page({
         comment: '10',
         like: '20',
         collected: 0
-
-      },
-      {
-        time: '2019.4.11 13.55',
-        version: '今天天气好',
-        id: '小明',
-        head: '../../image/27.jpg',
-        see: '20',
-        comment: '10',
-        like: '20',
-        collected: 0
-
       }
-      
-    ]
+    ],
+    dynamic:[]
   },
   // 更改点赞状态
   onCollectionTap: function (event) {
@@ -63,20 +44,11 @@ Page({
   },
 
   onLoad: function () {
+    var that = this;
     wx.request({
-      url: url,
+      url:'http://localhost:8080/garden/findDynamicByUserId',
       data: {
-        'time': time,  //时间
-        'id': id,    //用户名
-        'version': version,//动态内容
-        'head': head,    //头像
-        'see': see,     //浏览次数
-        'comment': comment,  //评论次数
-        'like': like,  //点赞次数
-        'imgArr': imgarr    //动态图片
-
-
-
+        'dynamic_userid': wx.getStorageSync("openid")
       },
       method: 'post',
       header: {
@@ -84,6 +56,9 @@ Page({
       },
       success: function (res) {
         console.log(res.data);
+        that.setData({
+          dynamic: res.data
+        })
       },
       fail: function (res) {
         console.log(".....fail.....");

@@ -1,26 +1,28 @@
 <view class="board">
   <navigator url="../comment/comment">
-  <view class="board-item">
-   <image src="../../image/message.gif" />
+    <view class="board-item">
+      <image src="../../image/message.gif" />
       <text space="ensp">  评论</text>
-      <image src="../../image/8.png"mode="widthFix" />
-  </view>
-   </navigator>
-   </view>
-   <view class="contain">
-     <!-- 分割线 -->
+      <image src="../../image/8.png" mode="widthFix" />
+    </view>
+  </navigator>
+</view>
+<!--
+<view class="contain">
+  <!-- 分割线 
   <view class="divLine"></view>
 </view>
-   <view class="board">
+<view class="board">
   <navigator url="../like/like">
-  <view class="board-item">
+    <view class="board-item">
       <image src="../../image/good.png" />
       <text space="ensp">  点赞</text>
-      <image src="../../image/8.png"mode="widthFix" />
-  </view>
-   </navigator>
-   </view>
-   <view class="contain">
-     <!-- 分割线 -->
+      <image src="../../image/8.png" mode="widthFix" />
+    </view>
+  </navigator>
+</view>
+<view class="contain">
+  <!-- 分割线 
   <view class="divLine"></view>
 </view>
+-->

@@ -1,19 +1,23 @@
+<view wx:for="{{dynamic}}">
+<view ></view>
+  <view class="table">
 
-<view wx:for="{{goodsList}}">
-
-<view class="table">
-
-  <view class="tr" >
+    <view class="tr">
       <view class="td">
-        <image  class="userinfo-avatar" mode="cover" src="{{item.head}}"></image>
+        <image class="userinfo-avatar" mode="cover" src="{{item.user_image}}"></image>
       </view>
-  
-     <view class="tr1">
-        <view class="td1"><text class="hello">{{item.id}}</text></view>
-        <view class="td2"><text class='user_msg'>{{item.time}}</text></view>
-     </view>
-    <view class="hello2"data-index="{{index}}" bindtap = "delItem">
-      <image src="../../image/delete.png"/>
+
+      <view class="tr1">
+        <view class="td1">
+          <text class="hello">{{item.user_name}}</text>
+        </view>
+        <view class="td2">
+          <text class='user_msg'>{{item.dynamic_date}}</text>
+        </view>
+      </view>
+      <view class="hello2" data-index="{{index}}" bindtap="delItem">
+        <image src="../../image/delete.png" />
+      </view>
     </view>
   </view>
   <navigator url="../state/state">
@@ -33,29 +37,47 @@
 </navigator>
    <view class="divLine"></view>
    <view class="tr4">
+=======
+    <navigator url="../state/state?dynamic_id={{item.dynamic_id}}">
+      <view class="divLine"></view>
+      <view class="style">
+        <text class="hello1">{{item.dynamic_description}}</text>
+      </view>
+      <view class="divLine"></view>
+      <view class='imgList'>
+        <view class='imgList-li'>
+          <image class='img' src='{{item.dynamic_image}}' data-index='{{index}}' bindtap='previewImg'></image>
+
+        </view>
+
+      </view>
+    </navigator>
+    <view class="divLine"></view>
+    <view class="tr4">
+>>>>>>> 254f0a342fbcb82000085d5014d7d9de919a72ee
       <view class="td4">
-          <image src="../../image/share(1).png"mode="aspectFill" />
+        <image src="../../image/share(1).png" mode="aspectFill" />
       </view>
       <view class="td5">
-            <text>{{item.see}}</text>
+        <text>{{item.dynamic_viewnum}}</text>
       </view>
       <view class="td4">
-            <image src="../../image/note.png"mode="aspectFill" />
-       </view>
+        <image src="../../image/note.png" mode="aspectFill" />
+      </view>
       <view class="td5">
-            <text>{{item.comment}}</text>
-       </view>
-      
-       <view class="td4">
-            <image class='fav-icon' catchtap='onCollectionTap' src="../../image/goods{{item.collected?'1':''}}.png" data-index='{{index}}'></image>
-       </view>
+        <text>{{ }}</text>
+      </view>
+
+      <view class="td4">
+        <image class='fav-icon' catchtap='onCollectionTap' src="../../image/goods{{item.collected?'1':''}}.png" data-index='{{index}}'></image>
+      </view>
       <view class="td5">
-            <text>{{item.like}}</text>
-       </view>
-       
-</view>
-   <view class="divLine1"></view>
-</view>
+        <text>{{item.dynamic_pointnum}}</text>
+      </view>
+
+    </view>
+    <view class="divLine1"></view>
+  </view>
 
 
 </view>
