@@ -27,14 +27,13 @@ Page({
       '../../image/10.jpg',
       '../../image/12.jpg'
     ],
-    comment: [
-      '20'
-    ],
+    
 
 
     like: ['10'],
     collected1: [0],
 
+    comment:[],
 
     goodsList: [{
         ids: '校长',
@@ -137,7 +136,7 @@ Page({
       },
       success: function(res) {
         console.log(res.data);
-        goodsList: res.data
+        comment: res.data
       },
       fail: function(res) {
         console.log(".....fail.....");
