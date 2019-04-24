@@ -10,43 +10,11 @@ Page({
     dynamic: [],
     pointnum:[],
     commentnum:[],
-    id: [
-      '小明'
-    ],
-    head: [
-      '../../image/27.jpg'
-    ],
-    time: [
-      '2019.4.11 17.41'
-    ],
-    version: [
-      '今天天气真好'
-    ],
-    imgArr: [
-      '../../image/16.jpg',
-      '../../image/10.jpg',
-      '../../image/12.jpg'
-    ],
-    
-
 
     like: ['10'],
     collected1: [0],
 
     comment:[],
-
-    goodsList: [{
-        ids: '校长',
-        date: '2019.4.11 16.22',
-        write: '今天天气好',
-        comments: '20',
-        likes: '18',
-        heads: '../../image/27.jpg',
-        collected: 0
-
-      },
-
-    ],
     hiddenmodalput: true,
     //可以通过hidden是否掩藏弹出框的属性，来指定那个弹出框
   },
@@ -105,6 +73,7 @@ Page({
   onLoad: function(options) {
     console.log(options)
     var that = this
+    var thats = this
     //根据动态id查询详细动态
     wx.request({
       url: 'http://localhost:8080/garden/findDynamicByDynamicId',
@@ -117,7 +86,9 @@ Page({
       },
       success: function(res) {
         console.log(res.data);
-        dynamic: res.data
+        that.setData({
+          dynamic: res.data
+        })
       },
       fail: function(res) {
         console.log(".....fail.....");
@@ -136,7 +107,9 @@ Page({
       },
       success: function(res) {
         console.log(res.data);
-        comment: res.data
+        thats.setData({
+          comment: res.data
+        })
       },
       fail: function(res) {
         console.log(".....fail.....");

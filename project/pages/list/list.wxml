@@ -1,8 +1,24 @@
-<view class="style2">
-      <input confirm-type="search" maxlength="30" bindinput='wxSearchInput' value='{{keyword}}' bindconfirm='wxSearchFn' placeholder='请输入搜索内容'></input>
-      <button class='search' bindtap="wxSearchFn" hover-class='button-hover'><image src="../../image/search.png" /></button>
+<!--pages/list/list.wxml-->
+<view class="container"> 
+  
+  <view class='card b-shadow' id="journeyCar">
+    <view class='card-content' bindtap='toggleBtn' id='toggleBtn'>
+     <view class="style2">
+      <input confirm-type="search" maxlength="30" bindinput='wxSearchInput' value='{{keyword}}' bindconfirm='wxSearchFn'  placeholder='请输入搜索内容'></input>
+      <button class='search' bindtap="wxSearchFn" hover-class='button-hover'><image src="../../image/search.png" class='s'/></button>
       </view>
-      
+    </view>
+    <view  wx:if="{{uhide}}">
+    <view class="xx"><text>搜索历史:</text></view>
+
+    <block  wx:for="{{list}}"class='xy'>
+      <navigator url="../scenicCar/scenicCar?scenicName=舟山" class='journey-item'>{{item.text}}</navigator>
+      </block >
+   
+    </view>
+  </view>
+</view>
+
 
     <view class="contain">
 <navigator url="../skill/skill">
@@ -11,12 +27,7 @@
      <view class="contain"><text class="style3">养花技巧</text></view>
     </view>
     </navigator>
-    <navigator url="../photo/photo">
-   <view class="">
-    <image class="userinfo-avatar"src="../../image/22.jpg" background-size="cover"></image>
-    <view class="contain"><text class="style3">花卉常识</text></view>
-    </view>
-    </navigator>
+ 
     <navigator url="../sense/sense">
     <view class="">
     <image class="userinfo-avatar"src="../../image/23.jpg" background-size="cover"></image>
