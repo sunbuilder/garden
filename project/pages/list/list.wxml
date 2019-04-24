@@ -12,7 +12,7 @@
     <view class="xx"><text>搜索历史:</text></view>
 
     <block  wx:for="{{list}}"class='xy'>
-      <navigator url="../scenicCar/scenicCar?scenicName=舟山" class='journey-item'>{{item.text}}</navigator>
+      <navigator url="" class='journey-item'>{{item.text}}</navigator>
       </block >
    
     </view>

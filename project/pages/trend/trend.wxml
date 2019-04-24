@@ -19,25 +19,6 @@
         <image src="../../image/delete.png" />
       </view>
     </view>
-  </view>
-  <navigator url="../state/state">
-  <view class="divLine"></view>
-  <view class="style">
-  <text class="hello1">{{item.version}}</text>
-  </view>
-  <view class="divLine"></view>
- <view class='imgList'>      
- <view class='imgList-li'>
-    <image class='img' src='{{item.dynamic_image}}' data-index='{{index}}' bindtap='previewImg'></image>
-   
-  </view>
- 
- 
-</view>
-</navigator>
-   <view class="divLine"></view>
-   <view class="tr4">
-=======
     <navigator url="../state/state?dynamic_id={{item.dynamic_id}}">
       <view class="divLine"></view>
       <view class="style">
@@ -54,7 +35,6 @@
     </navigator>
     <view class="divLine"></view>
     <view class="tr4">
->>>>>>> 254f0a342fbcb82000085d5014d7d9de919a72ee
       <view class="td4">
         <image src="../../image/share(1).png" mode="aspectFill" />
       </view>
