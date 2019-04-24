@@ -7,8 +7,7 @@
 }
 
 .style3{
-  margin: 10rpx;
-  color: rgb(22, 18, 18);
+  m
   font-size: 30rpx;
 }
 
