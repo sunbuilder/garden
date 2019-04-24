@@ -8,7 +8,7 @@ Page({
     var msg;
     wx.uploadFile({
       url: getApp().globalData.path + 'createDiarylog' + getApp().globalData.path2, //仅为示例，非真实的接口地址
-      filePath: that.data.photos[0],
+      filePath: that.data.photos,
       name: 'file',
       formData: {
 
@@ -41,7 +41,7 @@ Page({
         // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
         var tempFilePaths = res.tempFilePaths
         that.setData({
-          photos: tempFilePaths
+          photos: tempFilePaths[0]
         })
         console.log(that.data.photos)
       }
