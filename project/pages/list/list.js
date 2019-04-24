@@ -52,6 +52,11 @@ Page({
      
     ],
   },
+  onPullDownRefresh: function () {
+    this.onLoad();
+  }
+  
+  ,
   
   onLoad: function () {
     var that = this;

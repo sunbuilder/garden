@@ -14,7 +14,7 @@ Page({
   },
 
   onPullDownRefresh: function(){
-    wx.stopPullDownRefresh()
+  this.onLoad("刷新成功");
   }
 ,
   getMsg:function(event){

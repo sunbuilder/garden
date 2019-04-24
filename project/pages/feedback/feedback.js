@@ -17,9 +17,11 @@ Page({
   }
   ,
   formSubmit: function (e) {
+    console.log(e.detail.value.details)
     wx.request({
-      url: 'url',
+      url: getApp().globalData.path + 'feedback' + getApp().globalData.path2,
       data: {
+        'userid':wx.getStorageSync("openid"),
         'details': e.detail.value.details
       },
       method: 'POST',

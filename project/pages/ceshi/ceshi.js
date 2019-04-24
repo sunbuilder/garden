@@ -9,6 +9,8 @@ Page({
       url: getApp().globalData.path + 'getMyCollectionList?userid=' + wx.getStorageSync("openid") + getApp().globalData.path2,
       success: function (res) {
         console.log(res)
+        wx.setStorageSync("listtech", res.data.techlist)
+        wx.setStorageSync("listplant", res.data.plantlist)
         that.setData({
           list: res.data.techlist
         })
@@ -131,6 +133,35 @@ Page({
     })
 
   },
+  delplant: function (e) {
+    //获取列表中要删除项的下标
+    var index = e.currentTarget.dataset.index;
+    var plantid = e.currentTarget.dataset.plantid;
+    var that = this
+ 
+    wx.request({
+      url: getApp().globalData.path + 'deletePlantById' + getApp().globalData.path2,
+      data: {
+        plantid: plantid,
+        userid: wx.getStorageSync("openid")
+      },
+      method: "get",
+      success: function (res) {
+        console.log(res.data)
+        if (res.data == "ok") {
+          var list = that.data.list;
+          //移除列表中下标为index的项
+          list.splice(index, 1);
+          //更新列表的状态
+          that.setData({
+            list: list
+          });
+        }
+      }
+    })
+
+  }
+  ,
   // 测试临时数据
   tempData: function () {
     var list = [
@@ -155,34 +186,15 @@ Page({
     });
   },
   change: function (event) {
-    var type
-    var that = this;
-    wx.request({
-      url:url,
-      data: {
-        type: type
-      },
-      success: function (res) {
-        that.setData({
-          
-        })
-      }
-    })
+   this.setData({
+     list:wx.getStorageSync('listtech')
+   })
   },
   change1: function (event) {
-    var type
-    var that = this;
-    wx.request({
-      url: url,
-      data: {
-        type: type
-      },
-      success: function (res) {
-        that.setData({
-
-        })
-      }
+    this.setData({
+      list:wx.getStorageSync('listplant')
     })
+    
   },
 })
 
