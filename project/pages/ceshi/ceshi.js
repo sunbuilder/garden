@@ -153,6 +153,36 @@ Page({
     this.setData({
       list: list
     });
-  }
+  },
+  change: function (event) {
+    var type
+    var that = this;
+    wx.request({
+      url:url,
+      data: {
+        type: type
+      },
+      success: function (res) {
+        that.setData({
+          
+        })
+      }
+    })
+  },
+  change1: function (event) {
+    var type
+    var that = this;
+    wx.request({
+      url: url,
+      data: {
+        type: type
+      },
+      success: function (res) {
+        that.setData({
+
+        })
+      }
+    })
+  },
 })
 

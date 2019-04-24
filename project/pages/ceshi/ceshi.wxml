@@ -1,3 +1,15 @@
+<view class="contain">
+
+  <view bindtap='change' >  
+    <image class="userinfo-avatar"src="../../image/110.jpg" background-size="cover"></image>
+    </view> 
+    <view bindtap='change1' >  
+    <image class="userinfo-avatar"src="../../image/100.jpg" background-size="cover"></image>
+    </view>
+    
+</view> 
+
+
 <view class="item-box">
   <view class="items">
     <view wx:for="{{list}}"  wx:key="{{index}}"  class="item">

@@ -86,3 +86,17 @@ page{
   background-color: rgb(210,210,236);
 
 }
+.userinfo-avatar {
+  width: 250rpx;
+  height: 250rpx;
+  margin: 10rpx;
+  border-radius: 50%;
+}
+.contain{
+  height: 100%;
+  width:100%;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content:space-around;
+}
