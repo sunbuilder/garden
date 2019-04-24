@@ -1,29 +1,7 @@
 Page({
   data: {
     uhide: false,
-    list: [{
-      text: '多肉的养殖经验',
-
-    }, {
-      text: '多肉的养殖经验',
-
-    },
-    {
-      text: '多肉的养殖经验',
-
-    },
-    {
-      text: '多肉的养殖经验',
-
-    },
-    {
-      text: '多肉的养殖经验',
-
-    }, {
-      text: '多肉的养殖经验',
-
-    }
-    ],
+   
    
     array2: [
       {
@@ -81,7 +59,8 @@ Page({
       url: getApp().globalData.path + 'randowPlant' + getApp().globalData.path2,
       success:function(res){
         that.setData({
-          plantlist:res.data
+          plantlist:res.data,
+          list:wx.getStorageSync("history")
         })
       }
     })
@@ -103,7 +82,18 @@ Page({
   //搜索方法 key为用户输入的查询字段
   search: function (key) {
     /*console.log('搜索函数触发')*/
-
+    var list=[{}];
+    if(wx.getStorageSync("history")){
+      list = wx.getStorageSync("history");
+      if(list.length==6){
+        list.splice(0,1)
+      }
+      list.push({text:key});
+      wx.setStorageSync("history", list)
+    }else{
+      list.push({text: key})
+      wx.setStorageSync("history", list);
+    }
     var that = this;
     wx.navigateTo({
       url: "../result/result?word=" + key,
@@ -112,11 +102,16 @@ Page({
   },
 //搜素时触发，调用search: function (key)，传入输入的e.detail.value值
 wxSearchInput: function (e) {
+
    this.setData({
      word:e.detail.value
    })
     
   },
+  historySearch:function(res){
+    this.search(res.currentTarget.dataset.text)
+  }
+  ,
 wxSearchFn : function() {
 
   this.search(this.data.word);
@@ -132,7 +127,8 @@ wxSearchFn : function() {
       })
     } else {
       that.setData({
-        uhide: true
+        uhide: true,
+        list:wx.getStorageSync("history")
       })
     }
   },

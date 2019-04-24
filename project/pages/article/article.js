@@ -27,11 +27,11 @@ Page({
           url: getApp().globalData.path + 'findcollection' + getApp().globalData.path2,
           data: {
             "userid": wx.getStorageSync("openid"),
-            "techid": wx.getStorageSync("techid")
+            "techid": id
           },
           success: function (res) {
             they.setData({
-              isCollected: !res.data
+              isCollected: res.data
             })
           }
         })
@@ -43,25 +43,30 @@ Page({
 
   }
   ,
-  handleCollection() {
+  handleCollection(event) {
+    var id = event.target.dataset.id
+    console.log(event)
     let isCollected = !this.data.isCollected
     console.log(isCollected)
+    var that = this;
     wx.request({
       url: getApp().globalData.path + 'collectTechById' + getApp().globalData.path2,
       data: {
-        "techid": wx.getStorageSync("techid"),
+        "techid": id,
         "userid": wx.getStorageSync("openid"),
-        "buer": isCollected
       },
       success: function (res) {
         console.log(res.data)
+
+        that.setData({
+          // 下面本来是这样子的:isCollected=isCollected,可以简写
+          isCollected: isCollected
+        })
       }
+
     })
 
-    this.setData({
-      // 下面本来是这样子的:isCollected=isCollected,可以简写
-      isCollected
-    })
+
     //提示用户
     wx.showToast({
       title: isCollected ? '收藏成功' : '取消收藏',

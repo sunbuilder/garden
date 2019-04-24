@@ -12,7 +12,9 @@
     <view class="xx"><text>搜索历史:</text></view>
 
     <block  wx:for="{{list}}"class='xy'>
-      <navigator url="" class='journey-item'>{{item.text}}</navigator>
+
+      <view bindtap='historySearch' data-text="{{item.text}}" class='journey-item' >
+            {{item.text}}</view>
       </block >
    
     </view>

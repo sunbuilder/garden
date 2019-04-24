@@ -8,8 +8,9 @@
 
 </view>
 <view class="style4">
-<image  catchtap='handleCollection' wx:if="{{!isCollected}}" src="../../image/shou.png"></image>
- <image wx:if="{{isCollected}}" catchtap='handleCollection' src="../../image/shou1.png"></image></view>
+<image  catchtap='handleCollection' wx:if="{{!isCollected}}" data-id="{{tech.techId}}"
+ src="../../image/shou.png"></image>
+ <image wx:if="{{isCollected}}" catchtap='handleCollection' data-id="{{tech.techId}}"  src="../../image/shou1.png"></image></view>
 </view>
  <view class="divLine"></view>
  <view class="divLine1"></view>

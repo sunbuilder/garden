@@ -8,6 +8,7 @@ Page({
     wx.request({
       url: getApp().globalData.path + 'getMyCollectionList?userid=' + wx.getStorageSync("openid") + getApp().globalData.path2,
       success: function (res) {
+        console.log(res)
         that.setData({
           list: res.data.techlist
         })
@@ -104,18 +105,20 @@ Page({
   //点击删除按钮事件
   delItem: function (e) {
     //获取列表中要删除项的下标
-    var index = e.target.dataset.index;
-    var techid=e.target.dataset.techid;
+    var index = e.currentTarget.dataset.index;
+    var techid = e.currentTarget.dataset.techid;
+    var that = this
+    console.log(techid)
     wx.request({
-      url: getApp().globalData.path + 'deleteTechById?techid='+techid+ getApp().globalData.path2,
-      data:{
-        techid:techid,
-        userid:wx.getStorageSync("openid")
+      url: getApp().globalData.path + 'deleteTechById?' + getApp().globalData.path2,
+      data: {
+        techid: techid,
+        userid: wx.getStorageSync("openid")
       },
-      method:"get",
-      success:function(res){
+      method: "get",
+      success: function (res) {
         console.log(res.data)
-        if(res.data=="ok"){
+        if (res.data == "ok") {
           var list = that.data.list;
           //移除列表中下标为index的项
           list.splice(index, 1);
@@ -126,31 +129,30 @@ Page({
         }
       }
     })
-    
+
   },
   // 测试临时数据
   tempData: function () {
-  var list = [
-  {
-  txtStyle: "",
-  icon: "../../image/17.jpg",
-  txt: "向左滑动可以删除"
-  },
-  {
-  txtStyle: "",
-  icon: "../../image/9.jpg",
-  txt: "微信小程序"
-  },
-  {
-  txtStyle: "",
-  icon: "../../image/12.jpg",
-  txt: "微信小程序"
+    var list = [
+      {
+        txtStyle: "",
+        icon: "../../image/17.jpg",
+        txt: "向左滑动可以删除"
+      },
+      {
+        txtStyle: "",
+        icon: "../../image/9.jpg",
+        txt: "微信小程序"
+      },
+      {
+        txtStyle: "",
+        icon: "../../image/12.jpg",
+        txt: "微信小程序"
+      }
+    ];
+    this.setData({
+      list: list
+    });
   }
-  ];
-  this.setData({
-  list: list
-  });
-  }
-  
 })
 
