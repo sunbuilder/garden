@@ -73,6 +73,7 @@ Page({
             wx.request({
               url: getApp().globalData.path + 'login' + getApp().globalData.path2,
               data: {
+            
                 code: res.code
               },         
               success: function (co) {
