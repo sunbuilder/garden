@@ -2,10 +2,10 @@
   <view class="items">
     <view wx:for="{{list}}"  wx:key="{{index}}"  class="item">
       <view bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" data-index="{{index}}" style="{{item.txtStyle}}" class="inner txt">
-         <image class="style" src="{{item.icon}}"></image>
-          <view class="style1">{{item.txt}}</view>   
+         <image class="style" src="{{item.tech.techImage}}"></image>
+          <view class="style1">{{item.tech.techName}}</view>   
       </view>
-      <view data-index="{{index}}" bindtap = "delItem" class="inner del"><text>删除</text></view>
+      <view data-index="{{index}}" bindtap = "delItem" data-techid="{[item.tech.techId}}" class="inner del"><text>删除</text></view>
     </view>
   </view>
 </view>

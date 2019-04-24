@@ -41,9 +41,9 @@
 
  <scroll-view scroll-x class="scroll-header1">
 
-         <view wx:for="{{brand}}" wx:key="{{index}}">
-          <navigator url="/pages/article/article?goodsId={{index}}">
-          <view class="x3"><image src="{{item.imgArr1}}"/>
+         <view wx:for="{{plantlist}}" wx:key="{{index}}">
+          <navigator url="/pages/article3/article3?goodsId={{item.plantId}}">
+          <view class="x3"><image src="{{item.plantImage}}"/>
         
         </view>
         </navigator>

@@ -3,9 +3,17 @@ Page({
     delBtnWidth: 180//删除按钮宽度单位（rpx）
   },
   onLoad: function (options) {
+    var that = this
     // 页面初始化 options为页面跳转所带来的参数
+    wx.request({
+      url: getApp().globalData.path + 'getMyCollectionList?userid=' + wx.getStorageSync("openid") + getApp().globalData.path2,
+      success: function (res) {
+        that.setData({
+          list: res.data.techlist
+        })
+      }
+    })
     this.initEleWidth();
-    this.tempData();
   },
   onReady: function () {
     // 页面渲染完成
@@ -97,35 +105,51 @@ Page({
   delItem: function (e) {
     //获取列表中要删除项的下标
     var index = e.target.dataset.index;
-    var list = this.data.list;
-    //移除列表中下标为index的项
-    list.splice(index, 1);
-    //更新列表的状态
-    this.setData({
-      list: list
-    });
-  },
-  //测试临时数据
-  tempData: function () {
-    var list = [
-      {
-        txtStyle: "",
-        icon: "../../image/17.jpg",
-        txt: "向左滑动可以删除"
+    var techid=e.target.dataset.techid;
+    wx.request({
+      url: getApp().globalData.path + 'deleteTechById?techid='+techid+ getApp().globalData.path2,
+      data:{
+        techid:techid,
+        userid:wx.getStorageSync("openid")
       },
-      {
-        txtStyle: "",
-        icon: "../../image/9.jpg",
-        txt: "微信小程序"
-      },
-      {
-        txtStyle: "",
-        icon: "../../image/12.jpg",
-        txt: "微信小程序"
+      method:"get",
+      success:function(res){
+        console.log(res.data)
+        if(res.data=="ok"){
+          var list = that.data.list;
+          //移除列表中下标为index的项
+          list.splice(index, 1);
+          //更新列表的状态
+          that.setData({
+            list: list
+          });
+        }
       }
-    ];
-    this.setData({
-      list: list
-    });
+    })
+    
+  },
+  // 测试临时数据
+  tempData: function () {
+  var list = [
+  {
+  txtStyle: "",
+  icon: "../../image/17.jpg",
+  txt: "向左滑动可以删除"
+  },
+  {
+  txtStyle: "",
+  icon: "../../image/9.jpg",
+  txt: "微信小程序"
+  },
+  {
+  txtStyle: "",
+  icon: "../../image/12.jpg",
+  txt: "微信小程序"
+  }
+  ];
+  this.setData({
+  list: list
+  });
   }
 })
+

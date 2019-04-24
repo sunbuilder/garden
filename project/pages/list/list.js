@@ -57,7 +57,9 @@ Page({
     wx.request({
       url: getApp().globalData.path + 'randowPlant' + getApp().globalData.path2,
       success:function(res){
-        console.log(res.data)
+        that.setData({
+          plantlist:res.data
+        })
       }
     })
     wx.request({
