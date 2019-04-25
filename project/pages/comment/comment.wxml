@@ -1,40 +1,45 @@
- <modal hidden="{{hiddenmodalput}}" title="回复消息" confirm-text="确认" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm"> 
- <input type='text'placeholder="请输入内容" auto-focus/>
+<modal hidden="{{hiddenmodalput}}" title="回复消息" confirm-text="确认" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
+  <input type='text' placeholder="请输入内容" auto-focus/>
 </modal>
- 
- <view wx:for="{{array}}"> 
-    <view class="divLine"></view>
-    <view class="tr5" >
-        <view class="td5">
-           <image  class="userinfo-avatar1" mode="cover" src="{{item.imgArr}}"></image>
-        </view>
-  
-      <view class="tr6">
-        <view class="td6"><text class="hello">{{item.id}}</text></view>
-        <view class="td7"><text class='user_msg'>{{item.time}}</text></view>
-       </view>
-      <view class="tr1">
-          <view class="container" bindtap="modalinput">
-              <image src="../../image/huifu.png"/>
-          </view>
-      </view>
-      <view class="hello2"data-index="{{index}}" bindtap = "delItem">
-         <image src="../../image/delete.png"/>
-      </view>
-   </view>
-   <view class="td8">
-        <text class="usg">{{item.version}}</text>
-   </view>
-   <navigator url="../article/article">
-<view class="first">
-    <view class="style">
-       <image src="{{item.photo}}" background-size="cover"></image>
-    </view>
-    <view class="style1"> 
-    <text>{{item.write}}</text>
-    </view>
-    
-</view>
-</navigator>
-</view>
 
+<block wx:for="{{comment}}">
+  <view class="divLine"></view>
+  <view class="tr5">
+    <view class="td5">
+      <image class="userinfo-avatar1" mode="cover" src="{{item.user_image}}"></image>
+    </view>
+
+    <view class="tr6">
+      <view class="td6">
+        <text class="hello">{{item.user_name}}</text>
+      </view>
+      <view class="td7">
+        <text class='user_msg'>{{item.comment_date}}</text>
+      </view>
+    </view>
+    <!-- 
+    <view class="tr1">
+      <view class="container" bindtap="modalinput">
+        <image src="../../image/huifu.png" />
+      </view>
+    </view> 
+    -->
+    <view class="hello2" data-index="{{item.comment_id}}" data-number="{{index}}" bindtap="delItem">
+      <image src="../../image/delete.png" />
+    </view>
+  </view>
+  <view class="td8">
+    <text class="usg">{{item.comment_description}}</text>
+  </view>
+  <navigator url="../state/state?dynamic_id={{item.comment_dynamicid}}">
+    <view class="first">
+      <view class="style">
+        <image src="{{item.dynamic_image}}" background-size="cover"></image>
+      </view>
+      <view class="style1">
+        <text>{{item.dynamic_description}}</text>
+      </view>
+
+    </view>
+  </navigator>
+</block>

@@ -7,21 +7,12 @@ Page({
         time: '2019.4.11 16.22',
         version: '今天天气好',
         photo: '../../image/3.jpg',
-        write:'必看！2019年购物新模式',
-        imgArr: '../../image/27.jpg'
-
-      },
-      {
-        id: '校长',
-        time: '2019.4.11 16.22',
-        version: '今天天气好',
-        photo: '../../image/3.jpg',
         write: '必看！2019年购物新模式',
         imgArr: '../../image/27.jpg'
 
-
-      }
+      },
     ],
+    comment: [],
     hiddenmodalput: true,
     //可以通过hidden是否掩藏弹出框的属性，来指定那个弹出框
   },
@@ -43,25 +34,21 @@ Page({
       hiddenmodalput: true
     })
   },
-   onLoad: function () {
+  onLoad: function () {
+    var that = this;
     wx.request({
-      url: url,
+      url: 'http://localhost:8080/garden/findMyCommentByDynamicId',
       data: {
-        'id': id,  //用户名
-        'time': time,  //时间
-        'photo':photo,    //文章封面
-        'version': version,   //评论内容
-        'imgArr': imgArr,   // 头像
-        'write':write   //文章标题
-
-
-
+        'dynamic_userid': wx.getStorageSync("openid")
       },
       method: 'post',
       header: {
         'content-type': 'application/json' // 默认值
       },
       success: function (res) {
+        that.setData({
+          comment: res.data
+        })
         console.log(res.data);
       },
       fail: function (res) {

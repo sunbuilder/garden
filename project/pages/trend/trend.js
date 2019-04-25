@@ -1,18 +1,16 @@
 Page({
   data: {
-    goodsList: [
-      {
-        time: '2019.4.11 13.55',
-        version: '今天天气好',
-        id: '小明',
-        head: '../../image/28.jpg',
-        see: '20',
-        comment: '10',
-        like: '20',
-        collected: 0
-      }
-    ],
-    dynamic:[]
+    goodsList: [{
+      time: '2019.4.11 13.55',
+      version: '今天天气好',
+      id: '小明',
+      head: '../../image/28.jpg',
+      see: '20',
+      comment: '10',
+      like: '20',
+      collected: 0
+    }],
+    dynamic: []
   },
   // 更改点赞状态
   onCollectionTap: function (event) {
@@ -46,7 +44,7 @@ Page({
   onLoad: function () {
     var that = this;
     wx.request({
-      url:'http://localhost:8080/garden/findDynamicByUserId',
+      url: 'http://localhost:8080/garden/findDynamicByUserId',
       data: {
         'dynamic_userid': wx.getStorageSync("openid")
       },
@@ -65,19 +63,48 @@ Page({
       }
     })
   },
-//点击删除按钮事件
+  //点击删除按钮事件
   delItem: function (e) {
     //获取列表中要删除项的下标
-    var index = e.target.dataset.index;
-    var goodsList = this.data.goodsList;
-    //移除列表中下标为index的项
-    goodsList.splice(index, 1);
-    //更新列表的状态
-    this.setData({
-      goodsList: goodsList
-    });
+    var that = this;
+    var index = e.currentTarget.dataset.index;
+    wx.showModal({
+      title: '提示',
+      content: '确定要此动态吗？',
+      success: function (sm) {
+        var they = that
+        if (sm.confirm) {
+          wx.request({
+
+            url: 'http://localhost:8080/garden/delDynamicByDynamicId',
+            data: {
+              'dynamic_id': index
+            },
+            method: 'post',
+            header: {
+              'content-type': 'application/json' // 默认值
+            },
+            success: function (res) {
+              if (res.data == "ok") {
+                wx.showToast({
+                  title: '删除成功',
+                })
+                var dynamic = they.data.dynamic;
+                dynamic.splice(e.currentTarget.dataset.index, 1)
+                they.setData({
+                  dynamic: dynamic
+                });
+              } else {
+                wx.showToast({
+                  title: '删除失败',
+                })
+              }
+            }
+          })
+        }
+      }
+    })
   },
 
 
 })
-
