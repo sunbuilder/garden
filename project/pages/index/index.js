@@ -12,7 +12,19 @@ Page({
    
     
   },
-
+  onReachBottom() {
+    // Do something when page reach bottom.
+    var list=wx.getStorageSync("logList");
+    if(list.length<this.data.logList.length+5){
+      this.setData({
+        logList:list.slice(0,list.length)
+      })
+    }else{
+      this.setData({
+        logList: list.slice(0, this.data.logList.length + 5)
+      })
+    }
+  },
   onPullDownRefresh: function(){
   this.onLoad("刷新成功");
   }
@@ -43,8 +55,9 @@ Page({
         'content-type': 'application/json'
       },
       success: function (cos) {
+        wx.setStorageSync("logList", cos.data)
         that.setData({
-          logList: cos.data,
+          logList: cos.data.slice(0,5),
           loglength:cos.data.length
         })
       },
@@ -112,10 +125,11 @@ Page({
        
 
           wx.setStorageSync("diaryid", res.data[0].diary.diaryId);
+          wx.setStorageSync("logList", res.data[0].logList);
           that.setData({
             diarylength: res.data.length,
             diaryList: res.data,
-            logList: res.data[0].logList,
+            logList: res.data[0].logList.slice(0, 4),
             loglength: res.data[0].logList.length
           })
         }else{

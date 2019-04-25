@@ -57,7 +57,20 @@ Page({
   }
   
   ,
-  
+  onReachBottom() {
+var list=wx.getStorageSync("recommendTech");
+if(list.length<this.data.techlist.length+5){
+  this.setData({
+    techlist: list.slice(0, list.length)
+  })
+}else{
+  this.setData({
+    techlist: list.slice(0, this.data.techlist.length+5)
+  })
+}
+
+  },
+
   onLoad: function () {
     var that = this;
     wx.request({
@@ -72,9 +85,9 @@ Page({
     wx.request({
       url: getApp().globalData.path + 'recommendTech' + getApp().globalData.path2,
       success: function (res) {
-          console.log(res.data)
+          wx.setStorageSync("recommendTech", res.data)
         that.setData({
-          techlist: res.data
+          techlist: res.data.slice(0,5)
         })
       },
       fail: function (res) {
