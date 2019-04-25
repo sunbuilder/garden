@@ -42,7 +42,7 @@
             <image src="../../image/note.png"mode="aspectFill" />
        </view>
       <view class="td5">
-            <text>{{item.dynamic_id}}</text>
+            <text>{{item.dynamic_commentnum}}</text>
        </view>
       
        <view class="td4">

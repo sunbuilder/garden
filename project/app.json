@@ -26,7 +26,6 @@
     "pages/article1/article1",
     "pages/article2/article2",
     "pages/article3/article3"
-
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -62,5 +61,6 @@
         "selectedIconPath": "image/27.jpg"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

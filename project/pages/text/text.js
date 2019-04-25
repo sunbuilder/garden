@@ -3,7 +3,6 @@ Page({
         imgArr: [
         ]
      ,
-
     goodsList: [
     ]
   },

@@ -59,14 +59,42 @@ Page({
   //点击删除按钮事件
   delItem: function (e) {
     //获取列表中要删除项的下标
-    var index = e.target.dataset.index;
-    var array = this.data.array;
-    //移除列表中下标为index的项
-    array.splice(index, 1);
-    //更新列表的状态
-    this.setData({
-      array: array
-    });
+    var that = this;
+    var index = e.currentTarget.dataset.index;
+    wx.showModal({
+      title: '提示',
+      content: '确定要此回复吗？',
+      success: function (sm) {
+        var they = that
+        if (sm.confirm) {
+          wx.request({
+            url: 'http://localhost:8080/garden/delCommentByCommentId',
+            data: {
+              'comment_id': index
+            },
+            method: 'post',
+            header: {
+              'content-type': 'application/json' // 默认值
+            },
+            success: function (res) {
+              if (res.data == "ok") {
+                wx.showToast({
+                  title: '删除成功',
+                })
+                var comment = they.data.comment;
+                comment.splice(e.currentTarget.dataset.index, 1)
+                they.setData({
+                  comment: comment
+                });
+              } else {
+                wx.showToast({
+                  title: '删除失败',
+                })
+              }
+            }
+          })
+        }
+      }
+    })
   },
-
 })
