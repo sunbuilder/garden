@@ -1,108 +1,46 @@
-const app = getApp()
 Page({
   data: {
-         list: '',
-       upload_picture_list: []
-
+    photos: ""
   },
-   //选择图片方法
-    uploadpic: function (e) {
-         var that = this //获取上下文
-         var upload_picture_list = that.data.upload_picture_list
-         //选择图片
-         wx.chooseImage({
-             count: 1,
-             sizeType: ['compressed'],
-             sourceType: ['album', 'camera'],
-             success: function(res) {
-                 var tempFiles = res.tempFiles
-                 //把选择的图片 添加到集合里
-                 for (var i in tempFiles) {
-                     tempFiles[i]['upload_percent'] = 0
-                     tempFiles[i]['path_server'] = ''
-                     upload_picture_list.push(tempFiles[i])
-          
-        }
-                 //显示
-                 that.setData({
-                     upload_picture_list: upload_picture_list,
-                   });
-        
+  uploadImg: function (e) {
+    var that = this
+    var msg;
+    wx.uploadFile({
+      url: 'http://localhost:8080/garden/insertDynamic', //仅为示例，非真实的接口地址
+      filePath: that.data.photos,
+      name: 'file',
+      formData: {
+        "dynamic_description": e.detail.value.description,
+        "dynamic_userid": wx.getStorageSync("openid")
+      },
+      header: {
+        'content-type': 'multipart/form-data'
+      },
+      success: function (res) {
+        console.log(res.data)
+        wx.reLaunch({
+          url: '../text/text?msg=',
+        })
       }
-     })
-    
-  },
-     //点击上传事件
-   uploadimage: function () {
-         var page = this
-         var upload_picture_list = page.data.upload_picture_list
-         //循环把图片上传到服务器 并显示进度       
-         for (var j in upload_picture_list) {
-             if (upload_picture_list[j]['upload_percent'] == 1) {
-        　　　　　　//调用函数
-                 app.util.upload_file_server(app.api.up_pic, page, upload_picture_list, j)
-        
+    })
+  }
+  ,
+
+
+  chooseImg: function () {
+    var that = this
+    wx.chooseImage({
+      count: 1, // 默认9
+      sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+      sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+      success: function (res) {
+        // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
+        var tempFilePaths = res.tempFilePaths
+        that.setData({
+          photos: tempFilePaths[0]
+        })
+        console.log(that.data.photos)
       }
-      
-    }
-    
-  },
-   
-   // 删除图片
-   deleteImg: function(e) {
-         let upload_picture_list = this.data.upload_picture_list;
-         let index = e.currentTarget.dataset.index;
-         upload_picture_list.splice(index, 1);
-         this.setData({
-             upload_picture_list: upload_picture_list
-
-    });
-    
-  },
-}),
-function upload_file_server(url, that, upload_picture_list, j)
-  {
-  //上传返回值
-  const upload_task = wx.uploadFile({
-    
-    url: getApp().globalData.path + 'createDiarylog' + getApp().globalData.path2,  
-    filePath: upload_picture_list[j]['path'], //上传的文件本地地址    
-    name: 'file',
-    formData: {
-      
-      "num": e.detail.value.description
-    },
-    //附近数据，这里为路径     
-    success: function (res) {
-
-      var data = JSON.parse(res.data);
-      // //字符串转化为JSON  
-      if (data.Success == true) {
-
-        var filename = data.file //存储地址 显示
-
-        upload_picture_list[j]['path_server'] = filename
-
-      } else {
-        upload_picture_list[j]['path_server'] = filename
-
-      }
-      that.setData({
-        upload_picture_list: upload_picture_list
-
-      });
-
-      wx.setStorageSync('imgs', upload_picture_list);
-
-    }
-  })
-    upload_task.onProgressUpdate((res) => {
-      upload_picture_list[j]['upload_percent'] = res.progress
-      that.setData({
-        upload_picture_list: upload_picture_list
-      });
-
-    });
-
-}
-
+    })
+  }
+})

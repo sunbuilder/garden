@@ -6,10 +6,12 @@ Page({
   },
 
   data: {
-
+    
     dynamic: [],
     pointnum:[],
     commentnum:[],
+
+    mess: '',
 
     like: ['10'],
     collected1: [0],
@@ -47,7 +49,9 @@ Page({
     })
   },
 
-
+  watchIn(e) {
+    this.data.mess = e.detail.value
+  },
 
 
   //点击按钮痰喘指定的hiddenmodalput弹出框
@@ -63,7 +67,32 @@ Page({
     });
   },
   //确认
-  confirm: function() {
+  confirm: function(e) {
+    var that = this;
+    var comment = this.data.mess;
+    wx.request({
+      url: 'http://localhost:8080/garden/addComment',
+      data: {
+        "comment_description": comment,
+        "comment_userid": wx.getStorageSync("openid"),
+        "comment_dynamicid": wx.getStorageSync("dynamic_id")
+      },
+      method: 'post',
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success: function (res) {
+        if (res.data == "ok") {
+          wx.showToast({
+            title: '回复成功',
+          })
+        } else {
+          wx.showToast({
+            title: '添加失败',
+          })
+        }
+      }
+    })
     this.setData({
       hiddenmodalput: true
     })
@@ -74,6 +103,10 @@ Page({
     console.log(options)
     var that = this
     var thats = this
+    wx.setStorage({
+      key: 'dynamic_id',
+      data: options.dynamic_id,
+    })
     //根据动态id查询详细动态
     wx.request({
       url: 'http://localhost:8080/garden/findDynamicByDynamicId',

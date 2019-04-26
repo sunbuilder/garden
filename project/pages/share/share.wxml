@@ -1,33 +1,27 @@
 <form bindsubmit="uploadImg">
-<view  class="style1" >
-<view class="tr">
-    <view class="td">
-      
-    </view>
-    <view class="td1">
-        <button bindtap='uploadimage' class='yes-upload'>提交</button>
-    </view>
-</view>
-<view class="first">
- <textarea class="detailText"  placeholder="分享精彩生活...." bindblur="bindTextAreaBlur"value="{{details}}">
-    </textarea>
- </view>
- <view class="style2">
-    <view class="picture_list">
- 
-      <view wx:for="{{upload_picture_list}}" class="picture_item" wx:key="{{index}}">
-        <image wx:if="{{item.upload_percent<1}}" src="{{item.path}}" mode="aspectFill"></image>
-        
-        <text class='del' bindtap='deleteImg' data-src='{{image}}' style='display:{{isDel}}' data-index="{{index}}">×</text>
+  <view class="style1">
+    <view class="tr">
+      <view class="td">
       </view>
-  
-     <view class='picture_item'>
-       <view class="add-image" bindtap='uploadpic'>
-         <text>+</text>
-       </view>
-     </view>
-   </view>
- </view>
+      <view class="td1">
+        <button form-type="submit">提交</button>
+      </view>
     </view>
+    <view class="first">
+      <textarea class="detailText" placeholder="分享精彩生活....." name="description">
+      </textarea>
+    </view>
+    <view class="style2">
+      <view class="picture_list">
+        <view class="picture_item" wx:key="{{index}}">
+          <image src="{{photos}}" mode="aspectFill"></image>
+        </view>
+        <view class='picture_item'>
+          <view class="add-image" bindtap="chooseImg">
+            <text>+</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
 </form>
-

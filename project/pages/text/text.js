@@ -50,6 +50,10 @@ Page({
         that.setData({
           goodsList: res.data
         })
+        console.log(res)
+        for (let i = 0; i < that.data.goodsList.length; i++) {
+          that.data.goodsList[i]["dynamic_date"] = new Date(that.data.goodsList[i]["dynamic_date"])
+        }
       },
       fail: function (res) {
         console.log(".....fail.....");

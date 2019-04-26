@@ -13,7 +13,7 @@
   
    <view class="tr1">
    <view class="td1"><text class="hello">{{item.user_name}}</text></view>
-   <view class="td2"><text class='user_msg'>{{item.dynamic_date}}</text></view>
+   <view class="td2"><text class='user_msg'>{{ item.dynamic_date }}</text></view>
    </view>
   
   </view>
@@ -46,7 +46,7 @@
        </view>
       
        <view class="td4">
-            <image class='fav-icon' catchtap='onCollectionTap' src="../../image/goods{{item.collected?'1':''}}.png" data-index='{{index}}'></image>
+            <image class='fav-icon' catchtap='onCollectionTap' src="../../image/goods{{item.collected?'1':''}}.png" data-index='{{item.dynamic_id}}'></image>
        </view>
       <view class="td5">
             <text>{{item.dynamic_pointnum}}</text>

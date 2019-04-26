@@ -1,20 +1,18 @@
 <modal hidden="{{hiddenmodalput}}" title="评论" confirm-text="确认" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
-  <input type='text' placeholder="请输入内容" auto-focus/>
+  <input type='text' bindinput='watchIn' placeholder="请输入内容" name="comment" auto-focus />
 </modal>
 
 <view class="circle-float">
-  <view class="tr4">
-    <view class="td8">
-      <view class="container" class="zn-uploadimg" bindtap="modalinput">
-        <text>说点什么吧...</text>
-      </view>
-    </view>
+
+  <view bindtap="modalinput">
+    <image src="../../image/write.png" />
   </view>
+
 </view>
 
 
 <view class="table">
-  
+
   <view class="tr">
     <view class="td">
       <image class="userinfo-avatar" mode="cover" src="{{dynamic.user_image}}"></image>
@@ -36,7 +34,7 @@
   <view class="divLine"></view>
   <view class='imgList'>
     <view class='imgList-li'>
-      <image class='img' src='{{dynamic.dynamic_image}}' data-index='{{index}}' bindtap='previewImg' ></image>
+      <image class='img' src='{{dynamic.dynamic_image}}' data-index='{{index}}' bindtap='previewImg'></image>
     </view>
   </view>
 

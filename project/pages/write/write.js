@@ -11,7 +11,6 @@ Page({
       filePath: that.data.photos,
       name: 'file',
       formData: {
-
         "logDescription": e.detail.value.description,
         "logDiaryid": wx.getStorageSync("diaryid")
       },
@@ -24,8 +23,6 @@ Page({
           url: '../index/index?msg=' + "添加成功",
         })
       }
-      
-
     })
   }
   ,
