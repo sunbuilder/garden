@@ -44,7 +44,7 @@ Page({
   onLoad: function () {
     var that = this;
     wx.request({
-      url: 'http://localhost:8080/garden/findDynamicByUserId',
+      url: 'http://192.168.43.246:8080/garden/findDynamicByUserId',
       data: {
         'dynamic_userid': wx.getStorageSync("openid")
       },
@@ -76,7 +76,7 @@ Page({
         if (sm.confirm) {
           wx.request({
 
-            url: 'http://localhost:8080/garden/delDynamicByDynamicId',
+            url: 'http://192.168.43.246:8080/garden/delDynamicByDynamicId',
             data: {
               'dynamic_id': index
             },

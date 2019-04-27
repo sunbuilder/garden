@@ -23,7 +23,7 @@ App({
     })
   },
   globalData: {
-    path: "http://192.168.31.230:8080/garden/",
+    path: "http://192.168.43.246:8080/garden/",
     userInfo: null,
     path2: ""  },
   onPullDownRefresh() {

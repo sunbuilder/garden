@@ -39,8 +39,8 @@ Page({
   onLoad: function () {
     var that=this;
     wx.request({
-      url: 'http://localhost:8080/garden/selectDynamic',
-      data: {
+      url: 'http://192.168.43.246:8080/garden/selectDynamic',
+      data: { 
       },
       method: 'post',
       header: {

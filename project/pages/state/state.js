@@ -71,7 +71,7 @@ Page({
     var that = this;
     var comment = this.data.mess;
     wx.request({
-      url: 'http://localhost:8080/garden/addComment',
+      url: 'http://192.168.43.246:8080/garden/addComment',
       data: {
         "comment_description": comment,
         "comment_userid": wx.getStorageSync("openid"),
@@ -83,6 +83,7 @@ Page({
       },
       success: function (res) {
         if (res.data == "ok") {
+         
           wx.showToast({
             title: '回复成功',
           })
@@ -109,7 +110,7 @@ Page({
     })
     //根据动态id查询详细动态
     wx.request({
-      url: 'http://localhost:8080/garden/findDynamicByDynamicId',
+      url: 'http://192.168.43.246:8080/garden/findDynamicByDynamicId',
       data: {
         "dynamic_id": options.dynamic_id
       },
@@ -130,7 +131,7 @@ Page({
 
     //根据动态id查询评论
     wx.request({
-      url: 'http://localhost:8080/garden/findCommentByDynamicId',
+      url: 'http://192.168.43.246:8080/garden/findCommentByDynamicId',
       data: {
         "dynamic_id": options.dynamic_id
       },

@@ -31,12 +31,8 @@
       <view class="td4">
             <text>{{item.tech.techViewnum}}</text>
        </view>
-       <view class="td4">
-            <view><image src="../../image/goods.png"mode="aspectFill" /></view>
-       </view>
-      <view class="td4">
-            <text>{{item.tech.techPointnum}}</text>
-       </view>
+       
+      
 </view>
 </navigator>
 </view>

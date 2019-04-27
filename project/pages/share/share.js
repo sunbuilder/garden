@@ -6,7 +6,7 @@ Page({
     var that = this
     var msg;
     wx.uploadFile({
-      url: 'http://localhost:8080/garden/insertDynamic', //仅为示例，非真实的接口地址
+      url: 'http://192.168.43.246:8080/garden/insertDynamic', //仅为示例，非真实的接口地址
       filePath: that.data.photos,
       name: 'file',
       formData: {
